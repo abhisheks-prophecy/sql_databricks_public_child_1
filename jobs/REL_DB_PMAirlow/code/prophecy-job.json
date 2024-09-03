@@ -22,7 +22,7 @@
       "do_xcom_push" : true
     },
     "endDate" : "2024-09-04",
-    "catchup" : true,
+    "catchup" : false,
     "startDate" : "2023-09-26",
     "tags" : [ ],
     "scheduleTimeZone" : "UTC",

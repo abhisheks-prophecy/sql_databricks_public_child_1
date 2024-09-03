@@ -23,7 +23,7 @@ with DAG(
     }, 
     start_date = pendulum.datetime(2023, 9, 26, tz = "UTC"), 
     end_date = pendulum.datetime(2024, 9, 4, tz = "UTC"), 
-    catchup = True, 
+    catchup = False, 
     tags = []
 ) as dag:
     DBT_0_op = DBT_0()
