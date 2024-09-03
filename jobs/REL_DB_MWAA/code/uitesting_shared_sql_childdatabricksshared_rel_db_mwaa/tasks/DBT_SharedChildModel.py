@@ -20,7 +20,7 @@ def DBT_SharedChildModel():
           "run_tests": False,
           "run_mode": "model",
           "entity_kind": "model",
-          "entity_name": "env_uitesting_shared_child_model_1",
+          "entity_name": "sanity_simple_model_1",
           "project_id": "74",
           "git_entity": "tag",
           "git_entity_value": "__PROJECT_FULL_RELEASE_TAG_PLACEHOLDER__",
