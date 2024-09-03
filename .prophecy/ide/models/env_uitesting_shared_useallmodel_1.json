@@ -13028,7 +13028,7 @@
             }, {
               "name" : "c_bigint",
               "dataType" : {
-                "type" : "Double"
+                "type" : "Float"
               }
             }, {
               "name" : "c_smallint",
@@ -24614,7 +24614,7 @@
                 }, {
                   "name" : "c_bigint",
                   "dataType" : {
-                    "type" : "Double"
+                    "type" : "Float"
                   }
                 }, {
                   "name" : "c_smallint",
@@ -27376,7 +27376,7 @@
             }, {
               "name" : "c_bigint",
               "dataType" : {
-                "type" : "Double"
+                "type" : "Float"
               }
             }, {
               "name" : "c_smallint",
