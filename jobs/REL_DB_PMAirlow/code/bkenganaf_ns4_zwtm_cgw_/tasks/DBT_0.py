@@ -36,7 +36,7 @@ def DBT_0():
             "DBT_PRINT": "false", 
             "DBT_FULL_REFRESH": "true"
           }, 
-          "git_token_secret": "lfJ5vC2nkIrYJFHPCPJU9Q_", 
+          "git_token_secret": "A5qEhn8w3NrfuQr5yQ6u8A_", 
           "dbt_profile_secret": "NBGW5z7eP5DyFVJyclt-j"
         },
         retry_exponential_backoff = True, 
