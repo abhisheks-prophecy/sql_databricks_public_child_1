@@ -1,6 +1,6 @@
-from bkenganaf_ns4_zwtm_cgw_.utils import *
+from dcomzbwlkncix34ykqcmsw_.utils import *
 
-def DBT_0_1():
+def DBT_0_1_4_1():
     from airflow.operators.python import PythonOperator
     from datetime import timedelta
     import os
@@ -8,7 +8,7 @@ def DBT_0_1():
     import tempfile
 
     return PythonOperator(
-        task_id = "DBT_0_1",
+        task_id = "DBT_0_1_4_1",
         python_callable = invoke_dbt_runner,
         op_kwargs = {
           "is_adhoc_run_from_same_project": False,
@@ -18,23 +18,23 @@ def DBT_0_1():
           "run_parents": False,
           "run_children": False,
           "run_tests": True,
-          "run_mode": "project",
-          "entity_kind": None,
-          "entity_name": None,
+          "run_mode": "model",
+          "entity_kind": "model",
+          "entity_name": "env_uitesting_shared_child_model_1",
           "project_id": "74",
           "git_entity": "tag",
           "git_entity_value": "__PROJECT_FULL_RELEASE_TAG_PLACEHOLDER__",
           "git_ssh_url": "https://github.com/abhisheks-prophecy/sql_databricks_public_child_1",
           "git_sub_path": "",
           "select": "",
-          "threads": "",
+          "threads": "1",
           "exclude": "",
           "run_props": " --profile run_profile",
           "envs": {
             "DBT_DATABRICKS_INVOCATION_ENV": "prophecy", 
             "DBT_FAIL_FAST": "true", 
             "DBT_PRINT": "false", 
-            "DBT_LOG_PATH": "logs.txt", 
+            "DBT_LOG_PATH": "log.txt", 
             "DBT_FULL_REFRESH": "true"
           }, 
           "git_token_secret": "lfJ5vC2nkIrYJFHPCPJU9Q_", 

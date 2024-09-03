@@ -879,7 +879,7 @@
           "alias" : "c_struct"
         } ],
         "activeTab" : "conditions",
-        "columnsSelector" : [ ],
+        "columnsSelector" : [ "b9f7Vcsq##c_bigint", "gmStuapZ##c_bigint", "b9f7Vcsq##c_tinyint", "b9f7Vcsq##c_smallint", "b9f7Vcsq##c_int", "b9f7Vcsq##c_bigint", "b9f7Vcsq##c_float", "b9f7Vcsq##c_double", "b9f7Vcsq##c_string", "b9f7Vcsq##c_boolean", "b9f7Vcsq##c_array", "b9f7Vcsq##c_struct" ],
         "headAlias" : "in0"
       },
       "ports" : {

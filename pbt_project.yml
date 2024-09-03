@@ -1,6 +1,6 @@
 name: SQL_DatabricksSharedBasic
 description: ''
-version: v3.3.9.0-3
+version: v3.3.10.0-3
 author: null
 language: sql
 buildSystem: ''
@@ -57,7 +57,8 @@ jobs:
     enabled: true
     createdAt: '2023-04-21 14:20:18'
     author: abhisheks+shared@prophecy.io
-    models: []
+    models:
+    - env_uitesting_shared_mid_model_1
     sqlProjects: []
   jobs/REL_DB_PMAirlow:
     name: Staging_REL_DB_PMAirlow
@@ -82,7 +83,8 @@ jobs:
     enabled: true
     createdAt: '2023-06-21 06:11:08'
     author: abhisheks+shared@prophecy.io
-    models: []
+    models:
+    - env_uitesting_shared_mid_model_1
     sqlProjects: []
   jobs/REL_DB_MWAA:
     name: Staging_REL_DB_MWAA
@@ -133,6 +135,44 @@ jobs:
     createdAt: '2024-03-13 13:40:25'
     author: abhisheks+shared@prophecy.io
     models: []
+    sqlProjects: []
+  jobs/fautly_model:
+    name: fautly_model
+    description: ''
+    fabricUID: 22
+    scheduler:
+      Prophecy: {}
+    cloudProvider: null
+    jobSize: null
+    scheduleCron: None
+    timeout: null
+    alerting:
+      emails: ''
+      onStart: false
+      onSuccess: false
+      onFailure: false
+    pipelines: []
+    jobClusterMode:
+      clusterMode:
+        Multi: {}
+      clusterId: null
+    enabled: false
+    createdAt: '2024-08-30 13:57:34'
+    author: abhisheks+shared@prophecy.io
+    models:
+    - env_uitesting_shared_mid_model_1
+    - uitesting_iow
+    - sanity_simple_model_1
+    - env_uitesting_shared_useallmodel_1
+    - uitesting_scd2_diff_col_val
+    - uitesting_replacewhere
+    - snapshot_sanity_test_1
+    - uitesting_specifycolumns
+    - uitesting_expressions_1
+    - uitesting_scd2_timestamp
+    - tpcds_uitesting_shared_1
+    - env_uitesting_shared_child_model_1
+    - env_uitesting_shared_parent_model_1
     sqlProjects: []
 gemContainer:
   languageVersion: ''
