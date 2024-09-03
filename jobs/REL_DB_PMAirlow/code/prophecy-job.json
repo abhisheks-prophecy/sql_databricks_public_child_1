@@ -74,7 +74,7 @@
         "label" : "S3FileSensor_1",
         "slug" : "S3FileSensor_1",
         "x" : 780,
-        "y" : 520
+        "y" : 500
       },
       "ports" : {
         "inputs" : [ {
