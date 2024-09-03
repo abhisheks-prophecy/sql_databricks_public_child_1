@@ -51,13 +51,11 @@
         } ]
       },
       "settings" : {
-        "type" : "Inherited",
-        "alerting" : {
-          "emails" : "",
-          "onStart" : false,
-          "onSuccess" : false,
-          "onFailure" : false
-        }
+        "retries" : 0,
+        "emails" : "",
+        "onStart" : false,
+        "onSuccess" : false,
+        "onFailure" : false
       },
       "properties" : {
         "execSeed" : true,
