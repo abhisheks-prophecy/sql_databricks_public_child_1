@@ -73,8 +73,8 @@
       "metadata" : {
         "label" : "S3FileSensor_1",
         "slug" : "S3FileSensor_1",
-        "x" : 780,
-        "y" : 520
+        "x" : 760,
+        "y" : 400
       },
       "ports" : {
         "inputs" : [ {
@@ -119,7 +119,7 @@
         } ]
       },
       "settings" : {
-        "retries" : 0,
+        "retries" : 10,
         "retry_exponential_backoff" : true
       },
       "properties" : {

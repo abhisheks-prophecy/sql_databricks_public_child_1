@@ -1,3 +1,5 @@
+
+
 {%
   set v_complex_dict = {
     "problems": [
@@ -38,16 +40,21 @@
 {% set v_dict = { 'a': 10, 'b': 20 } %}
 {% set v_int = 10 %}
 
-
-
-
-
-
 WITH env_uitesting_shared_parent_model_1 AS (
 
   SELECT * 
   
   FROM {{ ref('env_uitesting_shared_parent_model_1')}}
+
+),
+
+SQLStatement_1 AS (
+
+  SELECT * 
+  
+  FROM env_uitesting_shared_parent_model_1 AS in0
+  
+  WHERE c_tinyint > -1
 
 ),
 
@@ -74,21 +81,21 @@ AllStunningOne AS (
     or array_contains(array_repeat(5, 2), 6)
     or array_contains(array_union(array(1, 2, 3), array(1, 3, 5)), 10)
     or arrays_overlap(array(1, 2, 3), array(3, 4, 5))
-    or (10 BETWEEN 2 and 20)
+    or (10 BETWEEN 2 AND 20)
     or contains('Spark SQL', 'Spark')
     or endswith('Spark SQL', 'SQL')
     or (
-         EXISTS (
-           array(1, 2, 3),
-           
-           x -> x % 2 == 0
-         )
+         EXISTS(
+           array(1, 2, 3), 
+           x -> x % 2 == 0)
        )
-    or array_contains(filter(array(1, 2, 3), 
-       x -> x % 2 == 1), 5)
+    or array_contains(filter(
+         array(1, 2, 3), 
+         x -> x % 2 == 1), 5)
     or array_contains(flatten(array(array(1, 2), array(3, 4))), 10)
-    or forall(array(1, 2, 3), 
-       x -> x % 2 == 0)
+    or forall(
+         array(1, 2, 3), 
+         x -> x % 2 == 0)
     or ilike('Spark', '_Park')
     or (1 IN (2, 3, 4))
     or (isnan(CAST('NaN' AS double)))
@@ -98,14 +105,17 @@ AllStunningOne AS (
     or like('Spark', '_park')
     or map_contains_key(map(1, 'a', 2, 'b'), 1)
     or map_contains_key(map_concat(map(1, 'a', 2, 'b'), map(3, 'c')), 4)
-    or map_contains_key(map_filter(map(1, 0, 2, 2, 3, -1), 
-       (k, v) -> k > v), 3)
+    or map_contains_key(map_filter(
+         map(1, 0, 2, 2, 3, -1), 
+         (k, v) -> k > v), 3)
     or map_contains_key(map_from_arrays(array(1.0, 3.0), array('2', '4')), 2)
     or map_contains_key(map_from_entries(array(struct(1, 'a'), struct(2, 'b'))), 1)
     or array_contains(map_keys(map(1, 'a', 2, 'b')), 2)
     or array_contains(map_values(map(1, 'a', 2, 'b')), 'a')
-    or map_contains_key(map_zip_with(map(1, 'a', 2, 'b'), map(1, 'x', 2, 'y'), 
-       (k, v1, v2) -> concat(v1, v2)), 1)
+    or map_contains_key(map_zip_with(
+         map(1, 'a', 2, 'b'), 
+         map(1, 'x', 2, 'y'), 
+         (k, v1, v2) -> concat(v1, v2)), 1)
     or (named_struct('a', 1, 'b', 2) IN (named_struct('a', 1, 'b', 1), named_struct('a', 1, 'b', 3)))
     or (NOT true)
     or regexp('%SystemDrive%\\Users\\John', '%SystemDrive%\\\\Users.*')
@@ -118,16 +128,21 @@ AllStunningOne AS (
     or array_contains(split('oneAtwoBthreeC', '[ABC]'), 'one')
     or startswith('Spark SQL', 'Spark')
     or map_contains_key(str_to_map('a:1,b:2,c:3', ',', ':'), 'a')
-    or array_contains(transform(array(1, 2, 3), 
-       x -> x + 1), 1)
-    or map_contains_key(transform_keys(map_from_arrays(array(1, 2, 3), array(1, 2, 3)), 
-       (k, v) -> k + 1), 1)
-    or map_contains_key(transform_values(map_from_arrays(array(1, 2, 3), array(1, 2, 3)), 
-       (k, v) -> v + 1), 2)
+    or array_contains(transform(
+         array(1, 2, 3), 
+         x -> x + 1), 1)
+    or map_contains_key(transform_keys(
+         map_from_arrays(array(1, 2, 3), array(1, 2, 3)), 
+         (k, v) -> k + 1), 1)
+    or map_contains_key(transform_values(
+         map_from_arrays(array(1, 2, 3), array(1, 2, 3)), 
+         (k, v) -> v + 1), 2)
     or array_contains(xpath('<a><b>b1</b><b>b2</b><b>b3</b><c>c1</c><c>c2</c></a>', 'a/b/text()'), 'a')
     or xpath_boolean('<a><b>1</b></a>', 'a/b')
-    or array_contains(zip_with(array(1, 2), array(3, 4), 
-       (x, y) -> x + y), 1) AS c_bool_expr,
+    or array_contains(zip_with(
+         array(1, 2), 
+         array(3, 4), 
+         (x, y) -> x + y), 1) AS c_bool_expr,
     concat(
       aes_decrypt(unhex('83F16B2AA704794132802D248E6BFD4E380078182D1544813898AC97E709B28A94'), '0000111122223333'), 
       base64(aes_encrypt('Spark SQL', '1234567890abcdef', 'ECB', 'PKCS')), 
@@ -370,9 +385,9 @@ AllStunningOne AS (
     c_array AS c_array,
     c_struct AS c_struct,
     {{ SQL_DatabricksSharedBasic.qa_concat_function_main('c_string', 'c_boolean') }} AS c_macro,
-    {% if v_int > 0 or                       var('v_project_dict')['a'] > 10 %}
+    {% if v_int > 0 or                       var('v_project_dict') ['a'] > 10 %}
       concat(c_string, c_float) AS c_if,
-    {% elif v_dict['a'] > 10 or                       var('v_project_dict')['b'] == 'hello' %}
+    {% elif v_dict['a'] > 10 or                       var('v_project_dict') ['b'] == 'hello' %}
       concat(c_string, c_int) AS c_if,
     {% else %}
       concat(c_string, c_bigint) AS c_if,
@@ -396,16 +411,6 @@ Limit_1 AS (
 
 ),
 
-SQLStatement_1 AS (
-
-  SELECT * 
-  
-  FROM env_uitesting_shared_parent_model_1 AS in0
-  
-  WHERE c_tinyint > -1
-
-),
-
 Join_1 AS (
 
   SELECT 
@@ -426,6 +431,7 @@ Join_1 AS (
 
 )
 
+{#Utilizes combined customer and asset data for testing purposes.#}
 SELECT *
 
 FROM Join_1
