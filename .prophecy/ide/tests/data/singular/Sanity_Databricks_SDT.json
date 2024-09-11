@@ -1613,9 +1613,9 @@
         "macroDependencies" : [ ]
       },
       "properties" : {
-        "columnsSelector" : [ ],
+        "columnsSelector" : [ "xLVx6c9ZR8x8nQBUJuhDZ$$1BiyNIzjc9bTfhaOYQti3##c_boolean" ],
         "condition" : {
-          "expression" : "c_boolean is true"
+          "expression" : "c_boolean IS true"
         }
       },
       "ports" : {
