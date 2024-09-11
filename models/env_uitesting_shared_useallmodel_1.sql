@@ -14,12 +14,6 @@
 {% set v_int = 22 %}
 {% set DATASET_ID = '1' %}
 
-
-
-
-
-
-
 WITH all_type_parquet AS (
 
   SELECT * 

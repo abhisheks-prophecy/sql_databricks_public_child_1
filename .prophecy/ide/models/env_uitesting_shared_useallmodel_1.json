@@ -178,22 +178,23 @@
       }, {
         "source" : {
           "table" : {
-            "name" : "env_uitesting_shared_mid_model_1",
-            "sourceType" : "Model"
+            "name" : "dest_data_mart1",
+            "sourceName" : "hive_metastore.qa_database",
+            "sourceType" : "ExternalSource"
           }
         },
-        "sourceComponentKind" : "Model",
-        "sourceLabel" : "env_uitesting_shared_mid_model_1_1",
+        "sourceComponentKind" : "ExternalSource",
+        "sourceLabel" : "dest_data_mart1",
         "canJoinWith" : [ {
           "processLabel" : "all_type_parquet_1",
           "processId" : "all_type##Subgraph##H6Ek49Rd",
           "properties" : {
             "activeTab" : "conditions",
-            "columnsSelector" : [ "c_array", "c_bigint", "c_boolean" ],
+            "columnsSelector" : [ "c_int" ],
             "conditions" : [ {
-              "alias" : "env_uitesting_shared_mid_model_1_1",
+              "alias" : "dest_data_mart1",
               "expression" : {
-                "expression" : "env_uitesting_shared_mid_model_1_1.c_array = all_type_parquet_1.c_array AND env_uitesting_shared_mid_model_1_1.c_bigint = all_type_parquet_1.c_bigint AND env_uitesting_shared_mid_model_1_1.c_boolean = all_type_parquet_1.c_boolean"
+                "expression" : "dest_data_mart1.c_int = all_type_parquet_1.c_int"
               },
               "joinType" : "inner"
             } ],
@@ -248,7 +249,102 @@
               },
               "alias" : "c_bigint"
             } ],
-            "headAlias" : "env_uitesting_shared_mid_model_1_1",
+            "headAlias" : "dest_data_mart1",
+            "allowSelection" : false
+          },
+          "joinColumns" : [ "c_int" ],
+          "isRecommended" : true
+        } ]
+      }, {
+        "source" : {
+          "table" : {
+            "name" : "json_all_type_table",
+            "sourceName" : "hive_metastore.qa_db_warehouse",
+            "sourceType" : "ExternalSource"
+          }
+        },
+        "sourceComponentKind" : "ExternalSource",
+        "sourceLabel" : "json_all_type_table",
+        "canJoinWith" : [ {
+          "processLabel" : "all_type_parquet_1",
+          "processId" : "all_type##Subgraph##H6Ek49Rd",
+          "properties" : {
+            "activeTab" : "conditions",
+            "columnsSelector" : [ "c_array", "c_bigint", "c_boolean" ],
+            "conditions" : [ {
+              "alias" : "json_all_type_table",
+              "expression" : {
+                "expression" : "json_all_type_table.c_array = all_type_parquet_1.c_array AND json_all_type_table.c_bigint = all_type_parquet_1.c_bigint AND json_all_type_table.c_boolean = all_type_parquet_1.c_boolean"
+              },
+              "joinType" : "inner"
+            } ],
+            "expressions" : [ {
+              "expression" : {
+                "expression" : "json_all_type_table.c_map"
+              },
+              "alias" : "c_map"
+            }, {
+              "expression" : {
+                "expression" : "json_all_type_table.p_string"
+              },
+              "alias" : "p_string"
+            }, {
+              "expression" : {
+                "expression" : "json_all_type_table.p_int"
+              },
+              "alias" : "p_int"
+            }, {
+              "expression" : {
+                "expression" : "all_type_parquet_1.c_int"
+              },
+              "alias" : "c_int"
+            }, {
+              "expression" : {
+                "expression" : "all_type_parquet_1.c_float"
+              },
+              "alias" : "c_float"
+            }, {
+              "expression" : {
+                "expression" : "all_type_parquet_1.c_double"
+              },
+              "alias" : "c_double"
+            }, {
+              "expression" : {
+                "expression" : "all_type_parquet_1.c_array"
+              },
+              "alias" : "c_array"
+            }, {
+              "expression" : {
+                "expression" : "all_type_parquet_1.c_string"
+              },
+              "alias" : "c_string"
+            }, {
+              "expression" : {
+                "expression" : "all_type_parquet_1.c_smallint"
+              },
+              "alias" : "c_smallint"
+            }, {
+              "expression" : {
+                "expression" : "all_type_parquet_1.c_tinyint"
+              },
+              "alias" : "c_tinyint"
+            }, {
+              "expression" : {
+                "expression" : "all_type_parquet_1.c_struct"
+              },
+              "alias" : "c_struct"
+            }, {
+              "expression" : {
+                "expression" : "all_type_parquet_1.c_boolean"
+              },
+              "alias" : "c_boolean"
+            }, {
+              "expression" : {
+                "expression" : "all_type_parquet_1.c_bigint"
+              },
+              "alias" : "c_bigint"
+            } ],
+            "headAlias" : "json_all_type_table",
             "allowSelection" : false
           },
           "joinColumns" : [ "c_array", "c_bigint", "c_boolean" ],
@@ -257,12 +353,13 @@
       }, {
         "source" : {
           "table" : {
-            "name" : "sanity_simple_model_1",
-            "sourceType" : "Model"
+            "name" : "orc_all_type_table",
+            "sourceName" : "hive_metastore.qa_db_warehouse",
+            "sourceType" : "ExternalSource"
           }
         },
-        "sourceComponentKind" : "Model",
-        "sourceLabel" : "sanity_simple_model_1",
+        "sourceComponentKind" : "ExternalSource",
+        "sourceLabel" : "orc_all_type_table",
         "canJoinWith" : [ {
           "processLabel" : "all_type_parquet_1",
           "processId" : "all_type##Subgraph##H6Ek49Rd",
@@ -270,13 +367,28 @@
             "activeTab" : "conditions",
             "columnsSelector" : [ "c_array", "c_bigint", "c_boolean" ],
             "conditions" : [ {
-              "alias" : "sanity_simple_model_1",
+              "alias" : "orc_all_type_table",
               "expression" : {
-                "expression" : "sanity_simple_model_1.c_array = all_type_parquet_1.c_array AND sanity_simple_model_1.c_bigint = all_type_parquet_1.c_bigint AND sanity_simple_model_1.c_boolean = all_type_parquet_1.c_boolean"
+                "expression" : "orc_all_type_table.c_array = all_type_parquet_1.c_array AND orc_all_type_table.c_bigint = all_type_parquet_1.c_bigint AND orc_all_type_table.c_boolean = all_type_parquet_1.c_boolean"
               },
               "joinType" : "inner"
             } ],
             "expressions" : [ {
+              "expression" : {
+                "expression" : "orc_all_type_table.c_map"
+              },
+              "alias" : "c_map"
+            }, {
+              "expression" : {
+                "expression" : "orc_all_type_table.p_string"
+              },
+              "alias" : "p_string"
+            }, {
+              "expression" : {
+                "expression" : "orc_all_type_table.p_int"
+              },
+              "alias" : "p_int"
+            }, {
               "expression" : {
                 "expression" : "all_type_parquet_1.c_int"
               },
@@ -327,7 +439,7 @@
               },
               "alias" : "c_bigint"
             } ],
-            "headAlias" : "sanity_simple_model_1",
+            "headAlias" : "orc_all_type_table",
             "allowSelection" : false
           },
           "joinColumns" : [ "c_array", "c_bigint", "c_boolean" ],
@@ -336,31 +448,27 @@
       }, {
         "source" : {
           "table" : {
-            "name" : "uitesting_iow",
-            "sourceType" : "Model"
+            "name" : "account",
+            "sourceName" : "hive_metastore.qa_database",
+            "sourceType" : "ExternalSource"
           }
         },
-        "sourceComponentKind" : "Model",
-        "sourceLabel" : "uitesting_iow",
+        "sourceComponentKind" : "ExternalSource",
+        "sourceLabel" : "account",
         "canJoinWith" : [ {
           "processLabel" : "all_type_parquet_1",
           "processId" : "all_type##Subgraph##H6Ek49Rd",
           "properties" : {
             "activeTab" : "conditions",
-            "columnsSelector" : [ "c_array", "c_bigint", "c_boolean" ],
+            "columnsSelector" : [ "c_int" ],
             "conditions" : [ {
-              "alias" : "uitesting_iow",
+              "alias" : "account",
               "expression" : {
-                "expression" : "uitesting_iow.c_array = all_type_parquet_1.c_array AND uitesting_iow.c_bigint = all_type_parquet_1.c_bigint AND uitesting_iow.c_boolean = all_type_parquet_1.c_boolean"
+                "expression" : "account.c_int = all_type_parquet_1.c_int"
               },
               "joinType" : "inner"
             } ],
             "expressions" : [ {
-              "expression" : {
-                "expression" : "uitesting_iow.c_id"
-              },
-              "alias" : "c_id"
-            }, {
               "expression" : {
                 "expression" : "all_type_parquet_1.c_int"
               },
@@ -411,21 +519,22 @@
               },
               "alias" : "c_bigint"
             } ],
-            "headAlias" : "uitesting_iow",
+            "headAlias" : "account",
             "allowSelection" : false
           },
-          "joinColumns" : [ "c_array", "c_bigint", "c_boolean" ],
-          "isRecommended" : true
+          "joinColumns" : [ "c_int" ],
+          "isRecommended" : false
         } ]
       }, {
         "source" : {
           "table" : {
-            "name" : "env_uitesting_shared_child_model_1",
-            "sourceType" : "Model"
+            "name" : "dest_all_type_parquet_config",
+            "sourceName" : "hive_metastore.qa_database",
+            "sourceType" : "ExternalSource"
           }
         },
-        "sourceComponentKind" : "Model",
-        "sourceLabel" : "env_uitesting_shared_child_model_1",
+        "sourceComponentKind" : "ExternalSource",
+        "sourceLabel" : "dest_all_type_parquet_config",
         "canJoinWith" : [ {
           "processLabel" : "all_type_parquet_1",
           "processId" : "all_type##Subgraph##H6Ek49Rd",
@@ -433,18 +542,13 @@
             "activeTab" : "conditions",
             "columnsSelector" : [ "c_array", "c_bigint", "c_boolean" ],
             "conditions" : [ {
-              "alias" : "env_uitesting_shared_child_model_1",
+              "alias" : "dest_all_type_parquet_config",
               "expression" : {
-                "expression" : "env_uitesting_shared_child_model_1.c_array = all_type_parquet_1.c_array AND env_uitesting_shared_child_model_1.c_bigint = all_type_parquet_1.c_bigint AND env_uitesting_shared_child_model_1.c_boolean = all_type_parquet_1.c_boolean"
+                "expression" : "dest_all_type_parquet_config.c_array = all_type_parquet_1.c_array AND dest_all_type_parquet_config.c_bigint = all_type_parquet_1.c_bigint AND dest_all_type_parquet_config.c_boolean = all_type_parquet_1.c_boolean"
               },
               "joinType" : "inner"
             } ],
             "expressions" : [ {
-              "expression" : {
-                "expression" : "env_uitesting_shared_child_model_1.c_test"
-              },
-              "alias" : "c_test"
-            }, {
               "expression" : {
                 "expression" : "all_type_parquet_1.c_int"
               },
@@ -495,7 +599,7 @@
               },
               "alias" : "c_bigint"
             } ],
-            "headAlias" : "env_uitesting_shared_child_model_1",
+            "headAlias" : "dest_all_type_parquet_config",
             "allowSelection" : false
           },
           "joinColumns" : [ "c_array", "c_bigint", "c_boolean" ],
@@ -504,22 +608,113 @@
       }, {
         "source" : {
           "table" : {
-            "name" : "env_uitesting_shared_useallmodel_1",
-            "sourceType" : "Model"
+            "name" : "qa_test_seed",
+            "sourceName" : "hive_metastore.qa_db_warehouse",
+            "sourceType" : "ExternalSource"
           }
         },
-        "sourceComponentKind" : "Model",
-        "sourceLabel" : "env_uitesting_shared_useallmodel_1_1",
+        "sourceComponentKind" : "ExternalSource",
+        "sourceLabel" : "qa_test_seed",
         "canJoinWith" : [ {
           "processLabel" : "all_type_parquet_1",
           "processId" : "all_type##Subgraph##H6Ek49Rd",
           "properties" : {
             "activeTab" : "conditions",
-            "columnsSelector" : [ "c_array", "c_bigint", "c_boolean" ],
+            "columnsSelector" : [ "c_string", "c_boolean", "c_bigint" ],
             "conditions" : [ {
-              "alias" : "env_uitesting_shared_useallmodel_1_1",
+              "alias" : "qa_test_seed",
               "expression" : {
-                "expression" : "env_uitesting_shared_useallmodel_1_1.c_array = all_type_parquet_1.c_array AND env_uitesting_shared_useallmodel_1_1.c_bigint = all_type_parquet_1.c_bigint AND env_uitesting_shared_useallmodel_1_1.c_boolean = all_type_parquet_1.c_boolean"
+                "expression" : "qa_test_seed.c_bool = all_type_parquet_1.c_boolean AND qa_test_seed.c_int = all_type_parquet_1.c_bigint AND qa_test_seed.c_string = all_type_parquet_1.c_string"
+              },
+              "joinType" : "inner"
+            } ],
+            "expressions" : [ {
+              "expression" : {
+                "expression" : "qa_test_seed.c_bignumeric"
+              },
+              "alias" : "c_bignumeric"
+            }, {
+              "expression" : {
+                "expression" : "qa_test_seed.c_float64"
+              },
+              "alias" : "c_float64"
+            }, {
+              "expression" : {
+                "expression" : "all_type_parquet_1.c_int"
+              },
+              "alias" : "c_int"
+            }, {
+              "expression" : {
+                "expression" : "all_type_parquet_1.c_float"
+              },
+              "alias" : "c_float"
+            }, {
+              "expression" : {
+                "expression" : "all_type_parquet_1.c_double"
+              },
+              "alias" : "c_double"
+            }, {
+              "expression" : {
+                "expression" : "all_type_parquet_1.c_array"
+              },
+              "alias" : "c_array"
+            }, {
+              "expression" : {
+                "expression" : "all_type_parquet_1.c_string"
+              },
+              "alias" : "c_string"
+            }, {
+              "expression" : {
+                "expression" : "all_type_parquet_1.c_smallint"
+              },
+              "alias" : "c_smallint"
+            }, {
+              "expression" : {
+                "expression" : "all_type_parquet_1.c_tinyint"
+              },
+              "alias" : "c_tinyint"
+            }, {
+              "expression" : {
+                "expression" : "all_type_parquet_1.c_struct"
+              },
+              "alias" : "c_struct"
+            }, {
+              "expression" : {
+                "expression" : "all_type_parquet_1.c_boolean"
+              },
+              "alias" : "c_boolean"
+            }, {
+              "expression" : {
+                "expression" : "all_type_parquet_1.c_bigint"
+              },
+              "alias" : "c_bigint"
+            } ],
+            "headAlias" : "qa_test_seed",
+            "allowSelection" : false
+          },
+          "joinColumns" : [ "c_string", "c_boolean", "c_bigint" ],
+          "isRecommended" : false
+        } ]
+      }, {
+        "source" : {
+          "table" : {
+            "name" : "test_model_stage_new_1",
+            "sourceName" : "hive_metastore.qa_db_warehouse",
+            "sourceType" : "ExternalSource"
+          }
+        },
+        "sourceComponentKind" : "ExternalSource",
+        "sourceLabel" : "test_model_stage_new_1",
+        "canJoinWith" : [ {
+          "processLabel" : "all_type_parquet_1",
+          "processId" : "all_type##Subgraph##H6Ek49Rd",
+          "properties" : {
+            "activeTab" : "conditions",
+            "columnsSelector" : [ "c_tinyint" ],
+            "conditions" : [ {
+              "alias" : "test_model_stage_new_1",
+              "expression" : {
+                "expression" : "test_model_stage_new_1.c_tinyint = all_type_parquet_1.c_tinyint"
               },
               "joinType" : "inner"
             } ],
@@ -574,214 +769,62 @@
               },
               "alias" : "c_bigint"
             } ],
-            "headAlias" : "env_uitesting_shared_useallmodel_1_1",
+            "headAlias" : "test_model_stage_new_1",
             "allowSelection" : false
           },
-          "joinColumns" : [ "c_array", "c_bigint", "c_boolean" ],
+          "joinColumns" : [ "c_tinyint" ],
           "isRecommended" : false
         } ]
       }, {
         "source" : {
           "table" : {
-            "name" : "uitesting_expressions_1",
-            "sourceType" : "Model"
+            "name" : "very_complex_table",
+            "sourceName" : "hive_metastore.qa_database",
+            "sourceType" : "ExternalSource"
           }
         },
-        "sourceComponentKind" : "Model",
-        "sourceLabel" : "uitesting_expressions_1",
+        "sourceComponentKind" : "ExternalSource",
+        "sourceLabel" : "very_complex_table",
         "canJoinWith" : [ {
           "processLabel" : "all_type_parquet_1",
           "processId" : "all_type##Subgraph##H6Ek49Rd",
           "properties" : {
             "activeTab" : "conditions",
-            "columnsSelector" : [ "c_array", "c_bigint", "c_boolean" ],
+            "columnsSelector" : [ "c_boolean", "c_double", "c_int" ],
             "conditions" : [ {
-              "alias" : "uitesting_expressions_1",
+              "alias" : "very_complex_table",
               "expression" : {
-                "expression" : "uitesting_expressions_1.c_array = all_type_parquet_1.c_array AND uitesting_expressions_1.c_bigint = all_type_parquet_1.c_bigint AND uitesting_expressions_1.c_boolean = all_type_parquet_1.c_boolean"
+                "expression" : "very_complex_table.c_boolean = all_type_parquet_1.c_boolean AND very_complex_table.c_double = all_type_parquet_1.c_double AND very_complex_table.c_int = all_type_parquet_1.c_int"
               },
               "joinType" : "inner"
             } ],
             "expressions" : [ {
               "expression" : {
-                "expression" : "all_type_parquet_1.c_int"
+                "expression" : "very_complex_table.c_char"
               },
-              "alias" : "c_int"
+              "alias" : "c_char"
             }, {
               "expression" : {
-                "expression" : "all_type_parquet_1.c_float"
+                "expression" : "very_complex_table.c_time"
               },
-              "alias" : "c_float"
+              "alias" : "c_time"
             }, {
               "expression" : {
-                "expression" : "all_type_parquet_1.c_double"
-              },
-              "alias" : "c_double"
-            }, {
-              "expression" : {
-                "expression" : "all_type_parquet_1.c_array"
-              },
-              "alias" : "c_array"
-            }, {
-              "expression" : {
-                "expression" : "all_type_parquet_1.c_string"
-              },
-              "alias" : "c_string"
-            }, {
-              "expression" : {
-                "expression" : "all_type_parquet_1.c_smallint"
-              },
-              "alias" : "c_smallint"
-            }, {
-              "expression" : {
-                "expression" : "all_type_parquet_1.c_tinyint"
-              },
-              "alias" : "c_tinyint"
-            }, {
-              "expression" : {
-                "expression" : "all_type_parquet_1.c_struct"
-              },
-              "alias" : "c_struct"
-            }, {
-              "expression" : {
-                "expression" : "all_type_parquet_1.c_boolean"
-              },
-              "alias" : "c_boolean"
-            }, {
-              "expression" : {
-                "expression" : "all_type_parquet_1.c_bigint"
-              },
-              "alias" : "c_bigint"
-            } ],
-            "headAlias" : "uitesting_expressions_1",
-            "allowSelection" : false
-          },
-          "joinColumns" : [ "c_array", "c_bigint", "c_boolean" ],
-          "isRecommended" : false
-        } ]
-      }, {
-        "source" : {
-          "table" : {
-            "name" : "uitesting_replacewhere",
-            "sourceType" : "Model"
-          }
-        },
-        "sourceComponentKind" : "Model",
-        "sourceLabel" : "uitesting_replacewhere",
-        "canJoinWith" : [ {
-          "processLabel" : "all_type_parquet_1",
-          "processId" : "all_type##Subgraph##H6Ek49Rd",
-          "properties" : {
-            "activeTab" : "conditions",
-            "columnsSelector" : [ "c_array", "c_bigint", "c_boolean" ],
-            "conditions" : [ {
-              "alias" : "uitesting_replacewhere",
-              "expression" : {
-                "expression" : "uitesting_replacewhere.c_array = all_type_parquet_1.c_array AND uitesting_replacewhere.c_bigint = all_type_parquet_1.c_bigint AND uitesting_replacewhere.c_boolean = all_type_parquet_1.c_boolean"
-              },
-              "joinType" : "inner"
-            } ],
-            "expressions" : [ {
-              "expression" : {
-                "expression" : "uitesting_replacewhere.c_id"
-              },
-              "alias" : "c_id"
-            }, {
-              "expression" : {
-                "expression" : "all_type_parquet_1.c_int"
-              },
-              "alias" : "c_int"
-            }, {
-              "expression" : {
-                "expression" : "all_type_parquet_1.c_float"
-              },
-              "alias" : "c_float"
-            }, {
-              "expression" : {
-                "expression" : "all_type_parquet_1.c_double"
-              },
-              "alias" : "c_double"
-            }, {
-              "expression" : {
-                "expression" : "all_type_parquet_1.c_array"
-              },
-              "alias" : "c_array"
-            }, {
-              "expression" : {
-                "expression" : "all_type_parquet_1.c_string"
-              },
-              "alias" : "c_string"
-            }, {
-              "expression" : {
-                "expression" : "all_type_parquet_1.c_smallint"
-              },
-              "alias" : "c_smallint"
-            }, {
-              "expression" : {
-                "expression" : "all_type_parquet_1.c_tinyint"
-              },
-              "alias" : "c_tinyint"
-            }, {
-              "expression" : {
-                "expression" : "all_type_parquet_1.c_struct"
-              },
-              "alias" : "c_struct"
-            }, {
-              "expression" : {
-                "expression" : "all_type_parquet_1.c_boolean"
-              },
-              "alias" : "c_boolean"
-            }, {
-              "expression" : {
-                "expression" : "all_type_parquet_1.c_bigint"
-              },
-              "alias" : "c_bigint"
-            } ],
-            "headAlias" : "uitesting_replacewhere",
-            "allowSelection" : false
-          },
-          "joinColumns" : [ "c_array", "c_bigint", "c_boolean" ],
-          "isRecommended" : false
-        } ]
-      }, {
-        "source" : {
-          "table" : {
-            "name" : "uitesting_specifycolumns",
-            "sourceType" : "Model"
-          }
-        },
-        "sourceComponentKind" : "Model",
-        "sourceLabel" : "uitesting_specifycolumns",
-        "canJoinWith" : [ {
-          "processLabel" : "all_type_parquet_1",
-          "processId" : "all_type##Subgraph##H6Ek49Rd",
-          "properties" : {
-            "activeTab" : "conditions",
-            "columnsSelector" : [ "c_array", "c_bigint", "c_boolean" ],
-            "conditions" : [ {
-              "alias" : "uitesting_specifycolumns",
-              "expression" : {
-                "expression" : "uitesting_specifycolumns.c_array = all_type_parquet_1.c_array AND uitesting_specifycolumns.c_bigint = all_type_parquet_1.c_bigint AND uitesting_specifycolumns.c_boolean = all_type_parquet_1.c_boolean"
-              },
-              "joinType" : "inner"
-            } ],
-            "expressions" : [ {
-              "expression" : {
-                "expression" : "uitesting_specifycolumns.c_id"
-              },
-              "alias" : "c_id"
-            }, {
-              "expression" : {
-                "expression" : "uitesting_specifycolumns.c_date"
-              },
-              "alias" : "c_date"
-            }, {
-              "expression" : {
-                "expression" : "uitesting_specifycolumns.c_timestamp"
+                "expression" : "very_complex_table.c_timestamp"
               },
               "alias" : "c_timestamp"
             }, {
               "expression" : {
+                "expression" : "very_complex_table.`c_complex-array`"
+              },
+              "alias" : "c_complex-array"
+            }, {
+              "expression" : {
+                "expression" : "very_complex_table.`c_complex-struct`"
+              },
+              "alias" : "c_complex-struct"
+            }, {
+              "expression" : {
                 "expression" : "all_type_parquet_1.c_int"
               },
               "alias" : "c_int"
@@ -831,10 +874,10 @@
               },
               "alias" : "c_bigint"
             } ],
-            "headAlias" : "uitesting_specifycolumns",
+            "headAlias" : "very_complex_table",
             "allowSelection" : false
           },
-          "joinColumns" : [ "c_array", "c_bigint", "c_boolean" ],
+          "joinColumns" : [ "c_boolean", "c_double", "c_int" ],
           "isRecommended" : false
         } ]
       } ]
@@ -10255,7 +10298,7 @@
       "component" : "Source",
       "metadata" : {
         "label" : "all_type_parquet_1",
-        "x" : 20,
+        "x" : -20,
         "y" : 920,
         "phase" : 0,
         "isLabelGrayed" : false
