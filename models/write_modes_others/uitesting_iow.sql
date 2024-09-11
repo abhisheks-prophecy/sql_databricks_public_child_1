@@ -35,6 +35,7 @@ all_type_non_partitioned_columns AS (
 
 )
 
+{#Retrieves all records from a table with non-partitioned columns for UI testing purposes.#}
 SELECT *
 
 FROM all_type_non_partitioned_columns
