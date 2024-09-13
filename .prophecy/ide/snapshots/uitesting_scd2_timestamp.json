@@ -12,7 +12,7 @@
         "strategy" : "'timestamp'",
         "invalidate_hard_deletes" : true,
         "updated_at" : "'c_date'",
-        "target_schema" : " var('qa_schema') ",
+        "target_schema" : " concat( var('qa_config') , '_db_warehouse') ",
         "unique_key" : "'c_id'",
         "tags" : [ "'tag1'", "'tag2'" ],
         "type" : "SnapshotConfig"
@@ -581,7 +581,7 @@
     "target" : "Pox8qcqQBVvQFGeANAj8R$$RH9A7dFhQ4hYnNy5OqRJd",
     "targetPort" : "G4RqVRM6b8mAKCq7bt7tw$$yu57q8ygKqxcHe9g-PPQT"
   }, {
-    "id" : "cbjnJaJnOOTMYPhcc2w2M",
+    "id" : "mv_p5BEqJu1KFAtYPc8W2",
     "source" : "Pox8qcqQBVvQFGeANAj8R$$RH9A7dFhQ4hYnNy5OqRJd",
     "sourcePort" : "e6BnWDfo3eGnEpgfXy2e2$$2SZ0KzTjmq1X2yq3fvAoU",
     "target" : "uitesting_scd2_timestamp##vLSFayjQ",

@@ -3,7 +3,7 @@
   config({    
     "check_cols": ['c_id', 'c_struct.city', 'c_smallint'],
     "strategy": 'check',
-    "target_schema": 'qa_schema',
+    "target_schema":  var('qa_schema') ,
     "unique_key": 'c_id'
   })
 }}
