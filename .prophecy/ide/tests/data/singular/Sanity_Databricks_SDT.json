@@ -958,7 +958,21 @@
         "x" : 660,
         "y" : 0,
         "phase" : 0,
-        "macroDependencies" : [ ]
+        "macroDependencies" : [ ],
+        "dataExplorerProps" : {
+          "filter" : [ {
+            "type" : "simple",
+            "lhs" : "first_name",
+            "operator" : "in",
+            "rhs" : [ "1234" ]
+          }, {
+            "type" : "simple",
+            "lhs" : "id",
+            "operator" : "in",
+            "rhs" : [ "123", "345" ]
+          } ],
+          "sort" : [ ]
+        }
       },
       "properties" : {
         "query" : "SELECT * \n\nFROM Filter_1\n",
