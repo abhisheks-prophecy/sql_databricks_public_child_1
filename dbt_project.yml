@@ -29,6 +29,8 @@ target-path: "target"
 # Variable Configs
 # ==================
 vars:
+  qa_config: "qa"
+  qa_schema: "qa_schema"
   schema_qa_db_warehouse: "qa_db_warehouse"
   v_project_dict: "{'a': 2, 'b': 'hello'}"
   v_project_int: "20"
