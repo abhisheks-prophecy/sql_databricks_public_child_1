@@ -4,7 +4,7 @@
     "invalidate_hard_deletes": true,
     "strategy": 'timestamp',
     "tags": ['tag1', 'tag2'],
-    "target_schema": concat( var('qa_config') , '_db_warehouse'),
+    "target_schema": "qa_db_warehouse",
     "unique_key": 'c_id',
     "updated_at": 'c_date'
   })
