@@ -2,7 +2,7 @@
   "id" : "uitesting_scd2_diff_col_val",
   "metainfo" : {
     "label" : "uitesting_scd2_diff_col_val",
-    "autoLayout" : true,
+    "autoLayout" : false,
     "staleState" : "none",
     "sourceSuggestions" : {
       "sources" : [ ]
@@ -27,6 +27,8 @@
       "component" : "Source",
       "metadata" : {
         "label" : "all_type_non_partitioned_1",
+        "x" : 20,
+        "y" : 20,
         "phase" : 0,
         "isLabelGrayed" : false
       },
@@ -127,6 +129,8 @@
       "component" : "Reformat",
       "metadata" : {
         "label" : "all_type_non_partitioned_columns",
+        "x" : 220,
+        "y" : 20,
         "phase" : 0,
         "macroDependencies" : [ ],
         "comment" : "Extracts all non-partitioned columns from the 'all_type_non_partitioned' table.",
@@ -363,6 +367,8 @@
       "component" : "TargetSnapshot",
       "metadata" : {
         "label" : "uitesting_scd2_diff_col_val",
+        "x" : 420,
+        "y" : 20,
         "phase" : 0,
         "isLabelGrayed" : false
       },
