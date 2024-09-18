@@ -5104,7 +5104,7 @@
                 "type" : "Boolean"
               }
             }, {
-              "name" : "(NOT (array_sort(array(bc, ab, dc), lambdafunction((IF(((namedlambdavariable() IS NULL) AND (namedlambdavariable() IS NULL)), 0, (IF((namedlambdavariable() IS NULL), 1, (IF((namedlambdavariable() IS NULL), -1, (IF((namedlambdavariable() < namedlambdavariable()), -1, (IF((namedlambdavariable() > namedlambdavariable()), 1, 0)))))))))), namedlambdavariable(), namedlambdavariable())) = NULL))",
+              "name" : "(NOT (array_sort(array(bc, ab, dc), (namedlambdavariable(), namedlambdavariable()) -> IF(((namedlambdavariable() IS NULL) AND (namedlambdavariable() IS NULL)), 0, (IF((namedlambdavariable() IS NULL), 1, (IF((namedlambdavariable() IS NULL), -1, (IF((namedlambdavariable() < namedlambdavariable()), -1, (IF((namedlambdavariable() > namedlambdavariable()), 1, 0)))))))))) = NULL))",
               "dataType" : {
                 "type" : "Boolean"
               }
@@ -10623,7 +10623,7 @@
                 "type" : "Boolean"
               }
             }, {
-              "name" : "(NOT (array_sort(array(bc, ab, dc), lambdafunction((IF(((namedlambdavariable() IS NULL) AND (namedlambdavariable() IS NULL)), 0, (IF((namedlambdavariable() IS NULL), 1, (IF((namedlambdavariable() IS NULL), -1, (IF((namedlambdavariable() < namedlambdavariable()), -1, (IF((namedlambdavariable() > namedlambdavariable()), 1, 0)))))))))), namedlambdavariable(), namedlambdavariable())) = NULL))",
+              "name" : "(NOT (array_sort(array(bc, ab, dc), (namedlambdavariable(), namedlambdavariable()) -> IF(((namedlambdavariable() IS NULL) AND (namedlambdavariable() IS NULL)), 0, (IF((namedlambdavariable() IS NULL), 1, (IF((namedlambdavariable() IS NULL), -1, (IF((namedlambdavariable() < namedlambdavariable()), -1, (IF((namedlambdavariable() > namedlambdavariable()), 1, 0)))))))))) = NULL))",
               "dataType" : {
                 "type" : "Boolean"
               }
