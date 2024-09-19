@@ -7,21 +7,43 @@
   })
 }}
 
-WITH sanity_simple_model_1 AS (
+WITH uitesting_scd2_diff_col_val AS (
 
   SELECT * 
   
-  FROM {{ ref('sanity_simple_model_1')}}
+  FROM {{ ref('uitesting_scd2_diff_col_val')}}
 
 ),
 
-Limit_2 AS (
+Aggregate_1 AS (
+
+  SELECT 
+    any_value(c_tinyint) AS c_tinyint,
+    any_value(c_smallint) AS c_smallint,
+    any_value(c_int) AS c_int,
+    any_value(c_bigint) AS c_bigint,
+    any_value(c_float) AS c_float,
+    any_value(c_double) AS c_double,
+    any_value(c_string) AS c_string,
+    any_value(c_boolean) AS c_boolean,
+    any_value(c_array) AS c_array,
+    any_value(c_struct) AS c_struct,
+    any_value(c_id) AS c_id
+  
+  FROM uitesting_scd2_diff_col_val AS in0
+  
+  GROUP BY 
+    c_tinyint, c_smallint
+
+),
+
+Filter_1 AS (
 
   SELECT * 
   
-  FROM sanity_simple_model_1 AS in0
+  FROM Aggregate_1 AS in0
   
-  LIMIT 10
+  WHERE c_int > -1
 
 ),
 
@@ -54,36 +76,6 @@ Reformat_1 AS (
 
 ),
 
-uitesting_scd2_diff_col_val AS (
-
-  SELECT * 
-  
-  FROM {{ ref('uitesting_scd2_diff_col_val')}}
-
-),
-
-Aggregate_1 AS (
-
-  SELECT 
-    any_value(c_tinyint) AS c_tinyint,
-    any_value(c_smallint) AS c_smallint,
-    any_value(c_int) AS c_int,
-    any_value(c_bigint) AS c_bigint,
-    any_value(c_float) AS c_float,
-    any_value(c_double) AS c_double,
-    any_value(c_string) AS c_string,
-    any_value(c_boolean) AS c_boolean,
-    any_value(c_array) AS c_array,
-    any_value(c_struct) AS c_struct,
-    any_value(c_id) AS c_id
-  
-  FROM uitesting_scd2_diff_col_val AS in0
-  
-  GROUP BY 
-    c_tinyint, c_smallint
-
-),
-
 SetOperation_1 AS (
 
   SELECT * 
@@ -98,21 +90,19 @@ SetOperation_1 AS (
 
 ),
 
-Filter_1 AS (
+sanity_simple_model_1 AS (
 
   SELECT * 
   
-  FROM Aggregate_1 AS in0
-  
-  WHERE c_int > -1
+  FROM {{ ref('sanity_simple_model_1')}}
 
 ),
 
-Limit_3 AS (
+Limit_2 AS (
 
   SELECT * 
   
-  FROM Filter_1 AS in0
+  FROM sanity_simple_model_1 AS in0
   
   LIMIT 10
 
@@ -136,6 +126,16 @@ Join_1 AS (
   FROM uitesting_scd2_diff_col_val AS in0
   INNER JOIN Limit_2 AS in1
      ON in0.c_int != in1.c_float
+
+),
+
+Limit_3 AS (
+
+  SELECT * 
+  
+  FROM Filter_1 AS in0
+  
+  LIMIT 10
 
 ),
 
