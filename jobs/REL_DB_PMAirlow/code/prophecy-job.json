@@ -73,7 +73,7 @@
       "metadata" : {
         "label" : "S3FileSensor_1",
         "slug" : "S3FileSensor_1",
-        "x" : 760,
+        "x" : 860,
         "y" : 400
       },
       "ports" : {
