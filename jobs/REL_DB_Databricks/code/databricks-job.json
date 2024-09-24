@@ -42,7 +42,7 @@
           "spark.prophecy.metadata.job.uri" : "__PROJECT_ID_PLACEHOLDER__/jobs/REL_DB_Databricks",
           "spark.prophecy.metadata.is.interactive.run" : "false",
           "spark.prophecy.project.id" : "__PROJECT_ID_PLACEHOLDER__",
-          "spark.prophecy.metadata.user.id" : "3",
+          "spark.prophecy.metadata.user.id" : "4",
           "spark.prophecy.tasks" : "H4sIAAAAAAAAAKuuBQBDv6ajAgAAAA==",
           "spark.prophecy.metadata.job.branch" : "__PROJECT_RELEASE_VERSION_PLACEHOLDER__",
           "spark.prophecy.metadata.url" : "__PROPHECY_URL_PLACEHOLDER__",
@@ -105,5 +105,5 @@
     "clusterMode" : "Single"
   },
   "secret_scope" : "prophecy_jobs_5",
-  "sorted_processes" : [ "P75QdHzFZ7WkS6KdgzQud$$dVhW1m_7DC99ua3baYyyK", "TmAbh_5C1rPjfKNFEj8eM$$2A112a3Q5rsrXLKzpupSA", "_AyAnu_OMOj1L6uUjAF_-$$nw9kEtu4yK_u1mOzdC8Jc" ]
+  "sorted_processes" : [ "P75QdHzFZ7WkS6KdgzQud$$dVhW1m_7DC99ua3baYyyK", "TmAbh_5C1rPjfKNFEj8eM$$2A112a3Q5rsrXLKzpupSA" ]
 }
