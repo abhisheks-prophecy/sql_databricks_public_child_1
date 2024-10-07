@@ -1034,6 +1034,14 @@ sqlTests:
     - .prophecy/ide/tests/data/singular/Sanity_Databricks_SDT_Complex.json
     testType: SingularDataTest
     createdAt: '2024-07-30 15:55:48'
+  .prophecy/metadata/sqltests/new_multi_model_not_null:
+    name: new_multi_model_not_null
+    description: null
+    author: abhisheks+shared@prophecy.io
+    files:
+    - tests/generic/new_multi_model_not_null.sql
+    testType: GenericDataTest
+    createdAt: '2024-09-29 06:02:45'
 sqlMacros:
   .prophecy/metadata/sqlmacros/combine_multiple_tables:
     name: combine_multiple_tables
