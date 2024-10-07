@@ -173,7 +173,7 @@ sqlModels:
           type: Float
       - name: c_double
         dataType:
-          type: Float
+          type: Double
       - name: c_string
         dataType:
           type: String
@@ -286,7 +286,7 @@ sqlModels:
           type: Float
       - name: c_double
         dataType:
-          type: Float
+          type: Double
       - name: c_string
         dataType:
           type: String
@@ -346,7 +346,7 @@ sqlModels:
           type: Float
       - name: c_double
         dataType:
-          type: Float
+          type: Double
       - name: c_string
         dataType:
           type: String
@@ -416,7 +416,7 @@ sqlModels:
           type: Float
       - name: c_double
         dataType:
-          type: Float
+          type: Double
       - name: c_string
         dataType:
           type: String
@@ -477,7 +477,7 @@ sqlModels:
           type: Float
       - name: c_double
         dataType:
-          type: Float
+          type: Double
       - name: c_string
         dataType:
           type: String
@@ -537,7 +537,7 @@ sqlModels:
           type: Float
       - name: c_double
         dataType:
-          type: Float
+          type: Double
       - name: c_string
         dataType:
           type: String
@@ -597,7 +597,7 @@ sqlModels:
           type: Float
       - name: c_double
         dataType:
-          type: Float
+          type: Double
       - name: c_string
         dataType:
           type: String
@@ -685,7 +685,7 @@ sqlModels:
           type: Float
       - name: c_double
         dataType:
-          type: Float
+          type: Double
       - name: c_string
         dataType:
           type: String
@@ -746,7 +746,7 @@ sqlModels:
           type: Float
       - name: c_double
         dataType:
-          type: Float
+          type: Double
       - name: c_string
         dataType:
           type: String
@@ -811,7 +811,7 @@ sqlSnapshots:
           type: Float
       - name: c_double
         dataType:
-          type: Float
+          type: Double
       - name: c_string
         dataType:
           type: String
@@ -883,7 +883,7 @@ sqlSnapshots:
           type: Float
       - name: c_double
         dataType:
-          type: Float
+          type: Double
       - name: c_string
         dataType:
           type: String
@@ -959,7 +959,7 @@ sqlSnapshots:
           type: Float
       - name: c_double
         dataType:
-          type: Float
+          type: Double
       - name: c_string
         dataType:
           type: String
