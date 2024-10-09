@@ -136,4 +136,4 @@ models:
         severity: "warn"
         where: "c_struct.state != 'New York'"
         limit: 10
-      column_name: "\"c_struct.city\""
+      column_name: "c_struct.city"
