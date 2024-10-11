@@ -36,7 +36,7 @@
         "driver_node_type_id" : "i3.xlarge",
         "num_workers" : 0,
         "spark_conf" : {
-          "spark.prophecy.metadata.fabric.id" : "9",
+          "spark.prophecy.metadata.fabric.id" : "7",
           "spark.prophecy.metadata.job.uri" : "__PROJECT_ID_PLACEHOLDER__/jobs/REL_DB_Databricks",
           "spark.prophecy.metadata.is.interactive.run" : "false",
           "spark.prophecy.project.id" : "__PROJECT_ID_PLACEHOLDER__",
