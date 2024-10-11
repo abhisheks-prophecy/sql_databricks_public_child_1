@@ -1,7 +1,7 @@
 {
   "metainfo" : {
     "type" : "Databricks",
-    "fabricId" : "9",
+    "fabricId" : "7",
     "jobId" : "jobs/REL_DB_Databricks",
     "name" : "Staging_REL_DB_Databricks",
     "schedule" : "0 0 0 * * ? 2090",
@@ -10,7 +10,7 @@
       "clusterMode" : "Single"
     },
     "enabled" : true,
-    "defaultClusterSize" : "small",
+    "defaultClusterSize" : "prophecy_internal_jobs",
     "alerting" : {
       "emails" : "",
       "onStart" : false,
