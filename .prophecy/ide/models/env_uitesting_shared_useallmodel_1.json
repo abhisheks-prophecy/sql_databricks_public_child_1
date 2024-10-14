@@ -6997,7 +6997,9 @@
         "x" : 2360,
         "y" : 1920,
         "phase" : 0,
-        "macroDependencies" : [ ]
+        "macroDependencies" : [ ],
+        "comment" : "Consolidates data from various tables for comprehensive analysis.",
+        "autoUpdateComment" : true
       },
       "properties" : {
         "customQueryDisabled" : true,
