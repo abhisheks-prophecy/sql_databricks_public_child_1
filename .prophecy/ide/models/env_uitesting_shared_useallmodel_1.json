@@ -1008,7 +1008,7 @@
           "alias" : "c_struct"
         } ],
         "activeTab" : "conditions",
-        "columnsSelector" : [ "Z13vN7cq##c_smallint", "OVOFWnqc##c_int", "OVOFWnqc##c_string", "ZzESiJif##customer_id", "Ya74rNnS##c1", "Z13vN7cq##c_tinyint", "Z13vN7cq##c_smallint", "OVOFWnqc##c_int", "Z13vN7cq##c_bigint", "Z13vN7cq##c_float", "Z13vN7cq##c_double", "Z13vN7cq##c_string", "Z13vN7cq##c_boolean", "Z13vN7cq##c_array", "Z13vN7cq##c_struct" ],
+        "columnsSelector" : [ "Z13vN7cq##c_smallint", "OVOFWnqc##c_int", "OVOFWnqc##c_string", "Nu9XkaEE##customer_id", "ZzESiJif##customer_id", "Ya74rNnS##c1", "Z13vN7cq##c_tinyint", "Z13vN7cq##c_smallint", "OVOFWnqc##c_int", "Z13vN7cq##c_bigint", "Z13vN7cq##c_float", "Z13vN7cq##c_double", "Z13vN7cq##c_string", "Z13vN7cq##c_boolean", "Z13vN7cq##c_array", "Z13vN7cq##c_struct" ],
         "headAlias" : "in0"
       },
       "ports" : {
@@ -1443,7 +1443,7 @@
               "path" : "out",
               "id" : "out",
               "language" : "sql",
-              "content" : "{#Filters specific performance records based on defined criteria.#}\nSELECT \n  act1.c_int,\n  act1.c_string::STRING AS perfid\n\nFROM Reformat_10 AS act1\n\nWHERE act1.c_string = 'PERFORM' AND act1.c_int = 1\n"
+              "content" : "{#Filters specific performance records based on defined criteria.#}\nSELECT \n  act1.c_int,\n  act1.c_string::STRING AS perfid\n\nFROM Reformat_10 AS act1\n\nWHERE act1.c_string = 'PERFORM' AND act1.c_int = 1 and act1.c_int != ((select count(*) from SQLStatement_1_1_1_1) + (select count(*) from SQLStatement_2_2_1))\n"
             } ]
           },
           "ports" : {
@@ -1524,6 +1524,96 @@
                 } ]
               },
               "slug" : "Reformat_10"
+            }, {
+              "id" : "xJodEoUANmQjeCUNZFrOr$$jsoywczFrXdJUCSLTfhII",
+              "schema" : {
+                "entityType" : "",
+                "providerType" : "Databricks",
+                "fields" : [ {
+                  "name" : "c_tinyint",
+                  "dataType" : {
+                    "type" : "TinyInt"
+                  }
+                } ]
+              },
+              "slug" : "SQLStatement_1_1_1_1"
+            }, {
+              "id" : "WFwOxwJnrS0ntLL5rKzBQ$$C7BMpVxBw1VLIBOP8hHCw",
+              "schema" : {
+                "entityType" : "",
+                "providerType" : "Databricks",
+                "fields" : [ {
+                  "name" : "c_tinyint",
+                  "dataType" : {
+                    "type" : "TinyInt"
+                  }
+                }, {
+                  "name" : "c_smallint",
+                  "dataType" : {
+                    "type" : "SmallInt"
+                  }
+                }, {
+                  "name" : "c_int",
+                  "dataType" : {
+                    "type" : "Integer"
+                  }
+                }, {
+                  "name" : "c_bigint",
+                  "dataType" : {
+                    "type" : "Bigint"
+                  }
+                }, {
+                  "name" : "c_float",
+                  "dataType" : {
+                    "type" : "Float"
+                  }
+                }, {
+                  "name" : "c_double",
+                  "dataType" : {
+                    "type" : "Double"
+                  }
+                }, {
+                  "name" : "c_string",
+                  "dataType" : {
+                    "type" : "String"
+                  }
+                }, {
+                  "name" : "c_boolean",
+                  "dataType" : {
+                    "type" : "Boolean"
+                  }
+                }, {
+                  "name" : "c_array",
+                  "dataType" : {
+                    "type" : "Array",
+                    "dataType" : {
+                      "type" : "String"
+                    }
+                  }
+                }, {
+                  "name" : "c_struct",
+                  "dataType" : {
+                    "type" : "Struct",
+                    "fields" : [ {
+                      "name" : "city",
+                      "dataType" : {
+                        "type" : "String"
+                      }
+                    }, {
+                      "name" : "state",
+                      "dataType" : {
+                        "type" : "String"
+                      }
+                    }, {
+                      "name" : "pin",
+                      "dataType" : {
+                        "type" : "Bigint"
+                      }
+                    } ]
+                  }
+                } ]
+              },
+              "slug" : "SQLStatement_2_2_1"
             } ],
             "outputs" : [ {
               "id" : "tPP8bfBM",
@@ -1717,6 +1807,8 @@
             "y" : 420,
             "phase" : 0,
             "macroDependencies" : [ ],
+            "comment" : "Identifies departments with employees, excluding a specific count of employees from a test dataset.",
+            "autoUpdateComment" : true,
             "isLabelGrayed" : false
           },
           "properties" : {
@@ -1724,7 +1816,7 @@
               "path" : "out",
               "id" : "out",
               "language" : "sql",
-              "content" : "SELECT d.department_ID AS c1\n\nFROM departments AS d \nINNER JOIN LATERAL (\n  SELECT *\n  \n  FROM employees AS e\n  \n  WHERE e.department_ID = d.department_ID\n ) AS iv2\n\nORDER BY employee_ID\n"
+              "content" : "SELECT d.department_ID AS c1\n\nFROM departments AS d \nINNER JOIN LATERAL (\n  SELECT *\n  \n  FROM employees AS e\n  \n  WHERE e.department_ID = d.department_ID and e.employee_ID != (select count(*) from SQLStatementtest1232134)\n ) AS iv2\n\nORDER BY employee_ID\n"
             } ]
           },
           "ports" : {
@@ -1782,6 +1874,24 @@
                 } ]
               },
               "slug" : "employees"
+            }, {
+              "id" : "o7aCTCEntnWPqYnxm71Qm$$0Gca_C0S46X0nL2X339zx",
+              "schema" : {
+                "entityType" : "",
+                "providerType" : "Databricks",
+                "fields" : [ {
+                  "name" : "c_int",
+                  "dataType" : {
+                    "type" : "Integer"
+                  }
+                }, {
+                  "name" : "perfid",
+                  "dataType" : {
+                    "type" : "String"
+                  }
+                } ]
+              },
+              "slug" : "SQLStatementtest1232134"
             } ],
             "outputs" : [ {
               "id" : "q3bl0gPs",
@@ -1806,8 +1916,8 @@
           "component" : "SQLStatement",
           "metadata" : {
             "label" : "SQLStatement_1_1_1_1",
-            "x" : 20,
-            "y" : 420,
+            "x" : -100,
+            "y" : 340,
             "phase" : 0,
             "macroDependencies" : [ ],
             "isLabelGrayed" : false
@@ -2386,8 +2496,7 @@
             } ],
             "isCustomOutputSchema" : false,
             "autoUpdateOnRun" : false
-          },
-          "index" : 8
+          }
         },
         "pvt1##Subgraph##cRZhpb2I" : {
           "id" : "pvt1##Subgraph##cRZhpb2I",
@@ -2573,11 +2682,32 @@
         "sourcePort" : "q3bl0gPs",
         "target" : "SQLState##Subgraph##upLlMGmZ",
         "targetPort" : "SKnlOQrw"
+      }, {
+        "id" : "GmuSVpSi8PX5L5NlSKOIe",
+        "source" : "SQLState##Subgraph##vpQgIrkb",
+        "sourcePort" : "W74QGeRF",
+        "target" : "SQLState##Subgraph##wJYLZsvC",
+        "targetPort" : "xJodEoUANmQjeCUNZFrOr$$jsoywczFrXdJUCSLTfhII"
+      }, {
+        "id" : "ysvFH7MI0VeCccQIYFeeV",
+        "source" : "Subgraph##Subgraph##pcn5DHXg",
+        "sourcePort" : "lz6NpYxBuRA4NSAaRhboT$$zhQWvnEJdd20cPCjja70l",
+        "target" : "SQLState##Subgraph##wJYLZsvC",
+        "targetPort" : "WFwOxwJnrS0ntLL5rKzBQ$$C7BMpVxBw1VLIBOP8hHCw"
+      }, {
+        "id" : "ZXSdchkHZ8CRptONa8-bm",
+        "source" : "SQLState##Subgraph##wJYLZsvC",
+        "sourcePort" : "tPP8bfBM",
+        "target" : "pvt2##Subgraph##nuEYSLXw",
+        "targetPort" : "o7aCTCEntnWPqYnxm71Qm$$0Gca_C0S46X0nL2X339zx"
       } ],
       "ports" : {
         "inputs" : [ {
           "id" : "EJDHUAcg",
           "slug" : "SQLStatement_1_1_1"
+        }, {
+          "id" : "lz6NpYxBuRA4NSAaRhboT$$zhQWvnEJdd20cPCjja70l",
+          "slug" : "SQLStatement_2_2_1"
         } ],
         "outputs" : [ {
           "id" : "RR3aFMUd",
@@ -15656,8 +15786,8 @@
       "component" : "Filter",
       "metadata" : {
         "label" : "SQLStatement_2_2_1",
-        "x" : 1200,
-        "y" : 520,
+        "x" : 1060,
+        "y" : 860,
         "phase" : 0,
         "macroDependencies" : [ ],
         "isLabelGrayed" : false
@@ -15679,8 +15809,7 @@
         } ],
         "isCustomOutputSchema" : false,
         "autoUpdateOnRun" : false
-      },
-      "index" : 48
+      }
     },
     "Subgraph##Subgraph##qgyqMPAc" : {
       "id" : "Subgraph##Subgraph##qgyqMPAc",
@@ -21460,6 +21589,38 @@
         "autoUpdateOnRun" : false
       }
     },
+    "dsHZ-GaZdJ-f6UgAp23_W$$0T_5-bQvaehuJ1MGG9qr8" : {
+      "id" : "dsHZ-GaZdJ-f6UgAp23_W$$0T_5-bQvaehuJ1MGG9qr8",
+      "component" : "Limit",
+      "metadata" : {
+        "label" : "Limit8Test1",
+        "slug" : "Limit8Test1",
+        "x" : 1120,
+        "y" : 360,
+        "phase" : 0,
+        "macroDependencies" : [ ],
+        "comment" : "Extracts a sample of five records from the combined customer and asset data for review.",
+        "autoUpdateComment" : true,
+        "isLabelGrayed" : false
+      },
+      "properties" : {
+        "limit" : {
+          "expression" : "5"
+        }
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "S5IGQ29fnVAAl9F730Jxw$$XV8u81k5DuBZxYq8laZ4s",
+          "slug" : "in0"
+        } ],
+        "outputs" : [ {
+          "id" : "oUaIyxTfSBfoaXa3GS2T-$$rleqK0ZiqQ5yRtpsp4f8y",
+          "slug" : "out"
+        } ],
+        "isCustomOutputSchema" : false,
+        "autoUpdateOnRun" : false
+      }
+    },
     "3ZBKyCdKBCtai0z7VjjfK$$-AMZ8px3KPkhPx2lqADNm" : {
       "id" : "3ZBKyCdKBCtai0z7VjjfK$$-AMZ8px3KPkhPx2lqADNm",
       "component" : "Deduplicate",
@@ -21886,11 +22047,23 @@
     "target" : "Join_1_2##Subgraph##yJyp3u2y",
     "targetPort" : "hiK4bd8BTiWMmgIpwQ9Gv$$nIP2NjkKgg4yZIMdFkFrh"
   }, {
-    "id" : "rH-dHSLBptdbFOvhgr1Ct",
+    "id" : "_vftgeq4Mi1zwOtim79B3$$_5xj7Z-QGqi_nf7xbrYv9",
     "source" : "Join_1_2##Subgraph##yJyp3u2y",
     "sourcePort" : "xYR9pOWl",
+    "target" : "dsHZ-GaZdJ-f6UgAp23_W$$0T_5-bQvaehuJ1MGG9qr8",
+    "targetPort" : "S5IGQ29fnVAAl9F730Jxw$$XV8u81k5DuBZxYq8laZ4s"
+  }, {
+    "id" : "5FwK6-0C7kHwtH6J3ppEm",
+    "source" : "dsHZ-GaZdJ-f6UgAp23_W$$0T_5-bQvaehuJ1MGG9qr8",
+    "sourcePort" : "oUaIyxTfSBfoaXa3GS2T-$$rleqK0ZiqQ5yRtpsp4f8y",
     "target" : "Join_1##Subgraph##w6B6gfg4",
     "targetPort" : "Nu9XkaEE"
+  }, {
+    "id" : "O9uaRzh_pEXBN3F9YU46G",
+    "source" : "SQLState##Subgraph##HLUCNb2F",
+    "sourcePort" : "DZB99uWY",
+    "target" : "Subgraph##Subgraph##pcn5DHXg",
+    "targetPort" : "lz6NpYxBuRA4NSAaRhboT$$zhQWvnEJdd20cPCjja70l"
   } ],
   "component" : "Model"
 }

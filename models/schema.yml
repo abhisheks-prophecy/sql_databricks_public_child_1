@@ -93,3 +93,18 @@ models:
       - name: "pin"
         dataType:
           type: "Bigint"
+  tests:
+  - new_multi_model_not_null:
+      column_name_model_2: "c_tinyint"
+      column_name_model_1: "c_tinyint"
+      model1: "env_uitesting_main_model_databricks_2"
+      config:
+        fail_calc: "count(*)"
+        warn_if: ""
+        where: "c_double IS NOT NULL AND c_int BETWEEN -10000 AND 10000"
+      column_name_mode1_2: "c_int"
+      column_name_mode1_1: "c_int"
+  - not_null:
+      config:
+        fail_calc: "count(*)"
+      column_name: "c_struct.state"

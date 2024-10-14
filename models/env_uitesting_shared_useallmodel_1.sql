@@ -1824,6 +1824,17 @@ Join_1_2 AS (
 
 ),
 
+Limit8Test1 AS (
+
+  {#Extracts a sample of five records from the combined customer and asset data for review.#}
+  SELECT * 
+  
+  FROM Join_1_2 AS in0
+  
+  LIMIT 5
+
+),
+
 env_uitesting_shared_mid_model_1 AS (
 
   SELECT * 
@@ -1856,9 +1867,31 @@ SQLStatement_1_1_1 AS (
 
 ),
 
+SQLStatement_2_2_1 AS (
+
+  SELECT * 
+  
+  FROM SQLStatement_1_1_1 AS in1
+  
+  WHERE {% if var('DATASET_ID', '')  %}
+          c_string = '{{ var("DATASET_ID", "")}}'
+        {% else %}
+          true
+        {% endif %}
+
+),
+
 Subgraph_3 AS (
 
-  WITH Reformat_10 AS (
+  WITH SQLStatement_1_1_1_1 AS (
+  
+    SELECT DISTINCT c_tinyint
+    
+    FROM SQLStatement_1_1_1
+  
+  ),
+  
+  Reformat_10 AS (
   
     SELECT * 
     
@@ -1875,7 +1908,20 @@ Subgraph_3 AS (
     
     FROM Reformat_10 AS act1
     
-    WHERE act1.c_string = 'PERFORM' AND act1.c_int = 1
+    WHERE act1.c_string = 'PERFORM'
+          AND act1.c_int = 1
+          and act1.c_int != (
+                (
+                  SELECT count(*)
+                  
+                  FROM SQLStatement_1_1_1_1
+                 )
+                + (
+                    SELECT count(*)
+                    
+                    FROM SQLStatement_2_2_1
+                   )
+              )
   
   ),
   
@@ -1913,17 +1959,14 @@ Subgraph_3 AS (
       FROM employees AS e
       
       WHERE e.department_ID = d.department_ID
+            and e.employee_ID != (
+                  SELECT count(*)
+                  
+                  FROM SQLStatementtest1232134
+                 )
      ) AS iv2
     
     ORDER BY employee_ID
-  
-  ),
-  
-  SQLStatement_1_1_1_1 AS (
-  
-    SELECT DISTINCT c_tinyint
-    
-    FROM SQLStatement_1_1_1
   
   ),
   
@@ -2919,7 +2962,7 @@ Join_1 AS (
   FROM Subgraph_2 AS in0
   INNER JOIN env_uitesting_shared_mid_model_1 AS in1
      ON in0.c_smallint != in1.c_int
-  INNER JOIN Join_1_2 AS in2
+  INNER JOIN Limit8Test1 AS in2
      ON in1.c_string != in2.customer_id
   INNER JOIN Limit_1_1 AS in3
      ON in2.customer_id != in3.customer_id
@@ -9164,20 +9207,6 @@ all_type_parquet_1 AS (
   SELECT * 
   
   FROM {{ source('spark_catalog.qa_database', 'all_type_parquet') }}
-
-),
-
-SQLStatement_2_2_1 AS (
-
-  SELECT * 
-  
-  FROM SQLStatement_1_1_1 AS in1
-  
-  WHERE {% if var('DATASET_ID', '')  %}
-          c_string = '{{ var("DATASET_ID", "")}}'
-        {% else %}
-          true
-        {% endif %}
 
 )
 
