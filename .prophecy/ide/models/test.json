@@ -7,9 +7,341 @@
     "sourceSuggestions" : {
       "sources" : [ ]
     },
+    "graphConfig" : {
+      "entityConfig" : {
+        "type" : "ModelConfig"
+      },
+      "userDefinedConfig" : {
+        "vars" : {
+          "c_test_string" : "'test_string'",
+          "c_test_int" : "11"
+        }
+      }
+    },
     "version" : 3
   },
   "processes" : {
+    "kZeOJHFkfVIUSxko-OHEs$$2pv36GreUWJENS8qRW6lf" : {
+      "id" : "kZeOJHFkfVIUSxko-OHEs$$2pv36GreUWJENS8qRW6lf",
+      "component" : "Deduplicate",
+      "metadata" : {
+        "label" : "unique_tinyint_records",
+        "slug" : "unique_tinyint_records",
+        "x" : -800,
+        "y" : -360,
+        "phase" : 0,
+        "macroDependencies" : [ ],
+        "comment" : "Identifies unique records based on a specific small integer value.",
+        "autoUpdateComment" : true,
+        "isLabelGrayed" : false
+      },
+      "properties" : {
+        "dedupColumns" : [ {
+          "expression" : {
+            "expression" : "c_tinyint"
+          }
+        } ],
+        "dedupType" : "unique_only",
+        "columnsSelector" : [ "wiFWDD-CX58mIRGfrdvbn$$J5pRAbBapGjrh_0EJv-sG##c_tinyint" ],
+        "orders" : [ ],
+        "useOrderBy" : false
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "wiFWDD-CX58mIRGfrdvbn$$J5pRAbBapGjrh_0EJv-sG",
+          "slug" : "in0"
+        } ],
+        "outputs" : [ {
+          "id" : "t1J4f39FZ2d2bXblhoZea$$CJBHvHZtrsQWVf4C_zaK4",
+          "slug" : "out"
+        } ],
+        "isCustomOutputSchema" : false,
+        "autoUpdateOnRun" : false
+      }
+    },
+    "Dxe1FjVKt27vEUU0gPZL6" : {
+      "id" : "Dxe1FjVKt27vEUU0gPZL6",
+      "component" : "Source",
+      "metadata" : {
+        "label" : "all_type_non_partitioned",
+        "slug" : "all_type_non_partitioned",
+        "x" : -1160,
+        "y" : -240,
+        "phase" : 0
+      },
+      "properties" : {
+        "table" : {
+          "name" : "all_type_non_partitioned",
+          "sourceType" : "Source",
+          "sourceName" : "hive_metastore.qa_db_warehouse",
+          "alias" : ""
+        }
+      },
+      "ports" : {
+        "inputs" : [ ],
+        "outputs" : [ {
+          "id" : "yUZx5zHjJeW5qBUYpgAVL",
+          "slug" : "out"
+        } ],
+        "isCustomOutputSchema" : false,
+        "autoUpdateOnRun" : false
+      }
+    },
+    "NIptH2pJ1xUGt6FVsmFXs$$E57KzOtnySeZ6qfq4iIHl" : {
+      "id" : "NIptH2pJ1xUGt6FVsmFXs$$E57KzOtnySeZ6qfq4iIHl",
+      "component" : "Join",
+      "metadata" : {
+        "label" : "joined_records",
+        "slug" : "joined_records",
+        "x" : -640,
+        "y" : -220,
+        "phase" : 0,
+        "macroDependencies" : [ ],
+        "comment" : "Combines various unique records to create a comprehensive dataset for analysis.",
+        "autoUpdateComment" : true,
+        "isLabelGrayed" : false
+      },
+      "properties" : {
+        "conditions" : [ {
+          "alias" : "in1",
+          "expression" : {
+            "expression" : "in0.c_tinyint!=in1.c_tinyint"
+          },
+          "joinType" : "inner"
+        }, {
+          "alias" : "in2",
+          "expression" : {
+            "expression" : "in1.c_tinyint!=in2.c_smallint"
+          },
+          "joinType" : "inner"
+        } ],
+        "expressions" : [ {
+          "expression" : {
+            "expression" : "in0.c_tinyint"
+          },
+          "alias" : "c_tinyint"
+        }, {
+          "expression" : {
+            "expression" : "in0.c_int_string"
+          },
+          "alias" : "c_int_string"
+        }, {
+          "expression" : {
+            "expression" : "in1.c_bigint"
+          },
+          "alias" : "c_bigint"
+        }, {
+          "expression" : {
+            "expression" : "in1.c_array"
+          },
+          "alias" : "c_array"
+        }, {
+          "expression" : {
+            "expression" : "in2.c_struct"
+          },
+          "alias" : "c_struct"
+        }, {
+          "expression" : {
+            "expression" : "in2.c_string"
+          },
+          "alias" : "c_string"
+        }, {
+          "expression" : {
+            "expression" : "in2.c_double"
+          },
+          "alias" : "c_double"
+        } ],
+        "activeTab" : "conditions",
+        "columnsSelector" : [ "MmtIDVAdw3ZcsQAhpJU2i$$ccxXMZHyjKAMa_SmgZ6fA##c_tinyint", "-oy9urOmAYHclmBFZemZB$$3gJLZoh_1cj1urOFn3XEf##c_tinyint", "RRgHIVXz3BE3yFahINGwX$$RjCvivTGMElPrhuK7DYMP##c_smallint", "MmtIDVAdw3ZcsQAhpJU2i$$ccxXMZHyjKAMa_SmgZ6fA##c_tinyint", "MmtIDVAdw3ZcsQAhpJU2i$$ccxXMZHyjKAMa_SmgZ6fA##c_int_string", "-oy9urOmAYHclmBFZemZB$$3gJLZoh_1cj1urOFn3XEf##c_bigint", "-oy9urOmAYHclmBFZemZB$$3gJLZoh_1cj1urOFn3XEf##c_array", "RRgHIVXz3BE3yFahINGwX$$RjCvivTGMElPrhuK7DYMP##c_struct", "RRgHIVXz3BE3yFahINGwX$$RjCvivTGMElPrhuK7DYMP##c_string", "RRgHIVXz3BE3yFahINGwX$$RjCvivTGMElPrhuK7DYMP##c_double" ],
+        "headAlias" : "in0"
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "MmtIDVAdw3ZcsQAhpJU2i$$ccxXMZHyjKAMa_SmgZ6fA",
+          "slug" : "in0"
+        }, {
+          "id" : "-oy9urOmAYHclmBFZemZB$$3gJLZoh_1cj1urOFn3XEf",
+          "slug" : "in1"
+        }, {
+          "id" : "RRgHIVXz3BE3yFahINGwX$$RjCvivTGMElPrhuK7DYMP",
+          "slug" : "in2"
+        } ],
+        "outputs" : [ {
+          "id" : "jtHeHgcKDmiKks-sx67zt$$pbnX_oW_xtx1nzuuy0QOG",
+          "slug" : "out"
+        } ],
+        "isCustomOutputSchema" : false,
+        "autoUpdateOnRun" : false
+      }
+    },
+    "2QMtBevs639cqJElJ93Oa$$Y5j43igIJB9JyGkxDso8o" : {
+      "id" : "2QMtBevs639cqJElJ93Oa$$Y5j43igIJB9JyGkxDso8o",
+      "component" : "Deduplicate",
+      "metadata" : {
+        "label" : "distinct_rows_by_partition",
+        "slug" : "distinct_rows_by_partition",
+        "x" : -940,
+        "y" : -260,
+        "phase" : 0,
+        "macroDependencies" : [ ],
+        "comment" : "Identifies unique entries based on city, state, and a boolean flag, prioritizing specific numeric values.",
+        "autoUpdateComment" : true,
+        "isLabelGrayed" : false
+      },
+      "properties" : {
+        "dedupColumns" : [ {
+          "expression" : {
+            "expression" : "concat(c_struct.city, c_struct.state)"
+          }
+        }, {
+          "expression" : {
+            "expression" : "c_boolean"
+          }
+        } ],
+        "dedupType" : "first",
+        "columnsSelector" : [ "hvVjqiRiw0IfRTB-3QqU9$$EcGh190dRbsr9d-R_wl-N##c_struct", "hvVjqiRiw0IfRTB-3QqU9$$EcGh190dRbsr9d-R_wl-N##c_struct.city", "hvVjqiRiw0IfRTB-3QqU9$$EcGh190dRbsr9d-R_wl-N##c_struct.state", "hvVjqiRiw0IfRTB-3QqU9$$EcGh190dRbsr9d-R_wl-N##c_boolean" ],
+        "orders" : [ {
+          "expression" : {
+            "expression" : {
+              "expression" : "c_int"
+            },
+            "alias" : ""
+          },
+          "sortType" : "asc"
+        }, {
+          "expression" : {
+            "expression" : {
+              "expression" : "c_bigint"
+            },
+            "alias" : ""
+          },
+          "sortType" : "desc"
+        } ],
+        "useOrderBy" : true
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "hvVjqiRiw0IfRTB-3QqU9$$EcGh190dRbsr9d-R_wl-N",
+          "slug" : "in0"
+        } ],
+        "outputs" : [ {
+          "id" : "pGhszR3XVFBpC5za1uTgX$$4u0WqlKj9JKZzA4wnpyvL",
+          "slug" : "out"
+        } ],
+        "isCustomOutputSchema" : false,
+        "autoUpdateOnRun" : false
+      }
+    },
+    "8vLbapYOmzS7JhNEYpvRG$$PU8FKm8tziqCIYplWmDjf" : {
+      "id" : "8vLbapYOmzS7JhNEYpvRG$$PU8FKm8tziqCIYplWmDjf",
+      "component" : "Deduplicate",
+      "metadata" : {
+        "label" : "distinct_all_types",
+        "slug" : "distinct_all_types",
+        "x" : -980,
+        "y" : -420,
+        "phase" : 0,
+        "macroDependencies" : [ ],
+        "comment" : "Extracts unique combinations of tiny integer values and concatenated integer-string pairs.",
+        "autoUpdateComment" : true,
+        "isLabelGrayed" : false
+      },
+      "properties" : {
+        "dedupColumns" : [ {
+          "expression" : {
+            "expression" : "c_tinyint"
+          },
+          "alias" : ""
+        }, {
+          "expression" : {
+            "expression" : "concat(c_int, c_string)"
+          },
+          "alias" : "c_int_string"
+        } ],
+        "dedupType" : "distinct",
+        "columnsSelector" : [ "Qh44hVYxixWfh90uZHJ_N$$jB3nH4mbCh9zREnxIfYhh##c_tinyint", "Qh44hVYxixWfh90uZHJ_N$$jB3nH4mbCh9zREnxIfYhh##c_int", "Qh44hVYxixWfh90uZHJ_N$$jB3nH4mbCh9zREnxIfYhh##c_string" ],
+        "orders" : [ ],
+        "useOrderBy" : false
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "Qh44hVYxixWfh90uZHJ_N$$jB3nH4mbCh9zREnxIfYhh",
+          "slug" : "in0"
+        } ],
+        "outputs" : [ {
+          "id" : "hNq1aMn5cUvkGmbjf7l6w$$jfpMLc9WV2PHVEGrtGuoA",
+          "slug" : "out"
+        } ],
+        "isCustomOutputSchema" : false,
+        "autoUpdateOnRun" : false
+      }
+    },
+    "9vhq9AMH_JHn3z7ogrPp7$$bmZKNqoZ6dunobrOd56Li" : {
+      "id" : "9vhq9AMH_JHn3z7ogrPp7$$bmZKNqoZ6dunobrOd56Li",
+      "component" : "Deduplicate",
+      "metadata" : {
+        "label" : "distinct_rows_by_partition_1",
+        "slug" : "distinct_rows_by_partition_1",
+        "x" : -940,
+        "y" : -120,
+        "phase" : 0,
+        "macroDependencies" : [ ],
+        "comment" : "Identifies unique entries based on specific city and state attributes, ensuring data integrity.",
+        "autoUpdateComment" : true,
+        "isLabelGrayed" : false
+      },
+      "properties" : {
+        "dedupColumns" : [ {
+          "expression" : {
+            "expression" : "c_struct.city"
+          }
+        }, {
+          "expression" : {
+            "expression" : "c_boolean"
+          }
+        }, {
+          "expression" : {
+            "expression" : "c_struct.state"
+          }
+        }, {
+          "expression" : {
+            "expression" : "c_struct.pin"
+          }
+        } ],
+        "dedupType" : "last",
+        "columnsSelector" : [ "h4WfB6v0frTF9XMwhkjKz$$TfYy_RkfKL-dPwuX1MNmO##c_struct", "h4WfB6v0frTF9XMwhkjKz$$TfYy_RkfKL-dPwuX1MNmO##c_struct.city", "h4WfB6v0frTF9XMwhkjKz$$TfYy_RkfKL-dPwuX1MNmO##c_boolean", "h4WfB6v0frTF9XMwhkjKz$$TfYy_RkfKL-dPwuX1MNmO##c_struct.state", "h4WfB6v0frTF9XMwhkjKz$$TfYy_RkfKL-dPwuX1MNmO##c_struct.pin" ],
+        "orders" : [ {
+          "expression" : {
+            "expression" : {
+              "expression" : "c_int"
+            },
+            "alias" : ""
+          },
+          "sortType" : "asc"
+        }, {
+          "expression" : {
+            "expression" : {
+              "expression" : "c_bigint"
+            },
+            "alias" : ""
+          },
+          "sortType" : "desc"
+        } ],
+        "useOrderBy" : true
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "h4WfB6v0frTF9XMwhkjKz$$TfYy_RkfKL-dPwuX1MNmO",
+          "slug" : "in0"
+        } ],
+        "outputs" : [ {
+          "id" : "gev6gt6wBKzVRkmKZS1KY$$Uys0-RuxTQwtFFI6_b19f",
+          "slug" : "out"
+        } ],
+        "isCustomOutputSchema" : false,
+        "autoUpdateOnRun" : false
+      }
+    },
     "test##dAWfNgnX" : {
       "id" : "test##dAWfNgnX",
       "component" : "TargetModel",
@@ -42,75 +374,50 @@
         "isCustomOutputSchema" : false,
         "autoUpdateOnRun" : false
       }
-    },
-    "GTrj6SwgTKW9eCT5swUZw" : {
-      "id" : "GTrj6SwgTKW9eCT5swUZw",
-      "component" : "Seed",
-      "metadata" : {
-        "label" : "country_classification",
-        "slug" : "country_classification",
-        "x" : -720,
-        "y" : -180,
-        "phase" : 0
-      },
-      "properties" : {
-        "table" : {
-          "name" : "country_classification",
-          "sourceType" : "Seed",
-          "alias" : ""
-        }
-      },
-      "ports" : {
-        "inputs" : [ ],
-        "outputs" : [ {
-          "id" : "yVsrib0tlOSvJiBbGYb5B",
-          "slug" : "out"
-        } ],
-        "isCustomOutputSchema" : false,
-        "autoUpdateOnRun" : false
-      }
-    },
-    "Dao-qUZv96OIt2RgMg5zf$$qmHTmnPURY7ArLwZGmZds" : {
-      "id" : "Dao-qUZv96OIt2RgMg5zf$$qmHTmnPURY7ArLwZGmZds",
-      "component" : "Reformat",
-      "metadata" : {
-        "label" : "Reformat_1",
-        "slug" : "Reformat_1",
-        "x" : -380,
-        "y" : -80,
-        "phase" : 0,
-        "macroDependencies" : [ ]
-      },
-      "properties" : {
-        "columnsSelector" : [ ],
-        "expressions" : [ ]
-      },
-      "ports" : {
-        "inputs" : [ {
-          "id" : "f1DHpK9vrJs9VtuMLF0BD$$O_aZzwFLQ7ysGfmNRj8sE",
-          "slug" : "in0"
-        } ],
-        "outputs" : [ {
-          "id" : "xNE8U9wOor4L0v7sySOAR$$inHozkEzVnLfJi2leKZc6",
-          "slug" : "out"
-        } ],
-        "isCustomOutputSchema" : false,
-        "autoUpdateOnRun" : false
-      }
     }
   },
   "connections" : [ {
-    "id" : "9LrWf9KHUtmwtbrHI9WeL$$8bnFmRYkNit_F7W5mB9JM",
-    "source" : "GTrj6SwgTKW9eCT5swUZw",
-    "sourcePort" : "yVsrib0tlOSvJiBbGYb5B",
-    "target" : "Dao-qUZv96OIt2RgMg5zf$$qmHTmnPURY7ArLwZGmZds",
-    "targetPort" : "f1DHpK9vrJs9VtuMLF0BD$$O_aZzwFLQ7ysGfmNRj8sE"
+    "id" : "k6cuoOi-aurQxBtM2n7gl$$CNuFHDJL0fIeUAJwwW4hB",
+    "source" : "Dxe1FjVKt27vEUU0gPZL6",
+    "sourcePort" : "yUZx5zHjJeW5qBUYpgAVL",
+    "target" : "8vLbapYOmzS7JhNEYpvRG$$PU8FKm8tziqCIYplWmDjf",
+    "targetPort" : "Qh44hVYxixWfh90uZHJ_N$$jB3nH4mbCh9zREnxIfYhh"
   }, {
-    "id" : "d2TXFaLtHwxm2cQizeEYa",
-    "source" : "Dao-qUZv96OIt2RgMg5zf$$qmHTmnPURY7ArLwZGmZds",
-    "sourcePort" : "xNE8U9wOor4L0v7sySOAR$$inHozkEzVnLfJi2leKZc6",
-    "target" : "test##dAWfNgnX",
-    "targetPort" : "sYoqM19T"
+    "id" : "_akjIDTXGQhUbn3zxcaW-$$UfmEy-HGnxtrT53H7kRV9",
+    "source" : "8vLbapYOmzS7JhNEYpvRG$$PU8FKm8tziqCIYplWmDjf",
+    "sourcePort" : "hNq1aMn5cUvkGmbjf7l6w$$jfpMLc9WV2PHVEGrtGuoA",
+    "target" : "kZeOJHFkfVIUSxko-OHEs$$2pv36GreUWJENS8qRW6lf",
+    "targetPort" : "wiFWDD-CX58mIRGfrdvbn$$J5pRAbBapGjrh_0EJv-sG"
+  }, {
+    "id" : "bHwrE4YsMS_JLEqBvo6MI",
+    "source" : "Dxe1FjVKt27vEUU0gPZL6",
+    "sourcePort" : "yUZx5zHjJeW5qBUYpgAVL",
+    "target" : "2QMtBevs639cqJElJ93Oa$$Y5j43igIJB9JyGkxDso8o",
+    "targetPort" : "hvVjqiRiw0IfRTB-3QqU9$$EcGh190dRbsr9d-R_wl-N"
+  }, {
+    "id" : "J42DizT6NciKQ8Zi67Ig8",
+    "source" : "Dxe1FjVKt27vEUU0gPZL6",
+    "sourcePort" : "yUZx5zHjJeW5qBUYpgAVL",
+    "target" : "9vhq9AMH_JHn3z7ogrPp7$$bmZKNqoZ6dunobrOd56Li",
+    "targetPort" : "h4WfB6v0frTF9XMwhkjKz$$TfYy_RkfKL-dPwuX1MNmO"
+  }, {
+    "id" : "ev3HSRdXoGQz6oMCT1WhX$$7jBklogSGCS3aGrtFuqzR",
+    "source" : "kZeOJHFkfVIUSxko-OHEs$$2pv36GreUWJENS8qRW6lf",
+    "sourcePort" : "t1J4f39FZ2d2bXblhoZea$$CJBHvHZtrsQWVf4C_zaK4",
+    "target" : "NIptH2pJ1xUGt6FVsmFXs$$E57KzOtnySeZ6qfq4iIHl",
+    "targetPort" : "MmtIDVAdw3ZcsQAhpJU2i$$ccxXMZHyjKAMa_SmgZ6fA"
+  }, {
+    "id" : "UMxhcE3FUGrYS86fl2OS8",
+    "source" : "2QMtBevs639cqJElJ93Oa$$Y5j43igIJB9JyGkxDso8o",
+    "sourcePort" : "pGhszR3XVFBpC5za1uTgX$$4u0WqlKj9JKZzA4wnpyvL",
+    "target" : "NIptH2pJ1xUGt6FVsmFXs$$E57KzOtnySeZ6qfq4iIHl",
+    "targetPort" : "-oy9urOmAYHclmBFZemZB$$3gJLZoh_1cj1urOFn3XEf"
+  }, {
+    "id" : "KHrF-ESmYaYHLoe3Dctu-",
+    "source" : "9vhq9AMH_JHn3z7ogrPp7$$bmZKNqoZ6dunobrOd56Li",
+    "sourcePort" : "gev6gt6wBKzVRkmKZS1KY$$Uys0-RuxTQwtFFI6_b19f",
+    "target" : "NIptH2pJ1xUGt6FVsmFXs$$E57KzOtnySeZ6qfq4iIHl",
+    "targetPort" : "RRgHIVXz3BE3yFahINGwX$$RjCvivTGMElPrhuK7DYMP"
   } ],
   "component" : "Model"
 }

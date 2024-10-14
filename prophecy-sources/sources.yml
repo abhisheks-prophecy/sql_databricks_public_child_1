@@ -1769,3 +1769,69 @@ sources:
         - name: "pin"
           dataType:
             type: "Bigint"
+- name: "hive_metastore.qa_db_warehouse"
+  database: "hive_metastore"
+  schema: "qa_db_warehouse"
+  config:
+    enabled: true
+  tables:
+  - name: "all_type_non_partitioned"
+    description: "Comprehensive dataset capturing various data types, enabling diverse\
+      \ analytical capabilities across multiple dimensions."
+    columns:
+    - name: "c_tinyint"
+      description: "A small integer value representing a specific attribute."
+      dataType:
+        type: "TinyInt"
+    - name: "c_smallint"
+      description: "A small integer value representing a specific metric or identifier."
+      dataType:
+        type: "SmallInt"
+    - name: "c_int"
+      description: "An integer value representing a specific metric or identifier"
+      dataType:
+        type: "Integer"
+    - name: "c_bigint"
+      description: "A large integer value representing significant numerical data."
+      dataType:
+        type: "Bigint"
+    - name: "c_float"
+      description: "A floating-point number representing a value with decimal precision."
+      dataType:
+        type: "Float"
+    - name: "c_double"
+      description: "A double-precision floating-point number representing a value."
+      dataType:
+        type: "Double"
+    - name: "c_string"
+      description: "A string value representing textual information"
+      dataType:
+        type: "String"
+    - name: "c_boolean"
+      description: "Indicates a true or false value related to a specific condition."
+      dataType:
+        type: "Boolean"
+    - name: "c_array"
+      description: "Array of string values associated with the record"
+      dataType:
+        type: "Array"
+        dataType:
+          type: "String"
+    - name: "c_struct"
+      description: "Structured data containing city, state, and pin information."
+      dataType:
+        type: "Struct"
+        fields:
+        - name: "city"
+          dataType:
+            type: "String"
+          description: "City name associated with the structured data"
+        - name: "state"
+          dataType:
+            type: "String"
+          description: "The state associated with the structured data"
+        - name: "pin"
+          dataType:
+            type: "Bigint"
+          description: "The postal code associated with the address in the structured\
+            \ data"

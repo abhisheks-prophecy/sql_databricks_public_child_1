@@ -14,7 +14,7 @@
           }
         },
         "sourceComponentKind" : "Source",
-        "sourceLabel" : "all_type_non_partitioned",
+        "sourceLabel" : "all_type_non_partitioned_1",
         "canJoinWith" : [ {
           "processLabel" : "all_type_parquet_1",
           "processId" : "all_type##Subgraph##H6Ek49Rd",
@@ -22,9 +22,9 @@
             "activeTab" : "conditions",
             "columnsSelector" : [ "c_array", "c_bigint", "c_boolean" ],
             "conditions" : [ {
-              "alias" : "all_type_non_partitioned",
+              "alias" : "all_type_non_partitioned_1",
               "expression" : {
-                "expression" : "all_type_non_partitioned.c_array = all_type_parquet_1.c_array AND all_type_non_partitioned.c_bigint = all_type_parquet_1.c_bigint AND all_type_non_partitioned.c_boolean = all_type_parquet_1.c_boolean"
+                "expression" : "all_type_non_partitioned_1.c_array = all_type_parquet_1.c_array AND all_type_non_partitioned_1.c_bigint = all_type_parquet_1.c_bigint AND all_type_non_partitioned_1.c_boolean = all_type_parquet_1.c_boolean"
               },
               "joinType" : "inner"
             } ],
@@ -79,7 +79,87 @@
               },
               "alias" : "c_bigint"
             } ],
-            "headAlias" : "all_type_non_partitioned",
+            "headAlias" : "all_type_non_partitioned_1",
+            "allowSelection" : false
+          },
+          "joinColumns" : [ "c_array", "c_bigint", "c_boolean" ],
+          "isRecommended" : true
+        } ]
+      }, {
+        "source" : {
+          "table" : {
+            "name" : "all_type_non_partitioned",
+            "sourceName" : "hive_metastore.qa_db_warehouse",
+            "sourceType" : "Source"
+          }
+        },
+        "sourceComponentKind" : "Source",
+        "sourceLabel" : "all_type_non_partitioned_1",
+        "canJoinWith" : [ {
+          "processLabel" : "all_type_parquet_1",
+          "processId" : "all_type##Subgraph##H6Ek49Rd",
+          "properties" : {
+            "activeTab" : "conditions",
+            "columnsSelector" : [ "c_array", "c_bigint", "c_boolean" ],
+            "conditions" : [ {
+              "alias" : "all_type_non_partitioned_1",
+              "expression" : {
+                "expression" : "all_type_non_partitioned_1.c_array = all_type_parquet_1.c_array AND all_type_non_partitioned_1.c_bigint = all_type_parquet_1.c_bigint AND all_type_non_partitioned_1.c_boolean = all_type_parquet_1.c_boolean"
+              },
+              "joinType" : "inner"
+            } ],
+            "expressions" : [ {
+              "expression" : {
+                "expression" : "all_type_parquet_1.c_int"
+              },
+              "alias" : "c_int"
+            }, {
+              "expression" : {
+                "expression" : "all_type_parquet_1.c_float"
+              },
+              "alias" : "c_float"
+            }, {
+              "expression" : {
+                "expression" : "all_type_parquet_1.c_double"
+              },
+              "alias" : "c_double"
+            }, {
+              "expression" : {
+                "expression" : "all_type_parquet_1.c_array"
+              },
+              "alias" : "c_array"
+            }, {
+              "expression" : {
+                "expression" : "all_type_parquet_1.c_string"
+              },
+              "alias" : "c_string"
+            }, {
+              "expression" : {
+                "expression" : "all_type_parquet_1.c_smallint"
+              },
+              "alias" : "c_smallint"
+            }, {
+              "expression" : {
+                "expression" : "all_type_parquet_1.c_tinyint"
+              },
+              "alias" : "c_tinyint"
+            }, {
+              "expression" : {
+                "expression" : "all_type_parquet_1.c_struct"
+              },
+              "alias" : "c_struct"
+            }, {
+              "expression" : {
+                "expression" : "all_type_parquet_1.c_boolean"
+              },
+              "alias" : "c_boolean"
+            }, {
+              "expression" : {
+                "expression" : "all_type_parquet_1.c_bigint"
+              },
+              "alias" : "c_bigint"
+            } ],
+            "headAlias" : "all_type_non_partitioned_1",
             "allowSelection" : false
           },
           "joinColumns" : [ "c_array", "c_bigint", "c_boolean" ],
@@ -258,101 +338,6 @@
       }, {
         "source" : {
           "table" : {
-            "name" : "json_all_type_table",
-            "sourceName" : "hive_metastore.qa_db_warehouse",
-            "sourceType" : "ExternalSource"
-          }
-        },
-        "sourceComponentKind" : "ExternalSource",
-        "sourceLabel" : "json_all_type_table",
-        "canJoinWith" : [ {
-          "processLabel" : "all_type_parquet_1",
-          "processId" : "all_type##Subgraph##H6Ek49Rd",
-          "properties" : {
-            "activeTab" : "conditions",
-            "columnsSelector" : [ "c_array", "c_bigint", "c_boolean" ],
-            "conditions" : [ {
-              "alias" : "json_all_type_table",
-              "expression" : {
-                "expression" : "json_all_type_table.c_array = all_type_parquet_1.c_array AND json_all_type_table.c_bigint = all_type_parquet_1.c_bigint AND json_all_type_table.c_boolean = all_type_parquet_1.c_boolean"
-              },
-              "joinType" : "inner"
-            } ],
-            "expressions" : [ {
-              "expression" : {
-                "expression" : "json_all_type_table.c_map"
-              },
-              "alias" : "c_map"
-            }, {
-              "expression" : {
-                "expression" : "json_all_type_table.p_string"
-              },
-              "alias" : "p_string"
-            }, {
-              "expression" : {
-                "expression" : "json_all_type_table.p_int"
-              },
-              "alias" : "p_int"
-            }, {
-              "expression" : {
-                "expression" : "all_type_parquet_1.c_int"
-              },
-              "alias" : "c_int"
-            }, {
-              "expression" : {
-                "expression" : "all_type_parquet_1.c_float"
-              },
-              "alias" : "c_float"
-            }, {
-              "expression" : {
-                "expression" : "all_type_parquet_1.c_double"
-              },
-              "alias" : "c_double"
-            }, {
-              "expression" : {
-                "expression" : "all_type_parquet_1.c_array"
-              },
-              "alias" : "c_array"
-            }, {
-              "expression" : {
-                "expression" : "all_type_parquet_1.c_string"
-              },
-              "alias" : "c_string"
-            }, {
-              "expression" : {
-                "expression" : "all_type_parquet_1.c_smallint"
-              },
-              "alias" : "c_smallint"
-            }, {
-              "expression" : {
-                "expression" : "all_type_parquet_1.c_tinyint"
-              },
-              "alias" : "c_tinyint"
-            }, {
-              "expression" : {
-                "expression" : "all_type_parquet_1.c_struct"
-              },
-              "alias" : "c_struct"
-            }, {
-              "expression" : {
-                "expression" : "all_type_parquet_1.c_boolean"
-              },
-              "alias" : "c_boolean"
-            }, {
-              "expression" : {
-                "expression" : "all_type_parquet_1.c_bigint"
-              },
-              "alias" : "c_bigint"
-            } ],
-            "headAlias" : "json_all_type_table",
-            "allowSelection" : false
-          },
-          "joinColumns" : [ "c_array", "c_bigint", "c_boolean" ],
-          "isRecommended" : true
-        } ]
-      }, {
-        "source" : {
-          "table" : {
             "name" : "orc_all_type_table",
             "sourceName" : "hive_metastore.qa_db_warehouse",
             "sourceType" : "ExternalSource"
@@ -448,27 +433,67 @@
       }, {
         "source" : {
           "table" : {
-            "name" : "account",
-            "sourceName" : "hive_metastore.qa_database",
+            "name" : "automation_databricks_sql_targetmodel_model_1728198325357",
+            "sourceName" : "hive_metastore.qa_db_warehouse",
             "sourceType" : "ExternalSource"
           }
         },
         "sourceComponentKind" : "ExternalSource",
-        "sourceLabel" : "account",
+        "sourceLabel" : "automation_databricks_sql_targetmodel_model_1728198325357",
         "canJoinWith" : [ {
           "processLabel" : "all_type_parquet_1",
           "processId" : "all_type##Subgraph##H6Ek49Rd",
           "properties" : {
             "activeTab" : "conditions",
-            "columnsSelector" : [ "c_int" ],
+            "columnsSelector" : [ "c_array", "c_bigint", "c_boolean" ],
             "conditions" : [ {
-              "alias" : "account",
+              "alias" : "automation_databricks_sql_targetmodel_model_1728198325357",
               "expression" : {
-                "expression" : "account.c_int = all_type_parquet_1.c_int"
+                "expression" : "automation_databricks_sql_targetmodel_model_1728198325357.c_array = all_type_parquet_1.c_array AND automation_databricks_sql_targetmodel_model_1728198325357.c_bigint = all_type_parquet_1.c_bigint AND automation_databricks_sql_targetmodel_model_1728198325357.c_boolean = all_type_parquet_1.c_boolean"
               },
               "joinType" : "inner"
             } ],
             "expressions" : [ {
+              "expression" : {
+                "expression" : "automation_databricks_sql_targetmodel_model_1728198325357.c_date"
+              },
+              "alias" : "c_date"
+            }, {
+              "expression" : {
+                "expression" : "automation_databricks_sql_targetmodel_model_1728198325357.c_timestamp"
+              },
+              "alias" : "c_timestamp"
+            }, {
+              "expression" : {
+                "expression" : "automation_databricks_sql_targetmodel_model_1728198325357.c_binary"
+              },
+              "alias" : "c_binary"
+            }, {
+              "expression" : {
+                "expression" : "automation_databricks_sql_targetmodel_model_1728198325357.c_decimal"
+              },
+              "alias" : "c_decimal"
+            }, {
+              "expression" : {
+                "expression" : "automation_databricks_sql_targetmodel_model_1728198325357.c_array_struct"
+              },
+              "alias" : "c_array_struct"
+            }, {
+              "expression" : {
+                "expression" : "automation_databricks_sql_targetmodel_model_1728198325357.c_map"
+              },
+              "alias" : "c_map"
+            }, {
+              "expression" : {
+                "expression" : "automation_databricks_sql_targetmodel_model_1728198325357.p_string"
+              },
+              "alias" : "p_string"
+            }, {
+              "expression" : {
+                "expression" : "automation_databricks_sql_targetmodel_model_1728198325357.p_int"
+              },
+              "alias" : "p_int"
+            }, {
               "expression" : {
                 "expression" : "all_type_parquet_1.c_int"
               },
@@ -519,10 +544,10 @@
               },
               "alias" : "c_bigint"
             } ],
-            "headAlias" : "account",
+            "headAlias" : "automation_databricks_sql_targetmodel_model_1728198325357",
             "allowSelection" : false
           },
-          "joinColumns" : [ "c_int" ],
+          "joinColumns" : [ "c_array", "c_bigint", "c_boolean" ],
           "isRecommended" : false
         } ]
       }, {
@@ -603,6 +628,181 @@
             "allowSelection" : false
           },
           "joinColumns" : [ "c_array", "c_bigint", "c_boolean" ],
+          "isRecommended" : false
+        } ]
+      }, {
+        "source" : {
+          "table" : {
+            "name" : "json_all_type_table",
+            "sourceName" : "hive_metastore.qa_db_warehouse",
+            "sourceType" : "ExternalSource"
+          }
+        },
+        "sourceComponentKind" : "ExternalSource",
+        "sourceLabel" : "json_all_type_table",
+        "canJoinWith" : [ {
+          "processLabel" : "all_type_parquet_1",
+          "processId" : "all_type##Subgraph##H6Ek49Rd",
+          "properties" : {
+            "activeTab" : "conditions",
+            "columnsSelector" : [ "c_array", "c_bigint", "c_boolean" ],
+            "conditions" : [ {
+              "alias" : "json_all_type_table",
+              "expression" : {
+                "expression" : "json_all_type_table.c_array = all_type_parquet_1.c_array AND json_all_type_table.c_bigint = all_type_parquet_1.c_bigint AND json_all_type_table.c_boolean = all_type_parquet_1.c_boolean"
+              },
+              "joinType" : "inner"
+            } ],
+            "expressions" : [ {
+              "expression" : {
+                "expression" : "json_all_type_table.c_map"
+              },
+              "alias" : "c_map"
+            }, {
+              "expression" : {
+                "expression" : "json_all_type_table.p_string"
+              },
+              "alias" : "p_string"
+            }, {
+              "expression" : {
+                "expression" : "json_all_type_table.p_int"
+              },
+              "alias" : "p_int"
+            }, {
+              "expression" : {
+                "expression" : "all_type_parquet_1.c_int"
+              },
+              "alias" : "c_int"
+            }, {
+              "expression" : {
+                "expression" : "all_type_parquet_1.c_float"
+              },
+              "alias" : "c_float"
+            }, {
+              "expression" : {
+                "expression" : "all_type_parquet_1.c_double"
+              },
+              "alias" : "c_double"
+            }, {
+              "expression" : {
+                "expression" : "all_type_parquet_1.c_array"
+              },
+              "alias" : "c_array"
+            }, {
+              "expression" : {
+                "expression" : "all_type_parquet_1.c_string"
+              },
+              "alias" : "c_string"
+            }, {
+              "expression" : {
+                "expression" : "all_type_parquet_1.c_smallint"
+              },
+              "alias" : "c_smallint"
+            }, {
+              "expression" : {
+                "expression" : "all_type_parquet_1.c_tinyint"
+              },
+              "alias" : "c_tinyint"
+            }, {
+              "expression" : {
+                "expression" : "all_type_parquet_1.c_struct"
+              },
+              "alias" : "c_struct"
+            }, {
+              "expression" : {
+                "expression" : "all_type_parquet_1.c_boolean"
+              },
+              "alias" : "c_boolean"
+            }, {
+              "expression" : {
+                "expression" : "all_type_parquet_1.c_bigint"
+              },
+              "alias" : "c_bigint"
+            } ],
+            "headAlias" : "json_all_type_table",
+            "allowSelection" : false
+          },
+          "joinColumns" : [ "c_array", "c_bigint", "c_boolean" ],
+          "isRecommended" : false
+        } ]
+      }, {
+        "source" : {
+          "table" : {
+            "name" : "prakhar_table_configs_model",
+            "sourceName" : "hive_metastore.qa_db_warehouse",
+            "sourceType" : "ExternalSource"
+          }
+        },
+        "sourceComponentKind" : "ExternalSource",
+        "sourceLabel" : "prakhar_table_configs_model",
+        "canJoinWith" : [ {
+          "processLabel" : "all_type_parquet_1",
+          "processId" : "all_type##Subgraph##H6Ek49Rd",
+          "properties" : {
+            "activeTab" : "conditions",
+            "columnsSelector" : [ "c_string", "c_boolean", "c_bigint" ],
+            "conditions" : [ {
+              "alias" : "prakhar_table_configs_model",
+              "expression" : {
+                "expression" : "prakhar_table_configs_model.c_bool = all_type_parquet_1.c_boolean AND prakhar_table_configs_model.c_int = all_type_parquet_1.c_bigint AND prakhar_table_configs_model.c_string = all_type_parquet_1.c_string"
+              },
+              "joinType" : "inner"
+            } ],
+            "expressions" : [ {
+              "expression" : {
+                "expression" : "all_type_parquet_1.c_int"
+              },
+              "alias" : "c_int"
+            }, {
+              "expression" : {
+                "expression" : "all_type_parquet_1.c_float"
+              },
+              "alias" : "c_float"
+            }, {
+              "expression" : {
+                "expression" : "all_type_parquet_1.c_double"
+              },
+              "alias" : "c_double"
+            }, {
+              "expression" : {
+                "expression" : "all_type_parquet_1.c_array"
+              },
+              "alias" : "c_array"
+            }, {
+              "expression" : {
+                "expression" : "all_type_parquet_1.c_string"
+              },
+              "alias" : "c_string"
+            }, {
+              "expression" : {
+                "expression" : "all_type_parquet_1.c_smallint"
+              },
+              "alias" : "c_smallint"
+            }, {
+              "expression" : {
+                "expression" : "all_type_parquet_1.c_tinyint"
+              },
+              "alias" : "c_tinyint"
+            }, {
+              "expression" : {
+                "expression" : "all_type_parquet_1.c_struct"
+              },
+              "alias" : "c_struct"
+            }, {
+              "expression" : {
+                "expression" : "all_type_parquet_1.c_boolean"
+              },
+              "alias" : "c_boolean"
+            }, {
+              "expression" : {
+                "expression" : "all_type_parquet_1.c_bigint"
+              },
+              "alias" : "c_bigint"
+            } ],
+            "headAlias" : "prakhar_table_configs_model",
+            "allowSelection" : false
+          },
+          "joinColumns" : [ "c_string", "c_boolean", "c_bigint" ],
           "isRecommended" : false
         } ]
       }, {
@@ -693,191 +893,6 @@
             "allowSelection" : false
           },
           "joinColumns" : [ "c_string", "c_boolean", "c_bigint" ],
-          "isRecommended" : false
-        } ]
-      }, {
-        "source" : {
-          "table" : {
-            "name" : "test_model_stage_new_1",
-            "sourceName" : "hive_metastore.qa_db_warehouse",
-            "sourceType" : "ExternalSource"
-          }
-        },
-        "sourceComponentKind" : "ExternalSource",
-        "sourceLabel" : "test_model_stage_new_1",
-        "canJoinWith" : [ {
-          "processLabel" : "all_type_parquet_1",
-          "processId" : "all_type##Subgraph##H6Ek49Rd",
-          "properties" : {
-            "activeTab" : "conditions",
-            "columnsSelector" : [ "c_tinyint" ],
-            "conditions" : [ {
-              "alias" : "test_model_stage_new_1",
-              "expression" : {
-                "expression" : "test_model_stage_new_1.c_tinyint = all_type_parquet_1.c_tinyint"
-              },
-              "joinType" : "inner"
-            } ],
-            "expressions" : [ {
-              "expression" : {
-                "expression" : "all_type_parquet_1.c_int"
-              },
-              "alias" : "c_int"
-            }, {
-              "expression" : {
-                "expression" : "all_type_parquet_1.c_float"
-              },
-              "alias" : "c_float"
-            }, {
-              "expression" : {
-                "expression" : "all_type_parquet_1.c_double"
-              },
-              "alias" : "c_double"
-            }, {
-              "expression" : {
-                "expression" : "all_type_parquet_1.c_array"
-              },
-              "alias" : "c_array"
-            }, {
-              "expression" : {
-                "expression" : "all_type_parquet_1.c_string"
-              },
-              "alias" : "c_string"
-            }, {
-              "expression" : {
-                "expression" : "all_type_parquet_1.c_smallint"
-              },
-              "alias" : "c_smallint"
-            }, {
-              "expression" : {
-                "expression" : "all_type_parquet_1.c_tinyint"
-              },
-              "alias" : "c_tinyint"
-            }, {
-              "expression" : {
-                "expression" : "all_type_parquet_1.c_struct"
-              },
-              "alias" : "c_struct"
-            }, {
-              "expression" : {
-                "expression" : "all_type_parquet_1.c_boolean"
-              },
-              "alias" : "c_boolean"
-            }, {
-              "expression" : {
-                "expression" : "all_type_parquet_1.c_bigint"
-              },
-              "alias" : "c_bigint"
-            } ],
-            "headAlias" : "test_model_stage_new_1",
-            "allowSelection" : false
-          },
-          "joinColumns" : [ "c_tinyint" ],
-          "isRecommended" : false
-        } ]
-      }, {
-        "source" : {
-          "table" : {
-            "name" : "very_complex_table",
-            "sourceName" : "hive_metastore.qa_database",
-            "sourceType" : "ExternalSource"
-          }
-        },
-        "sourceComponentKind" : "ExternalSource",
-        "sourceLabel" : "very_complex_table",
-        "canJoinWith" : [ {
-          "processLabel" : "all_type_parquet_1",
-          "processId" : "all_type##Subgraph##H6Ek49Rd",
-          "properties" : {
-            "activeTab" : "conditions",
-            "columnsSelector" : [ "c_boolean", "c_double", "c_int" ],
-            "conditions" : [ {
-              "alias" : "very_complex_table",
-              "expression" : {
-                "expression" : "very_complex_table.c_boolean = all_type_parquet_1.c_boolean AND very_complex_table.c_double = all_type_parquet_1.c_double AND very_complex_table.c_int = all_type_parquet_1.c_int"
-              },
-              "joinType" : "inner"
-            } ],
-            "expressions" : [ {
-              "expression" : {
-                "expression" : "very_complex_table.c_char"
-              },
-              "alias" : "c_char"
-            }, {
-              "expression" : {
-                "expression" : "very_complex_table.c_time"
-              },
-              "alias" : "c_time"
-            }, {
-              "expression" : {
-                "expression" : "very_complex_table.c_timestamp"
-              },
-              "alias" : "c_timestamp"
-            }, {
-              "expression" : {
-                "expression" : "very_complex_table.`c_complex-array`"
-              },
-              "alias" : "c_complex-array"
-            }, {
-              "expression" : {
-                "expression" : "very_complex_table.`c_complex-struct`"
-              },
-              "alias" : "c_complex-struct"
-            }, {
-              "expression" : {
-                "expression" : "all_type_parquet_1.c_int"
-              },
-              "alias" : "c_int"
-            }, {
-              "expression" : {
-                "expression" : "all_type_parquet_1.c_float"
-              },
-              "alias" : "c_float"
-            }, {
-              "expression" : {
-                "expression" : "all_type_parquet_1.c_double"
-              },
-              "alias" : "c_double"
-            }, {
-              "expression" : {
-                "expression" : "all_type_parquet_1.c_array"
-              },
-              "alias" : "c_array"
-            }, {
-              "expression" : {
-                "expression" : "all_type_parquet_1.c_string"
-              },
-              "alias" : "c_string"
-            }, {
-              "expression" : {
-                "expression" : "all_type_parquet_1.c_smallint"
-              },
-              "alias" : "c_smallint"
-            }, {
-              "expression" : {
-                "expression" : "all_type_parquet_1.c_tinyint"
-              },
-              "alias" : "c_tinyint"
-            }, {
-              "expression" : {
-                "expression" : "all_type_parquet_1.c_struct"
-              },
-              "alias" : "c_struct"
-            }, {
-              "expression" : {
-                "expression" : "all_type_parquet_1.c_boolean"
-              },
-              "alias" : "c_boolean"
-            }, {
-              "expression" : {
-                "expression" : "all_type_parquet_1.c_bigint"
-              },
-              "alias" : "c_bigint"
-            } ],
-            "headAlias" : "very_complex_table",
-            "allowSelection" : false
-          },
-          "joinColumns" : [ "c_boolean", "c_double", "c_int" ],
           "isRecommended" : false
         } ]
       } ]
@@ -993,7 +1008,7 @@
           "alias" : "c_struct"
         } ],
         "activeTab" : "conditions",
-        "columnsSelector" : [ ],
+        "columnsSelector" : [ "Z13vN7cq##c_smallint", "OVOFWnqc##c_int", "OVOFWnqc##c_string", "ZzESiJif##customer_id", "Ya74rNnS##c1", "Z13vN7cq##c_tinyint", "Z13vN7cq##c_smallint", "OVOFWnqc##c_int", "Z13vN7cq##c_bigint", "Z13vN7cq##c_float", "Z13vN7cq##c_double", "Z13vN7cq##c_string", "Z13vN7cq##c_boolean", "Z13vN7cq##c_array", "Z13vN7cq##c_struct" ],
         "headAlias" : "in0"
       },
       "ports" : {
@@ -1019,8 +1034,7 @@
         } ],
         "isCustomOutputSchema" : false,
         "autoUpdateOnRun" : false
-      },
-      "index" : 41
+      }
     },
     "env_uite##Subgraph##PV9ie1xP" : {
       "id" : "env_uite##Subgraph##PV9ie1xP",
@@ -1062,7 +1076,7 @@
         "isLabelGrayed" : false
       },
       "properties" : {
-        "columnsSelector" : [ ],
+        "columnsSelector" : [ "izQ6NAZG##customer_id", "izQ6NAZG##first_name", "izQ6NAZG##last_name" ],
         "expressions" : [ {
           "expression" : {
             "expression" : "customer_id"
@@ -1096,8 +1110,7 @@
         } ],
         "isCustomOutputSchema" : false,
         "autoUpdateOnRun" : false
-      },
-      "index" : 6
+      }
     },
     "all_type##Subgraph##OxoG3Hdj" : {
       "id" : "all_type##Subgraph##OxoG3Hdj",
@@ -1197,7 +1210,7 @@
         "isLabelGrayed" : false
       },
       "properties" : {
-        "columnsSelector" : [ ],
+        "columnsSelector" : [ "ls2ix8Rd##c_smallint", "ls2ix8Rd##c_tinyint", "ls2ix8Rd##c_int", "ls2ix8Rd##c_bigint", "ls2ix8Rd##c_float", "ls2ix8Rd##c_double", "ls2ix8Rd##c_string", "ls2ix8Rd##c_boolean", "ls2ix8Rd##c_array", "ls2ix8Rd##c_struct" ],
         "expressions" : [ {
           "expression" : {
             "expression" : "concat(\n  c_array[0], \n  c_struct.city, \n  aes_decrypt(unhex('83F16B2AA704794132802D248E6BFD4E380078182D1544813898AC97E709B28A94'), '0000111122223333'), \n  base64(aes_encrypt('Spark SQL', '1234567890abcdef', 'ECB', 'PKCS')), \n  bin(13), \n  btrim('    SparkSQL   '), \n  char(65), \n  chr(65), \n  concat('Spark', 'SQL'), \n  concat_ws(' ', 'Spark', 'SQL'), \n  crc32('Spark'), \n  current_catalog(), \n  current_database(), \n  current_date(), \n  current_timestamp(), \n  current_timezone(), \n  current_user(), \n  date_add('2016-07-30', 1), \n  date_sub('2016-07-30', 1), \n  date_format('2016-04-08', 'y'), \n  date_from_unix_date(1), \n  date_part('YEAR', TIMESTAMP'2019-08-12 01:00:00.123456'), \n  date_part('MONTH', INTERVAL '2021-11' YEAR TO MONTH), \n  date_part('MINUTE', INTERVAL '123 23:55:59.002001' DAY TO SECOND), \n  date_trunc('HOUR', '2015-03-05T09:32:05.359'), \n  date_trunc('DD', '2015-03-05T09:32:05.359'), \n  datediff('2009-07-31', '2009-07-30'), \n  decode(encode('abc', 'utf-8'), 'utf-8'), \n  e(), \n  elt(1, 'scala', 'java'), \n  format_number(12332.123456, '##################.###'), \n  format_string('Hello World %d %s', 100, 'days'), \n  CAST(from_csv('1, 0.8', 'a INT, b DOUBLE') AS string), \n  CAST(from_json(\n    '{\"teacher\": \"Alice\", \"student\": [{\"name\": \"Bob\", \"rank\": 1}, {\"name\": \"Charlie\", \"rank\": 2}]}', \n    'STRUCT<teacher: STRING, student: ARRAY<STRUCT<name: STRING, rank: INT>>>') AS string), \n  CAST(from_unixtime(0, 'yyyy-MM-dd HH:mm:ss') AS string), \n  CAST(from_utc_timestamp('2016-08-31', 'Asia/Seoul') AS string), \n  CAST(get_json_object('{\"a\":\"b\"}', '$.a') AS string), \n  hash('Spark', array(123), 2), \n  hex(17), \n  CAST(hour('2009-07-30 12:58:59') AS string), \n  CAST(hypot(3, 4) AS string), \n  CAST(ilike('Spark', '_Park') AS string), \n  CAST(initcap('sPark sql') AS string), \n  CAST(last_day('2009-01-12') AS string), \n  CAST(lcase('SparkSql') AS string), \n  CAST(if(\n    1 < 2, \n    'a', \n    'b') AS string), \n  CAST(ifnull(NULL, array('2')) AS string), \n  LEFT('Spark SQL', 3), \n  lower('SparkSql'), \n  lpad('hi', 5, '??'), \n  ltrim('    SparkSQL   '), \n  CAST(make_date(2013, 7, 15) AS string), \n  CAST(make_dt_interval(1, 12, 30, 1.001001) AS string), \n  CAST(make_interval(100, 11, 1, 1, 12, 30, 1.001001) AS string), \n  CAST(make_timestamp(2019, 6, 30, 23, 59, 60) AS string), \n  CAST(make_ym_interval(1, 2) AS string), \n  md5('Spark'), \n  next_day('2015-01-14', 'TU'), \n  now(), \n  nullif(2, 2), \n  nvl(NULL, 'hello'), \n  CAST(overlay('Spark SQL' PLACING '_' FROM 6) AS string), \n  CAST(parse_url('http://spark.apache.org/path?query=1', 'HOST') AS string), \n  printf('Hello World %d %s', 100, 'days'), \n  CAST(regexp_extract('100-200', '(\\\\d+)-(\\\\d+)', 1) AS string), \n  CAST(regexp_replace('100-200', '(\\\\d+)', 'num') AS string), \n  repeat('123', 2), \n  replace('ABCabc', 'abc', 'DEF'), \n  reverse('Spark SQL'), \n  RIGHT('Spark SQL', 3), \n  rpad('hi', 5, '??'), \n  rtrim('    SparkSQL   '), \n  CAST(schema_of_json('[{\"col\":0}]') AS string), \n  sha('Spark'), \n  sha1('Spark'), \n  sha2('Spark', 256), \n  concat(space(2), '1'), \n  split_part('11.12.13', '.', 3), \n  substr('Spark SQL', 5), \n  substring('Spark SQL', 5), \n  substring_index('www.apache.org', '.', 2), \n  timestamp_micros(1230219000123123), \n  timestamp_millis(1230219000123), \n  timestamp_seconds(1.230219000123E9), \n  to_csv(named_struct('a', 1, 'b', 2)), \n  to_date('2009-07-30 04:17:52'), \n  to_timestamp('2016-12-31 00:12:00'), \n  to_unix_timestamp('2016-04-08', 'yyyy-MM-dd'), \n  to_utc_timestamp('2016-08-31', 'Asia/Seoul'), \n  translate('AaBbCc', 'abc', '123'), \n  trunc('2019-08-04', 'week'), \n  try_to_binary('abc', 'utf-8'), \n  try_to_number('454', '999'), \n  typeof(1), \n  ucase('SparkSql'), \n  unbase64('U3BhcmsgU1FM'), \n  decode(unhex('537061726B2053514C'), 'UTF-8'), \n  unix_date(DATE(\"1970-01-02\")), \n  unix_micros(TIMESTAMP('1970-01-01 00:00:01Z')), \n  unix_millis(TIMESTAMP('1970-01-01 00:00:01Z')), \n  unix_seconds(TIMESTAMP('1970-01-01 00:00:01Z')), \n  unix_timestamp('2016-04-08', 'yyyy-MM-dd'), \n  upper('SparkSql'), \n  uuid(), \n  xpath_string('<a><b>b</b><c>cc</c></a>', 'a/c'), \n  xxhash64('Spark', array(123), 2), \n  YEAR ('2016-07-30'), \n  to_json(array(named_struct('a', 1, 'b', 2))))"
@@ -1358,8 +1371,7 @@
         } ],
         "isCustomOutputSchema" : false,
         "autoUpdateOnRun" : false
-      },
-      "index" : 15
+      }
     },
     "Reformat##Subgraph##OevRcozr" : {
       "id" : "Reformat##Subgraph##OevRcozr",
@@ -1373,7 +1385,7 @@
         "isLabelGrayed" : false
       },
       "properties" : {
-        "columnsSelector" : [ ],
+        "columnsSelector" : [ "Km1bghS4##col_int" ],
         "expressions" : [ {
           "expression" : {
             "expression" : "'This is my first name'"
@@ -1402,8 +1414,7 @@
         } ],
         "isCustomOutputSchema" : false,
         "autoUpdateOnRun" : false
-      },
-      "index" : 22
+      }
     },
     "Subgraph##Subgraph##pcn5DHXg" : {
       "id" : "Subgraph##Subgraph##pcn5DHXg",
@@ -1423,6 +1434,7 @@
             "x" : 220,
             "y" : 420,
             "phase" : 0,
+            "macroDependencies" : [ ],
             "comment" : "Filters specific performance records based on defined criteria.",
             "isLabelGrayed" : false
           },
@@ -1534,8 +1546,7 @@
             } ],
             "isCustomOutputSchema" : false,
             "autoUpdateOnRun" : false
-          },
-          "index" : 1
+          }
         },
         "employee##Subgraph##sf1xy0VQ" : {
           "id" : "employee##Subgraph##sf1xy0VQ",
@@ -1549,7 +1560,7 @@
             "isLabelGrayed" : false
           },
           "properties" : {
-            "columnsSelector" : [ ],
+            "columnsSelector" : [ "NbznFVq3##c_int", "NbznFVq3##c_string" ],
             "expressions" : [ {
               "expression" : {
                 "expression" : "c_int * 2"
@@ -1695,8 +1706,7 @@
             } ],
             "isCustomOutputSchema" : false,
             "autoUpdateOnRun" : false
-          },
-          "index" : 3
+          }
         },
         "pvt2##Subgraph##nuEYSLXw" : {
           "id" : "pvt2##Subgraph##nuEYSLXw",
@@ -1706,6 +1716,7 @@
             "x" : 480,
             "y" : 420,
             "phase" : 0,
+            "macroDependencies" : [ ],
             "isLabelGrayed" : false
           },
           "properties" : {
@@ -1788,8 +1799,7 @@
             } ],
             "isCustomOutputSchema" : false,
             "autoUpdateOnRun" : false
-          },
-          "index" : 5
+          }
         },
         "SQLState##Subgraph##vpQgIrkb" : {
           "id" : "SQLState##Subgraph##vpQgIrkb",
@@ -1799,6 +1809,7 @@
             "x" : 20,
             "y" : 420,
             "phase" : 0,
+            "macroDependencies" : [ ],
             "isLabelGrayed" : false
           },
           "properties" : {
@@ -1904,8 +1915,7 @@
             } ],
             "isCustomOutputSchema" : false,
             "autoUpdateOnRun" : false
-          },
-          "index" : 7
+          }
         },
         "departme##Subgraph##ZoDIPP2M" : {
           "id" : "departme##Subgraph##ZoDIPP2M",
@@ -1919,7 +1929,7 @@
             "isLabelGrayed" : false
           },
           "properties" : {
-            "columnsSelector" : [ ],
+            "columnsSelector" : [ "JKKsycDh##c_int", "JKKsycDh##c_string" ],
             "expressions" : [ {
               "expression" : {
                 "expression" : "c_int * 2"
@@ -2032,8 +2042,7 @@
             } ],
             "isCustomOutputSchema" : false,
             "autoUpdateOnRun" : false
-          },
-          "index" : 2
+          }
         },
         "pvt##Subgraph##kQzkTUBR" : {
           "id" : "pvt##Subgraph##kQzkTUBR",
@@ -2043,6 +2052,7 @@
             "x" : 480,
             "y" : 20,
             "phase" : 0,
+            "macroDependencies" : [ ],
             "isLabelGrayed" : false
           },
           "properties" : {
@@ -2125,8 +2135,7 @@
             } ],
             "isCustomOutputSchema" : false,
             "autoUpdateOnRun" : false
-          },
-          "index" : 6
+          }
         },
         "Reformat##Subgraph##tnnLFCTk" : {
           "id" : "Reformat##Subgraph##tnnLFCTk",
@@ -2136,6 +2145,7 @@
             "x" : 20,
             "y" : 220,
             "phase" : 0,
+            "macroDependencies" : [ ],
             "isLabelGrayed" : false
           },
           "properties" : {
@@ -2301,8 +2311,7 @@
             } ],
             "isCustomOutputSchema" : false,
             "autoUpdateOnRun" : false
-          },
-          "index" : 0
+          }
         },
         "SQLState##Subgraph##upLlMGmZ" : {
           "id" : "SQLState##Subgraph##upLlMGmZ",
@@ -2388,6 +2397,7 @@
             "x" : 480,
             "y" : 220,
             "phase" : 0,
+            "macroDependencies" : [ ],
             "isLabelGrayed" : false
           },
           "properties" : {
@@ -2470,8 +2480,7 @@
             } ],
             "isCustomOutputSchema" : false,
             "autoUpdateOnRun" : false
-          },
-          "index" : 4
+          }
         }
       },
       "connections" : [ {
@@ -2589,6 +2598,7 @@
         "x" : 680,
         "y" : 820,
         "phase" : 0,
+        "macroDependencies" : [ ],
         "isLabelGrayed" : false
       },
       "properties" : {
@@ -2610,8 +2620,51 @@
         } ],
         "isCustomOutputSchema" : false,
         "autoUpdateOnRun" : false
+      }
+    },
+    "CJCopLwqoq2oBcV20pI-u$$_PvUn8TUDCj-FZ0Lo_TrW" : {
+      "id" : "CJCopLwqoq2oBcV20pI-u$$_PvUn8TUDCj-FZ0Lo_TrW",
+      "component" : "Deduplicate",
+      "metadata" : {
+        "label" : "distinct_all_types",
+        "slug" : "distinct_all_types",
+        "x" : 200,
+        "y" : 300,
+        "phase" : 0,
+        "macroDependencies" : [ ],
+        "comment" : "Extracts unique combinations of tiny integer values and concatenated integer-string pairs.",
+        "autoUpdateComment" : true,
+        "isLabelGrayed" : false
       },
-      "index" : 38
+      "properties" : {
+        "dedupColumns" : [ {
+          "expression" : {
+            "expression" : "c_tinyint"
+          },
+          "alias" : ""
+        }, {
+          "expression" : {
+            "expression" : "concat(c_int, c_string)"
+          },
+          "alias" : "c_int_string"
+        } ],
+        "dedupType" : "distinct",
+        "columnsSelector" : [ "O1FrJV76Prl4IcgzC5O5C$$UHS-BS5Gjso1EyCAPj2CV##c_tinyint", "O1FrJV76Prl4IcgzC5O5C$$UHS-BS5Gjso1EyCAPj2CV##c_int", "O1FrJV76Prl4IcgzC5O5C$$UHS-BS5Gjso1EyCAPj2CV##c_string" ],
+        "orders" : [ ],
+        "useOrderBy" : false
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "O1FrJV76Prl4IcgzC5O5C$$UHS-BS5Gjso1EyCAPj2CV",
+          "slug" : "in0"
+        } ],
+        "outputs" : [ {
+          "id" : "oTLXxshzJ12SChiQc2Gpq$$uPS1XihwUlkrIMM3QBLHr",
+          "slug" : "out"
+        } ],
+        "isCustomOutputSchema" : false,
+        "autoUpdateOnRun" : false
+      }
     },
     "Aggregat##Subgraph##Si12eQcQ" : {
       "id" : "Aggregat##Subgraph##Si12eQcQ",
@@ -2736,7 +2789,7 @@
           "expression" : ""
         },
         "activeTab" : "aggregate",
-        "columnsSelector" : [ ],
+        "columnsSelector" : [ "eqsyMk9l##c_boolean" ],
         "groupBy" : [ {
           "expression" : {
             "expression" : "c_boolean"
@@ -2754,8 +2807,7 @@
         } ],
         "isCustomOutputSchema" : false,
         "autoUpdateOnRun" : false
-      },
-      "index" : 16
+      }
     },
     "all_type##Subgraph##SX2ZtsJw" : {
       "id" : "all_type##Subgraph##SX2ZtsJw",
@@ -2785,6 +2837,34 @@
       },
       "index" : 19
     },
+    "P-_4eIX18F0b6FUmf8QYx$$Pec7eXkdR8-sBaG1PXhA5" : {
+      "id" : "P-_4eIX18F0b6FUmf8QYx$$Pec7eXkdR8-sBaG1PXhA5",
+      "component" : "Source",
+      "metadata" : {
+        "label" : "all_type_non_partitioned",
+        "slug" : "all_type_non_partitioned",
+        "x" : 20,
+        "y" : 480,
+        "phase" : 0
+      },
+      "properties" : {
+        "table" : {
+          "name" : "all_type_non_partitioned",
+          "sourceType" : "Source",
+          "sourceName" : "hive_metastore.qa_db_warehouse",
+          "alias" : ""
+        }
+      },
+      "ports" : {
+        "inputs" : [ ],
+        "outputs" : [ {
+          "id" : "CLYf9c6MPMnOYBSyIzhF4$$Nu-JmZzeo1HbHxgCQYuh4",
+          "slug" : "out"
+        } ],
+        "isCustomOutputSchema" : false,
+        "autoUpdateOnRun" : false
+      }
+    },
     "SQLState##Subgraph##JnY6YErw" : {
       "id" : "SQLState##Subgraph##JnY6YErw",
       "component" : "SQLStatement",
@@ -2793,6 +2873,7 @@
         "x" : 680,
         "y" : 2880,
         "phase" : 0,
+        "macroDependencies" : [ ],
         "isLabelGrayed" : false
       },
       "properties" : {
@@ -2814,8 +2895,7 @@
         } ],
         "isCustomOutputSchema" : false,
         "autoUpdateOnRun" : false
-      },
-      "index" : 8
+      }
     },
     "all_type##Subgraph##T149a4Ty" : {
       "id" : "all_type##Subgraph##T149a4Ty",
@@ -2884,6 +2964,7 @@
         "x" : 940,
         "y" : 1820,
         "phase" : 0,
+        "macroDependencies" : [ ],
         "isLabelGrayed" : false
       },
       "properties" : {
@@ -2901,8 +2982,7 @@
         } ],
         "isCustomOutputSchema" : false,
         "autoUpdateOnRun" : false
-      },
-      "index" : 3
+      }
     },
     "date_dim##Subgraph##CMWg4xh0" : {
       "id" : "date_dim##Subgraph##CMWg4xh0",
@@ -2966,9 +3046,11 @@
       "metadata" : {
         "label" : "Join_1_2",
         "x" : 940,
-        "y" : 320,
+        "y" : 380,
         "phase" : 0,
         "macroDependencies" : [ ],
+        "comment" : "Combines customer data with additional records while excluding certain matches for deeper insights.",
+        "autoUpdateComment" : true,
         "isLabelGrayed" : false
       },
       "properties" : {
@@ -2978,6 +3060,12 @@
             "expression" : "in0.customer_id != in1.c1"
           },
           "joinType" : "INNER"
+        }, {
+          "alias" : "in2",
+          "expression" : {
+            "expression" : "in1.c1!=in2.c_string"
+          },
+          "joinType" : "inner"
         } ],
         "expressions" : [ {
           "expression" : {
@@ -3004,9 +3092,14 @@
             "expression" : "in1.c1"
           },
           "alias" : "c1"
+        }, {
+          "expression" : {
+            "expression" : "in2.c_tinyint"
+          },
+          "alias" : "c_tinyint"
         } ],
         "activeTab" : "conditions",
-        "columnsSelector" : [ ],
+        "columnsSelector" : [ "LhM7X4Rd##customer_id", "mTLe4wFG##c1", "hiK4bd8BTiWMmgIpwQ9Gv$$nIP2NjkKgg4yZIMdFkFrh##c_string", "LhM7X4Rd##customer_id", "LhM7X4Rd##first_name", "LhM7X4Rd##last_name", "LhM7X4Rd##c_expressions", "mTLe4wFG##c1", "hiK4bd8BTiWMmgIpwQ9Gv$$nIP2NjkKgg4yZIMdFkFrh##c_tinyint" ],
         "headAlias" : "in0"
       },
       "ports" : {
@@ -3016,6 +3109,9 @@
         }, {
           "id" : "mTLe4wFG",
           "slug" : "in1"
+        }, {
+          "id" : "hiK4bd8BTiWMmgIpwQ9Gv$$nIP2NjkKgg4yZIMdFkFrh",
+          "slug" : "in2"
         } ],
         "outputs" : [ {
           "id" : "xYR9pOWl",
@@ -3023,8 +3119,7 @@
         } ],
         "isCustomOutputSchema" : false,
         "autoUpdateOnRun" : false
-      },
-      "index" : 34
+      }
     },
     "SQLState##Subgraph##jGEsk2QI" : {
       "id" : "SQLState##Subgraph##jGEsk2QI",
@@ -3034,6 +3129,7 @@
         "x" : 940,
         "y" : 1020,
         "phase" : 0,
+        "macroDependencies" : [ ],
         "isLabelGrayed" : false
       },
       "properties" : {
@@ -3055,8 +3151,7 @@
         } ],
         "isCustomOutputSchema" : false,
         "autoUpdateOnRun" : false
-      },
-      "index" : 4
+      }
     },
     "OrderBy_##Subgraph##SBkLunzy" : {
       "id" : "OrderBy_##Subgraph##SBkLunzy",
@@ -3070,7 +3165,7 @@
         "isLabelGrayed" : false
       },
       "properties" : {
-        "columnsSelector" : [ ],
+        "columnsSelector" : [ "Yfcdu9ly##c_string", "Yfcdu9ly##c_int", "Yfcdu9ly##c_tinyint" ],
         "orders" : [ {
           "expression" : {
             "expression" : "concat(c_string, c_int)"
@@ -3095,8 +3190,7 @@
         } ],
         "isCustomOutputSchema" : false,
         "autoUpdateOnRun" : false
-      },
-      "index" : 9
+      }
     },
     "raw_cust##Subgraph##wD0IwbYK" : {
       "id" : "raw_cust##Subgraph##wD0IwbYK",
@@ -3166,7 +3260,7 @@
         "isLabelGrayed" : false
       },
       "properties" : {
-        "columnsSelector" : [ ],
+        "columnsSelector" : [ "IOW5cNJS##customer_id", "IOW5cNJS##first_name", "IOW5cNJS##c1", "IOW5cNJS##c3", "IOW5cNJS##c6", "IOW5cNJS##c13", "IOW5cNJS##c14" ],
         "expressions" : [ {
           "expression" : {
             "expression" : "customer_id"
@@ -3208,8 +3302,7 @@
         } ],
         "isCustomOutputSchema" : false,
         "autoUpdateOnRun" : false
-      },
-      "index" : 13
+      }
     },
     "SQLState##Subgraph##Z7Hefulh" : {
       "id" : "SQLState##Subgraph##Z7Hefulh",
@@ -3219,6 +3312,7 @@
         "x" : 680,
         "y" : 1100,
         "phase" : 0,
+        "macroDependencies" : [ ],
         "isLabelGrayed" : false
       },
       "properties" : {
@@ -3236,8 +3330,7 @@
         } ],
         "isCustomOutputSchema" : false,
         "autoUpdateOnRun" : false
-      },
-      "index" : 2
+      }
     },
     "Subgraph##Subgraph##rYpikgrC" : {
       "id" : "Subgraph##Subgraph##rYpikgrC",
@@ -3566,6 +3659,7 @@
                   "metadata" : {
                     "label" : "Reformat_7",
                     "phase" : 0,
+                    "macroDependencies" : [ ],
                     "isLabelGrayed" : false
                   },
                   "properties" : {
@@ -3741,8 +3835,7 @@
                     } ],
                     "isCustomOutputSchema" : false,
                     "autoUpdateOnRun" : false
-                  },
-                  "index" : 0
+                  }
                 },
                 "TestSubg##Subgraph##IsUE2Xew" : {
                   "id" : "TestSubg##Subgraph##IsUE2Xew",
@@ -3953,6 +4046,7 @@
                           "metadata" : {
                             "label" : "Reformat_8",
                             "phase" : 0,
+                            "macroDependencies" : [ ],
                             "isLabelGrayed" : false
                           },
                           "properties" : {
@@ -4128,8 +4222,7 @@
                             } ],
                             "isCustomOutputSchema" : false,
                             "autoUpdateOnRun" : false
-                          },
-                          "index" : 0
+                          }
                         },
                         "Subgraph##Subgraph##jHQPyq5t" : {
                           "id" : "Subgraph##Subgraph##jHQPyq5t",
@@ -4722,6 +4815,7 @@
                                       "metadata" : {
                                         "label" : "Reformat_9",
                                         "phase" : 0,
+                                        "macroDependencies" : [ ],
                                         "isLabelGrayed" : false
                                       },
                                       "properties" : {
@@ -4897,8 +4991,7 @@
                                         } ],
                                         "isCustomOutputSchema" : false,
                                         "autoUpdateOnRun" : false
-                                      },
-                                      "index" : 1
+                                      }
                                     }
                                   },
                                   "connections" : [ {
@@ -6535,8 +6628,7 @@
         } ],
         "isCustomOutputSchema" : false,
         "autoUpdateOnRun" : false
-      },
-      "index" : 47
+      }
     },
     "Limit_1_##Subgraph##ZDnNgZu4" : {
       "id" : "Limit_1_##Subgraph##ZDnNgZu4",
@@ -6600,8 +6692,8 @@
       "component" : "Model",
       "metadata" : {
         "label" : "env_uitesting_shared_mid_model_1",
-        "x" : 1200,
-        "y" : 220,
+        "x" : 1180,
+        "y" : 200,
         "phase" : 0,
         "isLabelGrayed" : false
       },
@@ -6634,7 +6726,7 @@
         "isLabelGrayed" : false
       },
       "properties" : {
-        "columnsSelector" : [ ],
+        "columnsSelector" : [ "ybvrXNwV##c_int", "ybvrXNwV##c_string" ],
         "expressions" : [ {
           "expression" : {
             "expression" : "CAST(c_int AS string)"
@@ -6663,8 +6755,7 @@
         } ],
         "isCustomOutputSchema" : false,
         "autoUpdateOnRun" : false
-      },
-      "index" : 5
+      }
     },
     "all_type##Subgraph##WGYEDe3G" : {
       "id" : "all_type##Subgraph##WGYEDe3G",
@@ -6706,7 +6797,7 @@
         "isLabelGrayed" : false
       },
       "properties" : {
-        "columnsSelector" : [ ],
+        "columnsSelector" : [ "Jg7ShjwY##c_int", "Jg7ShjwY##c_string" ],
         "expressions" : [ {
           "expression" : {
             "expression" : "CAST(c_int AS string)"
@@ -6735,8 +6826,7 @@
         } ],
         "isCustomOutputSchema" : false,
         "autoUpdateOnRun" : false
-      },
-      "index" : 11
+      }
     },
     "SetOpera##Subgraph##tCAalRx3" : {
       "id" : "SetOpera##Subgraph##tCAalRx3",
@@ -6817,7 +6907,7 @@
           "alias" : "c1"
         } ],
         "activeTab" : "conditions",
-        "columnsSelector" : [ ],
+        "columnsSelector" : [ "Ixetm1SK##customer_id", "RT5Qammd##customer_id", "Ixetm1SK##customer_id", "RT5Qammd##first_name", "Ixetm1SK##first_name", "Ixetm1SK##c1", "RT5Qammd##c1" ],
         "headAlias" : "in0"
       },
       "ports" : {
@@ -6834,8 +6924,7 @@
         } ],
         "isCustomOutputSchema" : false,
         "autoUpdateOnRun" : false
-      },
-      "index" : 39
+      }
     },
     "SQLState##Subgraph##H3owKwWP" : {
       "id" : "SQLState##Subgraph##H3owKwWP",
@@ -6849,7 +6938,7 @@
         "isLabelGrayed" : false
       },
       "properties" : {
-        "columnsSelector" : [ ],
+        "columnsSelector" : [ "mZdM53JX##c_smallint" ],
         "condition" : {
           "expression" : "c_smallint > 10"
         }
@@ -6865,8 +6954,7 @@
         } ],
         "isCustomOutputSchema" : false,
         "autoUpdateOnRun" : false
-      },
-      "index" : 18
+      }
     },
     "SetOpera##Subgraph##sJhpBwcj" : {
       "id" : "SetOpera##Subgraph##sJhpBwcj",
@@ -6908,13 +6996,14 @@
         "label" : "env_uitesting_shared_useallmodel_1",
         "x" : 2360,
         "y" : 1920,
-        "phase" : 0
+        "phase" : 0,
+        "macroDependencies" : [ ]
       },
       "properties" : {
         "customQueryDisabled" : true,
         "customQuery" : false,
         "incrementalEditorDisabled" : true,
-        "query" : "SELECT *\n\nFROM combine_multiple_tables_1\n",
+        "query" : "SELECT * \n\nFROM combine_multiple_tables_1\n",
         "incrementalKey" : false,
         "incremental" : {
           "expression" : "true"
@@ -6927,6 +7016,72 @@
         } ],
         "outputs" : [ {
           "id" : "coltBbkf",
+          "slug" : "out"
+        } ],
+        "isCustomOutputSchema" : false,
+        "autoUpdateOnRun" : false
+      }
+    },
+    "hvMELOxQXH_IIIDi4C1-S$$UzmbvmgT4AbUjlCQFcA80" : {
+      "id" : "hvMELOxQXH_IIIDi4C1-S$$UzmbvmgT4AbUjlCQFcA80",
+      "component" : "Deduplicate",
+      "metadata" : {
+        "label" : "distinct_rows_by_partition_1",
+        "slug" : "distinct_rows_by_partition_1",
+        "x" : 240,
+        "y" : 600,
+        "phase" : 0,
+        "macroDependencies" : [ ],
+        "comment" : "Identifies unique entries based on specific city and state attributes, ensuring data integrity.",
+        "autoUpdateComment" : true,
+        "isLabelGrayed" : false
+      },
+      "properties" : {
+        "dedupColumns" : [ {
+          "expression" : {
+            "expression" : "c_struct.city"
+          }
+        }, {
+          "expression" : {
+            "expression" : "c_boolean"
+          }
+        }, {
+          "expression" : {
+            "expression" : "c_struct.state"
+          }
+        }, {
+          "expression" : {
+            "expression" : "c_struct.pin"
+          }
+        } ],
+        "dedupType" : "last",
+        "columnsSelector" : [ "HhQ1Y0YdoTWnGUOUxcUfe$$yyApm58BikTmO7caJW80z##c_struct", "HhQ1Y0YdoTWnGUOUxcUfe$$yyApm58BikTmO7caJW80z##c_struct.city", "HhQ1Y0YdoTWnGUOUxcUfe$$yyApm58BikTmO7caJW80z##c_boolean", "HhQ1Y0YdoTWnGUOUxcUfe$$yyApm58BikTmO7caJW80z##c_struct.state", "HhQ1Y0YdoTWnGUOUxcUfe$$yyApm58BikTmO7caJW80z##c_struct.pin" ],
+        "orders" : [ {
+          "expression" : {
+            "expression" : {
+              "expression" : "c_int"
+            },
+            "alias" : ""
+          },
+          "sortType" : "asc"
+        }, {
+          "expression" : {
+            "expression" : {
+              "expression" : "c_bigint"
+            },
+            "alias" : ""
+          },
+          "sortType" : "desc"
+        } ],
+        "useOrderBy" : true
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "HhQ1Y0YdoTWnGUOUxcUfe$$yyApm58BikTmO7caJW80z",
+          "slug" : "in0"
+        } ],
+        "outputs" : [ {
+          "id" : "en44nhFxWdnho5RAtpGWK$$lOGXNMKaw6bF4EnaJjRDN",
           "slug" : "out"
         } ],
         "isCustomOutputSchema" : false,
@@ -7006,9 +7161,10 @@
       "component" : "SQLStatement",
       "metadata" : {
         "label" : "SQLStatement_1_2",
-        "x" : 680,
-        "y" : 420,
+        "x" : 600,
+        "y" : 320,
         "phase" : 0,
+        "macroDependencies" : [ ],
         "isLabelGrayed" : false
       },
       "properties" : {
@@ -7027,8 +7183,7 @@
         } ],
         "isCustomOutputSchema" : false,
         "autoUpdateOnRun" : false
-      },
-      "index" : 17
+      }
     },
     "SetOpera##Subgraph##xZ4IH1eD" : {
       "id" : "SetOpera##Subgraph##xZ4IH1eD",
@@ -7071,6 +7226,7 @@
         "x" : 480,
         "y" : 1100,
         "phase" : 0,
+        "macroDependencies" : [ ],
         "isLabelGrayed" : false
       },
       "properties" : {
@@ -7088,8 +7244,7 @@
         } ],
         "isCustomOutputSchema" : false,
         "autoUpdateOnRun" : false
-      },
-      "index" : 1
+      }
     },
     "Limit_4_##Subgraph##VV1wAZkH" : {
       "id" : "Limit_4_##Subgraph##VV1wAZkH",
@@ -7119,6 +7274,44 @@
         "autoUpdateOnRun" : false
       },
       "index" : 43
+    },
+    "s7Itp11I8KngS7OYUEmBH$$WNQu8dDnkuCeCvP4oASvA" : {
+      "id" : "s7Itp11I8KngS7OYUEmBH$$WNQu8dDnkuCeCvP4oASvA",
+      "component" : "Deduplicate",
+      "metadata" : {
+        "label" : "unique_tinyint_records",
+        "slug" : "unique_tinyint_records",
+        "x" : 380,
+        "y" : 360,
+        "phase" : 0,
+        "macroDependencies" : [ ],
+        "comment" : "Identifies unique records based on a specific small integer value.",
+        "autoUpdateComment" : true,
+        "isLabelGrayed" : false
+      },
+      "properties" : {
+        "dedupColumns" : [ {
+          "expression" : {
+            "expression" : "c_tinyint"
+          }
+        } ],
+        "dedupType" : "unique_only",
+        "columnsSelector" : [ "obUDXehYIgdiN3-rhJOyg$$h4SdCUIVI1PCbQxwhOyTl##c_tinyint" ],
+        "orders" : [ ],
+        "useOrderBy" : false
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "obUDXehYIgdiN3-rhJOyg$$h4SdCUIVI1PCbQxwhOyTl",
+          "slug" : "in0"
+        } ],
+        "outputs" : [ {
+          "id" : "cjSOGJDzyWbH9vTZmZZJt$$MLKMpexmCQ5Y46YMeBw9e",
+          "slug" : "out"
+        } ],
+        "isCustomOutputSchema" : false,
+        "autoUpdateOnRun" : false
+      }
     },
     "env_uite##Subgraph##fg8znIe4" : {
       "id" : "env_uite##Subgraph##fg8znIe4",
@@ -7169,7 +7362,7 @@
             "isLabelGrayed" : false
           },
           "properties" : {
-            "columnsSelector" : [ ],
+            "columnsSelector" : [ "zbWRghJn##first_name" ],
             "orders" : [ {
               "expression" : {
                 "expression" : "first_name"
@@ -7229,8 +7422,7 @@
             } ],
             "isCustomOutputSchema" : false,
             "autoUpdateOnRun" : false
-          },
-          "index" : 1
+          }
         },
         "Reformat##Subgraph##Rxu1CWfj" : {
           "id" : "Reformat##Subgraph##Rxu1CWfj",
@@ -7244,7 +7436,7 @@
             "isLabelGrayed" : false
           },
           "properties" : {
-            "columnsSelector" : [ ],
+            "columnsSelector" : [ "DskzBW6S##c_int", "DskzBW6S##c_string" ],
             "expressions" : [ {
               "expression" : {
                 "expression" : "CAST(c_int AS string)"
@@ -7367,8 +7559,7 @@
             } ],
             "isCustomOutputSchema" : false,
             "autoUpdateOnRun" : false
-          },
-          "index" : 7
+          }
         },
         "SQLState##Subgraph##KchU6VjC" : {
           "id" : "SQLState##Subgraph##KchU6VjC",
@@ -7378,6 +7569,7 @@
             "x" : 20,
             "y" : 420,
             "phase" : 0,
+            "macroDependencies" : [ ],
             "isLabelGrayed" : false
           },
           "properties" : {
@@ -7543,8 +7735,7 @@
             } ],
             "isCustomOutputSchema" : false,
             "autoUpdateOnRun" : false
-          },
-          "index" : 4
+          }
         },
         "Reformat##Subgraph##DDROtVZt" : {
           "id" : "Reformat##Subgraph##DDROtVZt",
@@ -7558,7 +7749,7 @@
             "isLabelGrayed" : false
           },
           "properties" : {
-            "columnsSelector" : [ ],
+            "columnsSelector" : [ "KFTudkSO##c_int", "KFTudkSO##c_string" ],
             "expressions" : [ {
               "expression" : {
                 "expression" : "CAST(c_int AS string)"
@@ -7681,8 +7872,7 @@
             } ],
             "isCustomOutputSchema" : false,
             "autoUpdateOnRun" : false
-          },
-          "index" : 0
+          }
         },
         "combine_##Subgraph##AHfa8xpc" : {
           "id" : "combine_##Subgraph##AHfa8xpc",
@@ -10443,6 +10633,7 @@
             "x" : 220,
             "y" : 220,
             "phase" : 0,
+            "macroDependencies" : [ ],
             "isLabelGrayed" : false
           },
           "properties" : {
@@ -10471,8 +10662,7 @@
             } ],
             "isCustomOutputSchema" : false,
             "autoUpdateOnRun" : false
-          },
-          "index" : 2
+          }
         },
         "SQLState##Subgraph##KQPShzbZ" : {
           "id" : "SQLState##Subgraph##KQPShzbZ",
@@ -10482,6 +10672,7 @@
             "x" : 220,
             "y" : 420,
             "phase" : 0,
+            "macroDependencies" : [ ],
             "isLabelGrayed" : false
           },
           "properties" : {
@@ -10641,8 +10832,7 @@
             } ],
             "isCustomOutputSchema" : false,
             "autoUpdateOnRun" : false
-          },
-          "index" : 5
+          }
         },
         "Limit_4##Subgraph##wKVq2aK4" : {
           "id" : "Limit_4##Subgraph##wKVq2aK4",
@@ -10725,7 +10915,7 @@
             "isLabelGrayed" : false
           },
           "properties" : {
-            "columnsSelector" : [ ],
+            "columnsSelector" : [ "d7p3GL7T##customer_id", "d7p3GL7T##first_name", "d7p3GL7T##last_name" ],
             "expressions" : [ {
               "expression" : {
                 "expression" : "CAST(customer_id AS int) > 5"
@@ -15346,8 +15536,7 @@
             } ],
             "isCustomOutputSchema" : false,
             "autoUpdateOnRun" : false
-          },
-          "index" : 8
+          }
         }
       },
       "connections" : [ {
@@ -15597,7 +15786,7 @@
                 "isLabelGrayed" : false
               },
               "properties" : {
-                "columnsSelector" : [ ],
+                "columnsSelector" : [ "JgEFNiOT##customer_id" ],
                 "expressions" : [ {
                   "expression" : {
                     "expression" : "CAST(customer_id AS int) > 5"
@@ -15686,7 +15875,7 @@
                   "expression" : ""
                 },
                 "activeTab" : "aggregate",
-                "columnsSelector" : [ ],
+                "columnsSelector" : [ "RdXGsw75##last_name", "RdXGsw75##first_name", "RdXGsw75##customer_id" ],
                 "groupBy" : [ {
                   "expression" : {
                     "expression" : "last_name"
@@ -15909,7 +16098,7 @@
                 "isLabelGrayed" : false
               },
               "properties" : {
-                "columnsSelector" : [ ],
+                "columnsSelector" : [ "tH5f3iZf##customer_id" ],
                 "orders" : [ {
                   "expression" : {
                     "expression" : "customer_id"
@@ -17444,7 +17633,7 @@
                 "isLabelGrayed" : false
               },
               "properties" : {
-                "columnsSelector" : [ ],
+                "columnsSelector" : [ "im6ZE3GV##customer_id", "im6ZE3GV##first_name", "im6ZE3GV##last_name" ],
                 "expressions" : [ {
                   "expression" : {
                     "expression" : "customer_id"
@@ -17546,7 +17735,7 @@
                   "alias" : "c2"
                 } ],
                 "activeTab" : "conditions",
-                "columnsSelector" : [ ],
+                "columnsSelector" : [ "hr5Dxrlc##customer_id", "tTC31gA8##customer_id1", "hr5Dxrlc##customer_id" ],
                 "headAlias" : "in0"
               },
               "ports" : {
@@ -18642,7 +18831,7 @@
               "alias" : "c_struct_pin"
             } ],
             "activeTab" : "conditions",
-            "columnsSelector" : [ ],
+            "columnsSelector" : [ "w3njSAPp##country_code", "SdkWoBfu##p_string", "QVlcdoCk##sm_type", "DbPND1Ei##p_string", "EjjD4uD1##IB_INCOME_BAND_SK", "SdkWoBfu##p_int", "SdkWoBfu##p_string", "SdkWoBfu##c_string", "SdkWoBfu##c_int", "SdkWoBfu##c_bigint", "SdkWoBfu##c_smallint", "SdkWoBfu##c_tinyint", "SdkWoBfu##c_float", "SdkWoBfu##c_boolean", "SdkWoBfu##c_array", "SdkWoBfu##c_double", "SdkWoBfu##c_struct", "SdkWoBfu##c_struct.city", "SdkWoBfu##c_struct.state", "SdkWoBfu##c_struct.pin" ],
             "headAlias" : "in0"
           },
           "ports" : {
@@ -19045,8 +19234,7 @@
             } ],
             "isCustomOutputSchema" : false,
             "autoUpdateOnRun" : false
-          },
-          "index" : 7
+          }
         },
         "OrderBy_##Subgraph##QScEK1ZT" : {
           "id" : "OrderBy_##Subgraph##QScEK1ZT",
@@ -19060,7 +19248,7 @@
             "isLabelGrayed" : false
           },
           "properties" : {
-            "columnsSelector" : [ ],
+            "columnsSelector" : [ "TGZ2oESR##c_string", "TGZ2oESR##c_int", "TGZ2oESR##c_tinyint" ],
             "orders" : [ {
               "expression" : {
                 "expression" : "concat(c_string, c_int)"
@@ -19253,8 +19441,7 @@
             } ],
             "isCustomOutputSchema" : false,
             "autoUpdateOnRun" : false
-          },
-          "index" : 3
+          }
         },
         "Subgraph##Subgraph##WR3C6eJq" : {
           "id" : "Subgraph##Subgraph##WR3C6eJq",
@@ -19357,7 +19544,7 @@
                 "isLabelGrayed" : false
               },
               "properties" : {
-                "columnsSelector" : [ ],
+                "columnsSelector" : [ "fZhK0O2A##ID", "fZhK0O2A##ORDER_ID", "fZhK0O2A##PAYMENT_METHOD", "fZhK0O2A##AMOUNT" ],
                 "expressions" : [ {
                   "expression" : {
                     "expression" : "ID"
@@ -19441,8 +19628,7 @@
                 } ],
                 "isCustomOutputSchema" : false,
                 "autoUpdateOnRun" : false
-              },
-              "index" : 7
+              }
             },
             "Reformat##Subgraph##UcuGOu7J" : {
               "id" : "Reformat##Subgraph##UcuGOu7J",
@@ -19454,7 +19640,7 @@
                 "isLabelGrayed" : false
               },
               "properties" : {
-                "columnsSelector" : [ ],
+                "columnsSelector" : [ "Bo3Fv8tq##IB_INCOME_BAND_SK", "Bo3Fv8tq##IB_LOWER_BOUND", "Bo3Fv8tq##IB_UPPER_BOUND" ],
                 "expressions" : [ {
                   "expression" : {
                     "expression" : "IB_INCOME_BAND_SK"
@@ -19523,8 +19709,7 @@
                 } ],
                 "isCustomOutputSchema" : false,
                 "autoUpdateOnRun" : false
-              },
-              "index" : 2
+              }
             },
             "SQLState##Subgraph##gJ3UYBeL" : {
               "id" : "SQLState##Subgraph##gJ3UYBeL",
@@ -19532,6 +19717,7 @@
               "metadata" : {
                 "label" : "SQLStatement_4",
                 "phase" : 0,
+                "macroDependencies" : [ ],
                 "isLabelGrayed" : false
               },
               "properties" : {
@@ -19565,7 +19751,7 @@
                       }
                     } ]
                   },
-                  "slug" : "Income_BAND"
+                  "slug" : "income_band"
                 } ],
                 "outputs" : [ {
                   "id" : "YvIXeYDn",
@@ -19593,8 +19779,7 @@
                 } ],
                 "isCustomOutputSchema" : false,
                 "autoUpdateOnRun" : false
-              },
-              "index" : 1
+              }
             },
             "payments##Subgraph##CdWLiACR" : {
               "id" : "payments##Subgraph##CdWLiACR",
@@ -19657,7 +19842,7 @@
                 "isLabelGrayed" : false
               },
               "properties" : {
-                "columnsSelector" : [ ],
+                "columnsSelector" : [ "Nkip9AKt##T_TIME_SK", "Nkip9AKt##T_TIME_ID", "Nkip9AKt##T_TIME", "Nkip9AKt##T_HOUR", "Nkip9AKt##T_MINUTE", "Nkip9AKt##T_SECOND", "Nkip9AKt##T_AM_PM", "Nkip9AKt##T_SHIFT", "Nkip9AKt##T_SUB_SHIFT", "Nkip9AKt##T_MEAL_TIME" ],
                 "expressions" : [ {
                   "expression" : {
                     "expression" : "T_TIME_SK"
@@ -19831,8 +20016,7 @@
                 } ],
                 "isCustomOutputSchema" : false,
                 "autoUpdateOnRun" : false
-              },
-              "index" : 11
+              }
             },
             "SQLState##Subgraph##Lj98aSsZ" : {
               "id" : "SQLState##Subgraph##Lj98aSsZ",
@@ -19840,6 +20024,7 @@
               "metadata" : {
                 "label" : "SQLStatement_4_1",
                 "phase" : 0,
+                "macroDependencies" : [ ],
                 "isLabelGrayed" : false
               },
               "properties" : {
@@ -19958,7 +20143,7 @@
                       }
                     } ]
                   },
-                  "slug" : "Store_RETURNS"
+                  "slug" : "store_returns"
                 } ],
                 "outputs" : [ {
                   "id" : "qrGbU6ee",
@@ -19986,8 +20171,7 @@
                 } ],
                 "isCustomOutputSchema" : false,
                 "autoUpdateOnRun" : false
-              },
-              "index" : 4
+              }
             },
             "income_b##Subgraph##vuNr0KZs" : {
               "id" : "income_b##Subgraph##vuNr0KZs",
@@ -20176,7 +20360,7 @@
                 "isLabelGrayed" : false
               },
               "properties" : {
-                "columnsSelector" : [ ],
+                "columnsSelector" : [ "fYOFoxr5##ID", "fYOFoxr5##USER_ID", "fYOFoxr5##ORDER_DATE", "fYOFoxr5##STATUS" ],
                 "expressions" : [ {
                   "expression" : {
                     "expression" : "ID"
@@ -20260,8 +20444,7 @@
                 } ],
                 "isCustomOutputSchema" : false,
                 "autoUpdateOnRun" : false
-              },
-              "index" : 9
+              }
             },
             "combine_##Subgraph##lN2pejd5" : {
               "id" : "combine_##Subgraph##lN2pejd5",
@@ -20542,7 +20725,7 @@
                 "isLabelGrayed" : false
               },
               "properties" : {
-                "columnsSelector" : [ ],
+                "columnsSelector" : [ "u48esXsr##SR_RETURNED_DATE_SK", "u48esXsr##SR_RETURN_TIME_SK" ],
                 "expressions" : [ {
                   "expression" : {
                     "expression" : "SR_RETURNED_DATE_SK"
@@ -20601,8 +20784,7 @@
                 } ],
                 "isCustomOutputSchema" : false,
                 "autoUpdateOnRun" : false
-              },
-              "index" : 5
+              }
             }
           },
           "connections" : [ {
@@ -20725,6 +20907,7 @@
             "x" : 220,
             "y" : 620,
             "phase" : 0,
+            "macroDependencies" : [ ],
             "comment" : "Filters records from a partitioned dataset based on a specific count condition.",
             "isLabelGrayed" : false
           },
@@ -20915,8 +21098,7 @@
             } ],
             "isCustomOutputSchema" : false,
             "autoUpdateOnRun" : false
-          },
-          "index" : 2
+          }
         }
       },
       "connections" : [ {
@@ -21020,7 +21202,7 @@
         "isLabelGrayed" : false
       },
       "properties" : {
-        "columnsSelector" : [ ],
+        "columnsSelector" : [ "pLy57abq##customer_id", "pLy57abq##first_name", "pLy57abq##last_name" ],
         "expressions" : [ {
           "expression" : {
             "expression" : "customer_id"
@@ -21159,8 +21341,7 @@
         } ],
         "isCustomOutputSchema" : false,
         "autoUpdateOnRun" : false
-      },
-      "index" : 12
+      }
     },
     "Limit_2##Subgraph##bBVBDaPD" : {
       "id" : "Limit_2##Subgraph##bBVBDaPD",
@@ -21188,8 +21369,152 @@
         } ],
         "isCustomOutputSchema" : false,
         "autoUpdateOnRun" : false
+      }
+    },
+    "ej04e_x2rzJbE8UJ4ijgu$$OiyiYnBORiiy_717uG7kl" : {
+      "id" : "ej04e_x2rzJbE8UJ4ijgu$$OiyiYnBORiiy_717uG7kl",
+      "component" : "Join",
+      "metadata" : {
+        "label" : "joined_records",
+        "slug" : "joined_records",
+        "x" : 540,
+        "y" : 500,
+        "phase" : 0,
+        "macroDependencies" : [ ],
+        "comment" : "Combines various unique records to create a comprehensive dataset for analysis.",
+        "autoUpdateComment" : true,
+        "isLabelGrayed" : false
       },
-      "index" : 42
+      "properties" : {
+        "conditions" : [ {
+          "alias" : "in1",
+          "expression" : {
+            "expression" : "in0.c_tinyint!=in1.c_tinyint"
+          },
+          "joinType" : "inner"
+        }, {
+          "alias" : "in2",
+          "expression" : {
+            "expression" : "in1.c_tinyint!=in2.c_smallint"
+          },
+          "joinType" : "inner"
+        } ],
+        "expressions" : [ {
+          "expression" : {
+            "expression" : "in0.c_tinyint"
+          },
+          "alias" : "c_tinyint"
+        }, {
+          "expression" : {
+            "expression" : "in0.c_int_string"
+          },
+          "alias" : "c_int_string"
+        }, {
+          "expression" : {
+            "expression" : "in1.c_bigint"
+          },
+          "alias" : "c_bigint"
+        }, {
+          "expression" : {
+            "expression" : "in1.c_array"
+          },
+          "alias" : "c_array"
+        }, {
+          "expression" : {
+            "expression" : "in2.c_struct"
+          },
+          "alias" : "c_struct"
+        }, {
+          "expression" : {
+            "expression" : "in2.c_string"
+          },
+          "alias" : "c_string"
+        }, {
+          "expression" : {
+            "expression" : "in2.c_double"
+          },
+          "alias" : "c_double"
+        } ],
+        "activeTab" : "conditions",
+        "columnsSelector" : [ "cMkGY0mYCVNGtW2A-rteQ$$fXUwwE2hfaZqT_CP50Xhc##c_tinyint", "kSk_mLUXHw3S4BHe7lweg$$UmNgp3C-1vABNIReOG4Qh##c_tinyint", "tD-rIZsAzshTmdX9PJczI$$wZMGRECMPBjMqBnXpXlxd##c_smallint", "cMkGY0mYCVNGtW2A-rteQ$$fXUwwE2hfaZqT_CP50Xhc##c_tinyint", "cMkGY0mYCVNGtW2A-rteQ$$fXUwwE2hfaZqT_CP50Xhc##c_int_string", "kSk_mLUXHw3S4BHe7lweg$$UmNgp3C-1vABNIReOG4Qh##c_bigint", "kSk_mLUXHw3S4BHe7lweg$$UmNgp3C-1vABNIReOG4Qh##c_array", "tD-rIZsAzshTmdX9PJczI$$wZMGRECMPBjMqBnXpXlxd##c_struct", "tD-rIZsAzshTmdX9PJczI$$wZMGRECMPBjMqBnXpXlxd##c_string", "tD-rIZsAzshTmdX9PJczI$$wZMGRECMPBjMqBnXpXlxd##c_double" ],
+        "headAlias" : "in0"
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "cMkGY0mYCVNGtW2A-rteQ$$fXUwwE2hfaZqT_CP50Xhc",
+          "slug" : "in0"
+        }, {
+          "id" : "kSk_mLUXHw3S4BHe7lweg$$UmNgp3C-1vABNIReOG4Qh",
+          "slug" : "in1"
+        }, {
+          "id" : "tD-rIZsAzshTmdX9PJczI$$wZMGRECMPBjMqBnXpXlxd",
+          "slug" : "in2"
+        } ],
+        "outputs" : [ {
+          "id" : "UhAUprtlDscxyBvTk1yx1$$858RUTkq95Soh4Jar_FRr",
+          "slug" : "out"
+        } ],
+        "isCustomOutputSchema" : false,
+        "autoUpdateOnRun" : false
+      }
+    },
+    "3ZBKyCdKBCtai0z7VjjfK$$-AMZ8px3KPkhPx2lqADNm" : {
+      "id" : "3ZBKyCdKBCtai0z7VjjfK$$-AMZ8px3KPkhPx2lqADNm",
+      "component" : "Deduplicate",
+      "metadata" : {
+        "label" : "distinct_rows_by_partition",
+        "slug" : "distinct_rows_by_partition",
+        "x" : 240,
+        "y" : 460,
+        "phase" : 0,
+        "macroDependencies" : [ ],
+        "comment" : "Identifies unique entries based on city, state, and a boolean flag, prioritizing specific numeric values.",
+        "autoUpdateComment" : true,
+        "isLabelGrayed" : false
+      },
+      "properties" : {
+        "dedupColumns" : [ {
+          "expression" : {
+            "expression" : "concat(c_struct.city, c_struct.state)"
+          }
+        }, {
+          "expression" : {
+            "expression" : "c_boolean"
+          }
+        } ],
+        "dedupType" : "first",
+        "columnsSelector" : [ "GZSf3JWexZhUT-rVFfDoa$$tlrNxzm62XuNM2kr1W48e##c_struct", "GZSf3JWexZhUT-rVFfDoa$$tlrNxzm62XuNM2kr1W48e##c_struct.city", "GZSf3JWexZhUT-rVFfDoa$$tlrNxzm62XuNM2kr1W48e##c_struct.state", "GZSf3JWexZhUT-rVFfDoa$$tlrNxzm62XuNM2kr1W48e##c_boolean" ],
+        "orders" : [ {
+          "expression" : {
+            "expression" : {
+              "expression" : "c_int"
+            },
+            "alias" : ""
+          },
+          "sortType" : "asc"
+        }, {
+          "expression" : {
+            "expression" : {
+              "expression" : "c_bigint"
+            },
+            "alias" : ""
+          },
+          "sortType" : "desc"
+        } ],
+        "useOrderBy" : true
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "GZSf3JWexZhUT-rVFfDoa$$tlrNxzm62XuNM2kr1W48e",
+          "slug" : "in0"
+        } ],
+        "outputs" : [ {
+          "id" : "r6uA2ib2rjLofkaqeFMDX$$dSGC8jqXmhks2Om7hcO5r",
+          "slug" : "out"
+        } ],
+        "isCustomOutputSchema" : false,
+        "autoUpdateOnRun" : false
+      }
     }
   },
   "connections" : [ {
@@ -21409,12 +21734,6 @@
     "target" : "Join_1##Subgraph##w6B6gfg4",
     "targetPort" : "OVOFWnqc"
   }, {
-    "id" : "kZ5SSFkA",
-    "source" : "Join_1_2##Subgraph##yJyp3u2y",
-    "sourcePort" : "xYR9pOWl",
-    "target" : "Join_1##Subgraph##w6B6gfg4",
-    "targetPort" : "Nu9XkaEE"
-  }, {
     "id" : "BrEEJRp8",
     "source" : "Limit_1_##Subgraph##ZDnNgZu4",
     "sourcePort" : "wgDxjVxc",
@@ -21516,6 +21835,60 @@
     "sourcePort" : "HXBEYAuw",
     "target" : "final##Subgraph##p8cXrmFN",
     "targetPort" : "pK17g8gm"
+  }, {
+    "id" : "zqSJcHL5-JKUGhWdWRo2o",
+    "source" : "P-_4eIX18F0b6FUmf8QYx$$Pec7eXkdR8-sBaG1PXhA5",
+    "sourcePort" : "CLYf9c6MPMnOYBSyIzhF4$$Nu-JmZzeo1HbHxgCQYuh4",
+    "target" : "CJCopLwqoq2oBcV20pI-u$$_PvUn8TUDCj-FZ0Lo_TrW",
+    "targetPort" : "O1FrJV76Prl4IcgzC5O5C$$UHS-BS5Gjso1EyCAPj2CV"
+  }, {
+    "id" : "XsbgHtVyuHfWcr6-3B4fa",
+    "source" : "CJCopLwqoq2oBcV20pI-u$$_PvUn8TUDCj-FZ0Lo_TrW",
+    "sourcePort" : "oTLXxshzJ12SChiQc2Gpq$$uPS1XihwUlkrIMM3QBLHr",
+    "target" : "s7Itp11I8KngS7OYUEmBH$$WNQu8dDnkuCeCvP4oASvA",
+    "targetPort" : "obUDXehYIgdiN3-rhJOyg$$h4SdCUIVI1PCbQxwhOyTl"
+  }, {
+    "id" : "4s51J3NMjxdhO6GVinVgR",
+    "source" : "P-_4eIX18F0b6FUmf8QYx$$Pec7eXkdR8-sBaG1PXhA5",
+    "sourcePort" : "CLYf9c6MPMnOYBSyIzhF4$$Nu-JmZzeo1HbHxgCQYuh4",
+    "target" : "3ZBKyCdKBCtai0z7VjjfK$$-AMZ8px3KPkhPx2lqADNm",
+    "targetPort" : "GZSf3JWexZhUT-rVFfDoa$$tlrNxzm62XuNM2kr1W48e"
+  }, {
+    "id" : "pv7fiTi0GRr4mgrezsI0C",
+    "source" : "P-_4eIX18F0b6FUmf8QYx$$Pec7eXkdR8-sBaG1PXhA5",
+    "sourcePort" : "CLYf9c6MPMnOYBSyIzhF4$$Nu-JmZzeo1HbHxgCQYuh4",
+    "target" : "hvMELOxQXH_IIIDi4C1-S$$UzmbvmgT4AbUjlCQFcA80",
+    "targetPort" : "HhQ1Y0YdoTWnGUOUxcUfe$$yyApm58BikTmO7caJW80z"
+  }, {
+    "id" : "zWXcFq43kVnFK6ni1ekTo",
+    "source" : "s7Itp11I8KngS7OYUEmBH$$WNQu8dDnkuCeCvP4oASvA",
+    "sourcePort" : "cjSOGJDzyWbH9vTZmZZJt$$MLKMpexmCQ5Y46YMeBw9e",
+    "target" : "ej04e_x2rzJbE8UJ4ijgu$$OiyiYnBORiiy_717uG7kl",
+    "targetPort" : "cMkGY0mYCVNGtW2A-rteQ$$fXUwwE2hfaZqT_CP50Xhc"
+  }, {
+    "id" : "DkYOeoh6ANBanVnLKQhan",
+    "source" : "3ZBKyCdKBCtai0z7VjjfK$$-AMZ8px3KPkhPx2lqADNm",
+    "sourcePort" : "r6uA2ib2rjLofkaqeFMDX$$dSGC8jqXmhks2Om7hcO5r",
+    "target" : "ej04e_x2rzJbE8UJ4ijgu$$OiyiYnBORiiy_717uG7kl",
+    "targetPort" : "kSk_mLUXHw3S4BHe7lweg$$UmNgp3C-1vABNIReOG4Qh"
+  }, {
+    "id" : "_xj3v0tDtQRFtY5lIbDS4",
+    "source" : "hvMELOxQXH_IIIDi4C1-S$$UzmbvmgT4AbUjlCQFcA80",
+    "sourcePort" : "en44nhFxWdnho5RAtpGWK$$lOGXNMKaw6bF4EnaJjRDN",
+    "target" : "ej04e_x2rzJbE8UJ4ijgu$$OiyiYnBORiiy_717uG7kl",
+    "targetPort" : "tD-rIZsAzshTmdX9PJczI$$wZMGRECMPBjMqBnXpXlxd"
+  }, {
+    "id" : "dBaRvlEqw_tngK3D7PQSr",
+    "source" : "ej04e_x2rzJbE8UJ4ijgu$$OiyiYnBORiiy_717uG7kl",
+    "sourcePort" : "UhAUprtlDscxyBvTk1yx1$$858RUTkq95Soh4Jar_FRr",
+    "target" : "Join_1_2##Subgraph##yJyp3u2y",
+    "targetPort" : "hiK4bd8BTiWMmgIpwQ9Gv$$nIP2NjkKgg4yZIMdFkFrh"
+  }, {
+    "id" : "rH-dHSLBptdbFOvhgr1Ct",
+    "source" : "Join_1_2##Subgraph##yJyp3u2y",
+    "sourcePort" : "xYR9pOWl",
+    "target" : "Join_1##Subgraph##w6B6gfg4",
+    "targetPort" : "Nu9XkaEE"
   } ],
   "component" : "Model"
 }

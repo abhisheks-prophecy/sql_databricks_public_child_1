@@ -640,16 +640,7 @@ sqlModels:
     createdAt: '2023-04-12 09:20:35'
   .prophecy/metadata/sqlmodels/test:
     name: test
-    schema:
-      entityType: ''
-      providerType: Databricks
-      fields:
-      - name: country_code
-        dataType:
-          type: String
-      - name: country_label
-        dataType:
-          type: String
+    schema: null
     description: null
     author: abhisheks+shared@prophecy.io
     files:
@@ -1151,6 +1142,69 @@ sqlSources:
       description: null
       author: abhisheks+shared@prophecy.io
       createdAt: '2024-07-22 05:19:59'
+  .prophecy/metadata/sqlsources/hive_metastore_qa_db_warehouse:
+    name: hive_metastore.qa_db_warehouse
+    description: null
+    author: abhisheks+shared@prophecy.io
+    files:
+    - prophecy-sources/sources.yml
+    createdAt: '2024-10-14 04:38:20'
+    tables:
+    - name: all_type_non_partitioned
+      schema:
+        entityType: ''
+        providerType: databricks
+        fields:
+        - name: c_tinyint
+          dataType:
+            type: TinyInt
+        - name: c_smallint
+          dataType:
+            type: SmallInt
+        - name: c_int
+          dataType:
+            type: Integer
+        - name: c_bigint
+          dataType:
+            type: Bigint
+        - name: c_float
+          dataType:
+            type: Float
+        - name: c_double
+          dataType:
+            type: Double
+        - name: c_string
+          dataType:
+            type: String
+        - name: c_boolean
+          dataType:
+            type: Boolean
+        - name: c_array
+          dataType:
+            type: Array
+            dataType:
+              type: String
+        - name: c_struct
+          dataType:
+            type: Struct
+            fields:
+            - name: city
+              dataType:
+                type: String
+              description: City name associated with the structured data
+            - name: state
+              dataType:
+                type: String
+              description: The state associated with the structured data
+            - name: pin
+              dataType:
+                type: Bigint
+              description: The postal code associated with the address in the structured
+                data
+      description: Comprehensive dataset capturing various data types, enabling diverse
+        analytical capabilities across multiple dimensions.
+      author: abhisheks+shared@prophecy.io
+      createdAt: '2024-10-14 04:38:20'
   .prophecy/metadata/sqlsources/spark_catalog_qa_database:
     name: spark_catalog.qa_database
     description: null
