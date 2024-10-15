@@ -1,0 +1,128 @@
+{
+  "id" : "test_model_1",
+  "metainfo" : {
+    "label" : "test_model_1",
+    "autoLayout" : false,
+    "staleState" : "none",
+    "sourceSuggestions" : {
+      "sources" : [ ]
+    },
+    "version" : 3
+  },
+  "processes" : {
+    "test_model_1##t1FaD8T6" : {
+      "id" : "test_model_1##t1FaD8T6",
+      "component" : "TargetModel",
+      "metadata" : {
+        "label" : "test_model_1",
+        "x" : 20,
+        "y" : 20,
+        "phase" : 0,
+        "macroDependencies" : [ ]
+      },
+      "properties" : {
+        "customQueryDisabled" : true,
+        "customQuery" : false,
+        "incrementalEditorDisabled" : true,
+        "query" : "SELECT * \n\nFROM distinct_asthma_medications\n",
+        "incrementalKey" : false,
+        "incremental" : {
+          "expression" : "true"
+        }
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "S2PpKUtB",
+          "slug" : "distinct_asthma_medications"
+        } ],
+        "outputs" : [ {
+          "id" : "tnDOtTUj",
+          "slug" : "out"
+        } ],
+        "isCustomOutputSchema" : false,
+        "autoUpdateOnRun" : false
+      }
+    },
+    "f-HTuJEBwn47CLb8icb_-$$Eio4wM928tKoOCxM5hB7m" : {
+      "id" : "f-HTuJEBwn47CLb8icb_-$$Eio4wM928tKoOCxM5hB7m",
+      "component" : "Deduplicate",
+      "metadata" : {
+        "label" : "distinct_asthma_medications",
+        "slug" : "distinct_asthma_medications",
+        "x" : -460,
+        "y" : -40,
+        "phase" : 0,
+        "macroDependencies" : [ ],
+        "comment" : "Identifies unique classes of asthma medications for better treatment options.",
+        "autoUpdateComment" : true,
+        "isLabelGrayed" : false
+      },
+      "properties" : {
+        "dedupColumns" : [ {
+          "expression" : {
+            "expression" : "`c_complex-array`.Asthma.medications.medicationsClasses.className_1.`associated-Drug`"
+          }
+        } ],
+        "dedupType" : "distinct",
+        "columnsSelector" : [ "EBXskAIQKCtwcc60n-NEQ$$lJjDabxkABX1bIkiAuZ3L##c_complex-array", "EBXskAIQKCtwcc60n-NEQ$$lJjDabxkABX1bIkiAuZ3L##c_complex-array.Asthma", "EBXskAIQKCtwcc60n-NEQ$$lJjDabxkABX1bIkiAuZ3L##c_complex-array.Asthma.medications", "EBXskAIQKCtwcc60n-NEQ$$lJjDabxkABX1bIkiAuZ3L##c_complex-array.Asthma.medications.medicationsClasses", "EBXskAIQKCtwcc60n-NEQ$$lJjDabxkABX1bIkiAuZ3L##c_complex-array.Asthma.medications.medicationsClasses.className_1", "EBXskAIQKCtwcc60n-NEQ$$lJjDabxkABX1bIkiAuZ3L##c_complex-array.Asthma.medications.medicationsClasses.className_1.associated-Drug" ],
+        "orders" : [ ],
+        "useOrderBy" : false
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "EBXskAIQKCtwcc60n-NEQ$$lJjDabxkABX1bIkiAuZ3L",
+          "slug" : "in0"
+        } ],
+        "outputs" : [ {
+          "id" : "X7DiYDLC6vNHkQ05EFT7Z$$H29mdQStk9vSHhL48c9uX",
+          "slug" : "out"
+        } ],
+        "isCustomOutputSchema" : false,
+        "autoUpdateOnRun" : false
+      }
+    },
+    "4BB0UM8m3J8PBETQvPABJ" : {
+      "id" : "4BB0UM8m3J8PBETQvPABJ",
+      "component" : "Source",
+      "metadata" : {
+        "label" : "very_complex_table",
+        "slug" : "very_complex_table",
+        "x" : -780,
+        "y" : -60,
+        "phase" : 0
+      },
+      "properties" : {
+        "table" : {
+          "name" : "very_complex_table",
+          "sourceType" : "Source",
+          "sourceName" : "hive_metastore.qa_database",
+          "alias" : "",
+          "additionalProperties" : null
+        }
+      },
+      "ports" : {
+        "inputs" : [ ],
+        "outputs" : [ {
+          "id" : "fq-ndG7jmI8zJx7ZW6GbQ",
+          "slug" : "out"
+        } ],
+        "isCustomOutputSchema" : false,
+        "autoUpdateOnRun" : false
+      }
+    }
+  },
+  "connections" : [ {
+    "id" : "jG0U1NpZMqGufYELysYkU",
+    "source" : "4BB0UM8m3J8PBETQvPABJ",
+    "sourcePort" : "fq-ndG7jmI8zJx7ZW6GbQ",
+    "target" : "f-HTuJEBwn47CLb8icb_-$$Eio4wM928tKoOCxM5hB7m",
+    "targetPort" : "EBXskAIQKCtwcc60n-NEQ$$lJjDabxkABX1bIkiAuZ3L"
+  }, {
+    "id" : "M9K1HhMiGFsoQ2ew6UAK1",
+    "source" : "f-HTuJEBwn47CLb8icb_-$$Eio4wM928tKoOCxM5hB7m",
+    "sourcePort" : "X7DiYDLC6vNHkQ05EFT7Z$$H29mdQStk9vSHhL48c9uX",
+    "target" : "test_model_1##t1FaD8T6",
+    "targetPort" : "S2PpKUtB"
+  } ],
+  "component" : "Model"
+}

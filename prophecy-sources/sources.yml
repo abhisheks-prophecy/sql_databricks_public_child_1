@@ -1719,56 +1719,6 @@ sources:
     - name: "WEB_TAX_PERCENTAGE"
       dataType:
         type: "Decimal"
-- name: "hive_metastore.qa_database"
-  database: "hive_metastore"
-  schema: "qa_database"
-  config:
-    enabled: true
-  tables:
-  - name: "all_type_non_partitioned"
-    columns:
-    - name: "c_tinyint"
-      dataType:
-        type: "TinyInt"
-    - name: "c_smallint"
-      dataType:
-        type: "SmallInt"
-    - name: "c_int"
-      dataType:
-        type: "Integer"
-    - name: "c_bigint"
-      dataType:
-        type: "Bigint"
-    - name: "c_float"
-      dataType:
-        type: "Float"
-    - name: "c_double"
-      dataType:
-        type: "Double"
-    - name: "c_string"
-      dataType:
-        type: "String"
-    - name: "c_boolean"
-      dataType:
-        type: "Boolean"
-    - name: "c_array"
-      dataType:
-        type: "Array"
-        dataType:
-          type: "String"
-    - name: "c_struct"
-      dataType:
-        type: "Struct"
-        fields:
-        - name: "city"
-          dataType:
-            type: "String"
-        - name: "state"
-          dataType:
-            type: "String"
-        - name: "pin"
-          dataType:
-            type: "Bigint"
 - name: "hive_metastore.qa_db_warehouse"
   database: "hive_metastore"
   schema: "qa_db_warehouse"
@@ -1835,3 +1785,889 @@ sources:
             type: "Bigint"
           description: "The postal code associated with the address in the structured\
             \ data"
+- name: "hive_metastore.qa_database"
+  database: "hive_metastore"
+  schema: "qa_database"
+  config:
+    enabled: true
+  tables:
+  - name: "all_type_non_partitioned"
+    columns:
+    - name: "c_tinyint"
+      dataType:
+        type: "TinyInt"
+    - name: "c_smallint"
+      dataType:
+        type: "SmallInt"
+    - name: "c_int"
+      dataType:
+        type: "Integer"
+    - name: "c_bigint"
+      dataType:
+        type: "Bigint"
+    - name: "c_float"
+      dataType:
+        type: "Float"
+    - name: "c_double"
+      dataType:
+        type: "Double"
+    - name: "c_string"
+      dataType:
+        type: "String"
+    - name: "c_boolean"
+      dataType:
+        type: "Boolean"
+    - name: "c_array"
+      dataType:
+        type: "Array"
+        dataType:
+          type: "String"
+    - name: "c_struct"
+      dataType:
+        type: "Struct"
+        fields:
+        - name: "city"
+          dataType:
+            type: "String"
+        - name: "state"
+          dataType:
+            type: "String"
+        - name: "pin"
+          dataType:
+            type: "Bigint"
+  - name: "very_complex_table"
+    description: "Comprehensive health data encompassing various conditions, medications,\
+      \ and lab results, aimed at enhancing patient care and treatment strategies."
+    columns:
+    - name: "c_int"
+      description: "An integer value representing a specific metric."
+      dataType:
+        type: "Integer"
+    - name: "c_boolean"
+      description: "A boolean value indicating a true or false condition."
+      dataType:
+        type: "Boolean"
+    - name: "c_double"
+      description: "A double value used for precise numerical measurements."
+      dataType:
+        type: "Double"
+    - name: "c_string"
+      description: "A string value containing textual information."
+      dataType:
+        type: "String"
+    - name: "c_char"
+      description: "A character value representing a single character."
+      dataType:
+        type: "String"
+    - name: "c_time"
+      description: "Date associated with the record"
+      dataType:
+        type: "Date"
+    - name: "c_timestamp"
+      description: "Timestamp indicating the exact moment of the record"
+      dataType:
+        type: "Date"
+    - name: "c_array"
+      description: "Array of integer values related to the record"
+      dataType:
+        type: "Array"
+        dataType:
+          type: "Integer"
+    - name: "c_struct"
+      description: "Structured data containing multiple related fields"
+      dataType:
+        type: "Struct"
+        fields:
+        - name: "col-1"
+          dataType:
+            type: "Integer"
+          description: "First column of the structured data"
+        - name: "col-2"
+          dataType:
+            type: "String"
+          description: "A string value related to the structured data"
+        - name: "col-3"
+          dataType:
+            type: "Double"
+          description: "A double value associated with the structured data"
+        - name: "c_struct"
+          dataType:
+            type: "Boolean"
+          description: "A boolean value indicating a condition within the structured\
+            \ data"
+    - name: "c_complex-array"
+      description: "An array containing complex structured data related to health\
+        \ conditions"
+      dataType:
+        type: "Array"
+        dataType:
+          type: "Struct"
+          fields:
+          - name: "Diabetes"
+            dataType:
+              type: "Array"
+              dataType:
+                type: "Struct"
+                fields:
+                - name: "medications"
+                  dataType:
+                    type: "Array"
+                    dataType:
+                      type: "Struct"
+                      fields:
+                      - name: "medicationsClasses"
+                        dataType:
+                          type: "Array"
+                          dataType:
+                            type: "Struct"
+                            fields:
+                            - name: "className_1"
+                              dataType:
+                                type: "Array"
+                                dataType:
+                                  type: "Struct"
+                                  fields:
+                                  - name: "associated-Drug"
+                                    dataType:
+                                      type: "Array"
+                                      dataType:
+                                        type: "Struct"
+                                        fields:
+                                        - name: "name"
+                                          dataType:
+                                            type: "String"
+                                          description: "Name of the associated drug\
+                                            \ in the first class for diabetes"
+                                        - name: "dose"
+                                          dataType:
+                                            type: "Integer"
+                                          description: "The dosage amount for the\
+                                            \ associated drug in diabetes treatment"
+                                        - name: "cf-use"
+                                          dataType:
+                                            type: "Double"
+                                          description: "The confidence level of use\
+                                            \ for the associated drug in diabetes\
+                                            \ treatment"
+                                        - name: "take-it_on"
+                                          dataType:
+                                            type: "Boolean"
+                                          description: "Indicates whether the associated\
+                                            \ drug should be taken"
+                                        - name: "strength"
+                                          dataType:
+                                            type: "String"
+                                          description: "The strength of the associated\
+                                            \ drug used for diabetes"
+                                    description: "Drugs associated with the first\
+                                      \ class of diabetes medications"
+                                  - name: "associated-Drug#2"
+                                    dataType:
+                                      type: "Array"
+                                      dataType:
+                                        type: "Struct"
+                                        fields:
+                                        - name: "name"
+                                          dataType:
+                                            type: "String"
+                                          description: "Name of the second associated\
+                                            \ drug for diabetes treatment"
+                                        - name: "dose"
+                                          dataType:
+                                            type: "Integer"
+                                          description: "Dosage of the second associated\
+                                            \ drug for diabetes treatment"
+                                        - name: "cf-use"
+                                          dataType:
+                                            type: "Double"
+                                          description: "Coefficient of use for the\
+                                            \ second associated drug for diabetes\
+                                            \ treatment"
+                                        - name: "take-it_on"
+                                          dataType:
+                                            type: "Boolean"
+                                          description: "Indicates whether the second\
+                                            \ associated drug for diabetes treatment\
+                                            \ should be taken"
+                                        - name: "strength"
+                                          dataType:
+                                            type: "String"
+                                          description: "Strength of the second associated\
+                                            \ drug for diabetes treatment"
+                                    description: "Details of a second associated drug\
+                                      \ for diabetes treatment"
+                              description: "First class of medications used for diabetes"
+                            - name: "className_2"
+                              dataType:
+                                type: "Array"
+                                dataType:
+                                  type: "Struct"
+                                  fields:
+                                  - name: "associated-Drug"
+                                    dataType:
+                                      type: "Array"
+                                      dataType:
+                                        type: "Struct"
+                                        fields:
+                                        - name: "name"
+                                          dataType:
+                                            type: "String"
+                                          description: "Name of the associated drug\
+                                            \ in the second class of diabetes medications"
+                                        - name: "dose"
+                                          dataType:
+                                            type: "Integer"
+                                          description: "Dosage information for the\
+                                            \ associated drug in the second class\
+                                            \ of diabetes medications"
+                                        - name: "cf-use"
+                                          dataType:
+                                            type: "Double"
+                                          description: "Indicates the clinical use\
+                                            \ of the associated drug in the second\
+                                            \ class of diabetes medications"
+                                        - name: "take-it_on"
+                                          dataType:
+                                            type: "Boolean"
+                                          description: "Indicates whether the associated\
+                                            \ drug should be taken as prescribed."
+                                        - name: "strength"
+                                          dataType:
+                                            type: "String"
+                                          description: "Strength of the associated\
+                                            \ drug."
+                                    description: "List of drugs associated with the\
+                                      \ second class of diabetes medications"
+                                  - name: "associated-Drug#2"
+                                    dataType:
+                                      type: "Array"
+                                      dataType:
+                                        type: "Struct"
+                                        fields:
+                                        - name: "name"
+                                          dataType:
+                                            type: "String"
+                                          description: "Name of the second associated\
+                                            \ drug."
+                                        - name: "dose"
+                                          dataType:
+                                            type: "Integer"
+                                          description: "Dose of the second associated\
+                                            \ drug."
+                                        - name: "cf-use"
+                                          dataType:
+                                            type: "Double"
+                                          description: "Indicates the frequency of\
+                                            \ use for the associated drug in diabetes\
+                                            \ treatment"
+                                        - name: "take-it_on"
+                                          dataType:
+                                            type: "Boolean"
+                                          description: "Indicates whether the associated\
+                                            \ drug should be taken"
+                                        - name: "strength"
+                                          dataType:
+                                            type: "String"
+                                          description: "Strength of the associated\
+                                            \ drug used for diabetes management"
+                                    description: "Second associated drug within the\
+                                      \ medication class."
+                              description: "Class name for the second category of\
+                                \ diabetes medications"
+                        description: "Classes of medications associated with diabetes\
+                          \ treatment"
+                  description: "List of medications prescribed for diabetes"
+                - name: "labs"
+                  dataType:
+                    type: "Array"
+                    dataType:
+                      type: "Struct"
+                      fields:
+                      - name: "missing_field"
+                        dataType:
+                          type: "String"
+                        description: "Field indicating any missing information in\
+                          \ lab results for diabetes"
+                  description: "Array of lab results related to diabetes"
+            description: "An array of structured data specifically related to diabetes\
+              \ medications and treatments"
+          - name: "Asthma"
+            dataType:
+              type: "Array"
+              dataType:
+                type: "Struct"
+                fields:
+                - name: "medications"
+                  dataType:
+                    type: "Array"
+                    dataType:
+                      type: "Struct"
+                      fields:
+                      - name: "medicationsClasses"
+                        dataType:
+                          type: "Array"
+                          dataType:
+                            type: "Struct"
+                            fields:
+                            - name: "className_1"
+                              dataType:
+                                type: "Array"
+                                dataType:
+                                  type: "Struct"
+                                  fields:
+                                  - name: "associated-Drug"
+                                    dataType:
+                                      type: "Array"
+                                      dataType:
+                                        type: "Struct"
+                                        fields:
+                                        - name: "name"
+                                          dataType:
+                                            type: "String"
+                                          description: "Name of the associated drug\
+                                            \ for asthma treatment"
+                                        - name: "dose"
+                                          dataType:
+                                            type: "Integer"
+                                          description: "Dosage of the associated drug\
+                                            \ for asthma treatment"
+                                        - name: "cf-use"
+                                          dataType:
+                                            type: "Double"
+                                          description: "Indicates the clinical frequency\
+                                            \ of use for the associated drug"
+                                        - name: "take-it_on"
+                                          dataType:
+                                            type: "Boolean"
+                                          description: "Flag indicating whether the\
+                                            \ associated drug should be taken"
+                                        - name: "strength"
+                                          dataType:
+                                            type: "String"
+                                          description: "Strength of the associated\
+                                            \ drug for asthma treatment"
+                                    description: "Array of drugs associated with the\
+                                      \ first medication class for asthma"
+                                  - name: "associated-Drug#2"
+                                    dataType:
+                                      type: "Array"
+                                      dataType:
+                                        type: "Struct"
+                                        fields:
+                                        - name: "name"
+                                          dataType:
+                                            type: "String"
+                                          description: "Name of the second associated\
+                                            \ drug for the first class of asthma medications."
+                                        - name: "dose"
+                                          dataType:
+                                            type: "Integer"
+                                          description: "Dosage information for the\
+                                            \ second associated drug for the first\
+                                            \ class of asthma medications."
+                                        - name: "cf-use"
+                                          dataType:
+                                            type: "Double"
+                                          description: "Indicates the clinical use\
+                                            \ of the second associated drug for the\
+                                            \ first class of asthma medications."
+                                        - name: "take-it_on"
+                                          dataType:
+                                            type: "Boolean"
+                                          description: "Flag indicating whether the\
+                                            \ second associated drug for the first\
+                                            \ class of asthma medications should be\
+                                            \ taken."
+                                        - name: "strength"
+                                          dataType:
+                                            type: "String"
+                                          description: "Strength of the second associated\
+                                            \ drug in the first class for asthma medications."
+                                    description: "Details of the second associated\
+                                      \ drug for the first class of asthma medications."
+                              description: "First class of medications associated\
+                                \ with asthma"
+                            - name: "className_2"
+                              dataType:
+                                type: "Array"
+                                dataType:
+                                  type: "Struct"
+                                  fields:
+                                  - name: "associated-Drug"
+                                    dataType:
+                                      type: "Array"
+                                      dataType:
+                                        type: "Struct"
+                                        fields:
+                                        - name: "name"
+                                          dataType:
+                                            type: "String"
+                                          description: "Name of the associated drug\
+                                            \ in the second class for asthma medications."
+                                        - name: "dose"
+                                          dataType:
+                                            type: "Integer"
+                                          description: "Dosage of the associated drug\
+                                            \ in the second class for asthma medications."
+                                        - name: "cf-use"
+                                          dataType:
+                                            type: "Double"
+                                          description: "Indicates whether the associated\
+                                            \ drug is clinically favored for use"
+                                        - name: "take-it_on"
+                                          dataType:
+                                            type: "Boolean"
+                                          description: "Indicates if the associated\
+                                            \ drug should be taken as prescribed"
+                                        - name: "strength"
+                                          dataType:
+                                            type: "String"
+                                          description: "Strength of the associated\
+                                            \ drug prescribed"
+                                    description: "Associated drugs listed under the\
+                                      \ second class of asthma medications."
+                                  - name: "associated-Drug#2"
+                                    dataType:
+                                      type: "Array"
+                                      dataType:
+                                        type: "Struct"
+                                        fields:
+                                        - name: "name"
+                                          dataType:
+                                            type: "String"
+                                          description: "Name of the second associated\
+                                            \ drug prescribed"
+                                        - name: "dose"
+                                          dataType:
+                                            type: "Integer"
+                                          description: "The dosage amount for the\
+                                            \ associated drug in the asthma medication\
+                                            \ class"
+                                        - name: "cf-use"
+                                          dataType:
+                                            type: "Double"
+                                          description: "The clinical frequency of\
+                                            \ use for the associated drug in the asthma\
+                                            \ medication class"
+                                        - name: "take-it_on"
+                                          dataType:
+                                            type: "Boolean"
+                                          description: "Indicates whether the associated\
+                                            \ drug should be taken as prescribed"
+                                        - name: "strength"
+                                          dataType:
+                                            type: "String"
+                                          description: "The strength of the associated\
+                                            \ drug in the asthma medication class"
+                                    description: "Second associated drug within the\
+                                      \ medication class"
+                              description: "The second class of medications for asthma."
+                        description: "Array of medication classes for asthma treatments"
+                  description: "Array of medications prescribed for asthma"
+                - name: "labs"
+                  dataType:
+                    type: "Array"
+                    dataType:
+                      type: "Struct"
+                      fields:
+                      - name: "missing_field"
+                        dataType:
+                          type: "String"
+                        description: "Field indicating missing lab information related\
+                          \ to asthma"
+                  description: "Lab results related to asthma treatment and management"
+            description: "Array of asthma-related data"
+    - name: "c_complex-struct"
+      description: "Complex structure containing various health-related data"
+      dataType:
+        type: "Struct"
+        fields:
+        - name: "problems"
+          dataType:
+            type: "Array"
+            dataType:
+              type: "Struct"
+              fields:
+              - name: "Diabetes"
+                dataType:
+                  type: "Array"
+                  dataType:
+                    type: "Struct"
+                    fields:
+                    - name: "medications"
+                      dataType:
+                        type: "Array"
+                        dataType:
+                          type: "Struct"
+                          fields:
+                          - name: "medicationsClasses"
+                            dataType:
+                              type: "Array"
+                              dataType:
+                                type: "Struct"
+                                fields:
+                                - name: "className_1"
+                                  dataType:
+                                    type: "Array"
+                                    dataType:
+                                      type: "Struct"
+                                      fields:
+                                      - name: "associated-Drug"
+                                        dataType:
+                                          type: "Array"
+                                          dataType:
+                                            type: "Struct"
+                                            fields:
+                                            - name: "name"
+                                              dataType:
+                                                type: "String"
+                                              description: "Name of the associated\
+                                                \ drug for diabetes treatment"
+                                            - name: "dose"
+                                              dataType:
+                                                type: "Integer"
+                                              description: "Dosage of the associated\
+                                                \ drug for diabetes treatment"
+                                            - name: "cf-use"
+                                              dataType:
+                                                type: "Double"
+                                              description: "Indicates the frequency\
+                                                \ of use for the associated drug in\
+                                                \ diabetes treatment"
+                                            - name: "take-it_on"
+                                              dataType:
+                                                type: "Boolean"
+                                              description: "Indicates whether the\
+                                                \ associated drug should be taken"
+                                            - name: "strength"
+                                              dataType:
+                                                type: "String"
+                                              description: "Strength of the associated\
+                                                \ drug prescribed for diabetes"
+                                        description: "Drugs associated with the first\
+                                          \ class of diabetes medications"
+                                      - name: "associated-Drug#2"
+                                        dataType:
+                                          type: "Array"
+                                          dataType:
+                                            type: "Struct"
+                                            fields:
+                                            - name: "name"
+                                              dataType:
+                                                type: "String"
+                                              description: "Name of the second associated\
+                                                \ drug prescribed for diabetes"
+                                            - name: "dose"
+                                              dataType:
+                                                type: "Integer"
+                                              description: "The dosage amount for\
+                                                \ the associated drug in the diabetes\
+                                                \ medication class"
+                                            - name: "cf-use"
+                                              dataType:
+                                                type: "Double"
+                                              description: "The clinical frequency\
+                                                \ of use for the associated drug in\
+                                                \ the diabetes medication class"
+                                            - name: "take-it_on"
+                                              dataType:
+                                                type: "Boolean"
+                                              description: "Indicates whether the\
+                                                \ associated drug should be taken\
+                                                \ as prescribed"
+                                            - name: "strength"
+                                              dataType:
+                                                type: "String"
+                                              description: "The strength of the associated\
+                                                \ drug in the diabetes medication\
+                                                \ class"
+                                        description: "Second associated drug used\
+                                          \ in diabetes treatment"
+                                  description: "First class of medications for diabetes"
+                                - name: "className_2"
+                                  dataType:
+                                    type: "Array"
+                                    dataType:
+                                      type: "Struct"
+                                      fields:
+                                      - name: "associated-Drug"
+                                        dataType:
+                                          type: "Array"
+                                          dataType:
+                                            type: "Struct"
+                                            fields:
+                                            - name: "name"
+                                              dataType:
+                                                type: "String"
+                                              description: "Name of the associated\
+                                                \ drug in the second class of diabetes\
+                                                \ medications"
+                                            - name: "dose"
+                                              dataType:
+                                                type: "Integer"
+                                              description: "Dosage information for\
+                                                \ the associated drug in the second\
+                                                \ class of diabetes medications"
+                                            - name: "cf-use"
+                                              dataType:
+                                                type: "Double"
+                                              description: "Indicates the clinical\
+                                                \ use frequency of the associated\
+                                                \ drug in the second class of diabetes\
+                                                \ medications"
+                                            - name: "take-it_on"
+                                              dataType:
+                                                type: "Boolean"
+                                              description: "Flag indicating whether\
+                                                \ the associated drug should be taken\
+                                                \ regularly"
+                                            - name: "strength"
+                                              dataType:
+                                                type: "String"
+                                              description: "Strength of the associated\
+                                                \ drug for diabetes treatment"
+                                        description: "List of associated drugs for\
+                                          \ the second class of diabetes medications"
+                                      - name: "associated-Drug#2"
+                                        dataType:
+                                          type: "Array"
+                                          dataType:
+                                            type: "Struct"
+                                            fields:
+                                            - name: "name"
+                                              dataType:
+                                                type: "String"
+                                              description: "Name of the second associated\
+                                                \ drug for diabetes treatment"
+                                            - name: "dose"
+                                              dataType:
+                                                type: "Integer"
+                                              description: "Dosage of the second associated\
+                                                \ drug for diabetes treatment"
+                                            - name: "cf-use"
+                                              dataType:
+                                                type: "Double"
+                                              description: "Indicates if the second\
+                                                \ associated drug for diabetes treatment\
+                                                \ is used"
+                                            - name: "take-it_on"
+                                              dataType:
+                                                type: "Boolean"
+                                              description: "Indicates whether the\
+                                                \ associated drug for diabetes is\
+                                                \ to be taken"
+                                            - name: "strength"
+                                              dataType:
+                                                type: "String"
+                                              description: "Strength of the associated\
+                                                \ drug for diabetes"
+                                        description: "Second associated drug for diabetes\
+                                          \ treatment"
+                                  description: "Details of the second class of medications\
+                                    \ associated with diabetes"
+                            description: "Classes of medications related to diabetes"
+                      description: "List of medications prescribed for managing diabetes"
+                    - name: "labs"
+                      dataType:
+                        type: "Array"
+                        dataType:
+                          type: "Struct"
+                          fields:
+                          - name: "missing_field"
+                            dataType:
+                              type: "String"
+                            description: "Field indicating any missing information\
+                              \ in diabetes lab results"
+                      description: "Lab results related to diabetes"
+                description: "Details related to diabetes as a health problem"
+              - name: "Asthma"
+                dataType:
+                  type: "Array"
+                  dataType:
+                    type: "Struct"
+                    fields:
+                    - name: "medications"
+                      dataType:
+                        type: "Array"
+                        dataType:
+                          type: "Struct"
+                          fields:
+                          - name: "medicationsClasses"
+                            dataType:
+                              type: "Array"
+                              dataType:
+                                type: "Struct"
+                                fields:
+                                - name: "className_1"
+                                  dataType:
+                                    type: "Array"
+                                    dataType:
+                                      type: "Struct"
+                                      fields:
+                                      - name: "associated-Drug"
+                                        dataType:
+                                          type: "Array"
+                                          dataType:
+                                            type: "Struct"
+                                            fields:
+                                            - name: "name"
+                                              dataType:
+                                                type: "String"
+                                              description: "Name of the associated\
+                                                \ drug in the first class of asthma\
+                                                \ medications"
+                                            - name: "dose"
+                                              dataType:
+                                                type: "Integer"
+                                              description: "The dosage amount for\
+                                                \ the associated drug in asthma treatment"
+                                            - name: "cf-use"
+                                              dataType:
+                                                type: "Double"
+                                              description: "Indicates the clinical\
+                                                \ use frequency of the associated\
+                                                \ drug in asthma treatment"
+                                            - name: "take-it_on"
+                                              dataType:
+                                                type: "Boolean"
+                                              description: "Flag indicating whether\
+                                                \ the associated drug should be taken"
+                                            - name: "strength"
+                                              dataType:
+                                                type: "String"
+                                              description: "Strength of the associated\
+                                                \ drug used for asthma management"
+                                        description: "List of drugs associated with\
+                                          \ the first class of asthma medications"
+                                      - name: "associated-Drug#2"
+                                        dataType:
+                                          type: "Array"
+                                          dataType:
+                                            type: "Struct"
+                                            fields:
+                                            - name: "name"
+                                              dataType:
+                                                type: "String"
+                                              description: "Name of the associated\
+                                                \ drug for asthma treatment"
+                                            - name: "dose"
+                                              dataType:
+                                                type: "Integer"
+                                              description: "Dosage of the associated\
+                                                \ drug for asthma treatment"
+                                            - name: "cf-use"
+                                              dataType:
+                                                type: "Double"
+                                              description: "Cumulative frequency of\
+                                                \ use for the associated drug"
+                                            - name: "take-it_on"
+                                              dataType:
+                                                type: "Boolean"
+                                              description: "Indicates whether the\
+                                                \ associated drug should be taken"
+                                            - name: "strength"
+                                              dataType:
+                                                type: "String"
+                                              description: "Strength of the associated\
+                                                \ drug for asthma treatment"
+                                        description: "Second associated drug used\
+                                          \ in the asthma treatment regimen"
+                                  description: "First class of medications for asthma"
+                                - name: "className_2"
+                                  dataType:
+                                    type: "Array"
+                                    dataType:
+                                      type: "Struct"
+                                      fields:
+                                      - name: "associated-Drug"
+                                        dataType:
+                                          type: "Array"
+                                          dataType:
+                                            type: "Struct"
+                                            fields:
+                                            - name: "name"
+                                              dataType:
+                                                type: "String"
+                                              description: "Name of the associated\
+                                                \ drug in the second class of asthma\
+                                                \ medications"
+                                            - name: "dose"
+                                              dataType:
+                                                type: "Integer"
+                                              description: "Dosage information for\
+                                                \ the associated drug in the second\
+                                                \ class of asthma medications"
+                                            - name: "cf-use"
+                                              dataType:
+                                                type: "Double"
+                                              description: "Indicates the clinical\
+                                                \ use frequency for the associated\
+                                                \ drug in the second class of asthma\
+                                                \ medications"
+                                            - name: "take-it_on"
+                                              dataType:
+                                                type: "Boolean"
+                                              description: "Indicates whether the\
+                                                \ associated drug should be taken\
+                                                \ as prescribed."
+                                            - name: "strength"
+                                              dataType:
+                                                type: "String"
+                                              description: "Strength of the associated\
+                                                \ drug."
+                                        description: "List of drugs associated with\
+                                          \ the second class of asthma medications"
+                                      - name: "associated-Drug#2"
+                                        dataType:
+                                          type: "Array"
+                                          dataType:
+                                            type: "Struct"
+                                            fields:
+                                            - name: "name"
+                                              dataType:
+                                                type: "String"
+                                              description: "Name of the second associated\
+                                                \ drug."
+                                            - name: "dose"
+                                              dataType:
+                                                type: "Integer"
+                                              description: "Dose of the second associated\
+                                                \ drug."
+                                            - name: "cf-use"
+                                              dataType:
+                                                type: "Double"
+                                              description: "Indicates the frequency\
+                                                \ of use for the second associated\
+                                                \ drug in the asthma medication class."
+                                            - name: "take-it_on"
+                                              dataType:
+                                                type: "Boolean"
+                                              description: "Indicates whether the\
+                                                \ second associated drug in the asthma\
+                                                \ medication class should be taken."
+                                            - name: "strength"
+                                              dataType:
+                                                type: "String"
+                                              description: "Strength of the second\
+                                                \ associated drug in the asthma medication\
+                                                \ class."
+                                        description: "Second associated drug in the\
+                                          \ medication class."
+                                  description: "Class name for the second category\
+                                    \ of asthma medications"
+                            description: "Classes of medications used for asthma treatment"
+                      description: "List of medications related to asthma"
+                    - name: "labs"
+                      dataType:
+                        type: "Array"
+                        dataType:
+                          type: "Struct"
+                          fields:
+                          - name: "missing_field"
+                            dataType:
+                              type: "String"
+                            description: "Field indicating any missing information\
+                              \ in the lab results for asthma."
+                      description: "Lab results related to asthma conditions."
+                description: "Information related to asthma conditions and treatments"
+          description: "List of health problems identified in the patient"
