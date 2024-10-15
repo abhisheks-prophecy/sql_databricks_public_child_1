@@ -9,8 +9,9 @@
     },
     "graphConfig" : {
       "entityConfig" : {
-        "strategy" : "'check'",
-        "check_cols" : "['c_id', 'c_struct.city', 'c_smallint']",
+        "strategy" : "'timestamp'",
+        "check_cols" : [ ],
+        "updated_at" : "\"c_float\"",
         "target_schema" : " var('qa_schema') ",
         "unique_key" : "'c_id'",
         "type" : "SnapshotConfig"

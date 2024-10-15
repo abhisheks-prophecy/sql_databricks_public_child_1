@@ -65,35 +65,29 @@ snapshots:
       type: "Date"
 - name: "uitesting_scd2_diff_col_val"
   columns:
-  - name: "c_tinyint"
-    dataType:
-      type: "TinyInt"
-  - name: "c_smallint"
-    dataType:
-      type: "SmallInt"
-  - name: "c_int"
-    dataType:
-      type: "Integer"
-  - name: "c_bigint"
-    dataType:
-      type: "Bigint"
   - name: "c_float"
     dataType:
       type: "Float"
-  - name: "c_double"
+  - name: "dbt_valid_to"
     dataType:
-      type: "Float"
-  - name: "c_string"
+      type: "String"
+  - name: "dbt_updated_at"
     dataType:
       type: "String"
   - name: "c_boolean"
     dataType:
       type: "Boolean"
+  - name: "c_smallint"
+    dataType:
+      type: "SmallInt"
   - name: "c_array"
     dataType:
       type: "Array"
       dataType:
         type: "String"
+  - name: "c_double"
+    dataType:
+      type: "Double"
   - name: "c_struct"
     dataType:
       type: "Struct"
@@ -107,6 +101,25 @@ snapshots:
       - name: "pin"
         dataType:
           type: "Bigint"
+  - name: "dbt_valid_from"
+    dataType:
+      type: "String"
+  - name: "c_bigint"
+    dataType:
+      type: "Bigint"
+  - name: "c_int"
+    dataType:
+      type: "Integer"
   - name: "c_id"
     dataType:
       type: "Bigint"
+  - name: "dbt_scd_id"
+    dataType:
+      type: "String"
+  - name: "c_string"
+    dataType:
+      type: "String"
+  - name: "c_tinyint"
+    dataType:
+      type: "TinyInt"
+  tests: []

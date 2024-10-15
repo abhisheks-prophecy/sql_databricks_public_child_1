@@ -9,8 +9,9 @@
     },
     "graphConfig" : {
       "entityConfig" : {
-        "strategy" : "'check'",
-        "check_cols" : [ "'c_bigint'", "'c_float'" ],
+        "strategy" : "'timestamp'",
+        "check_cols" : [ ],
+        "updated_at" : "\"c_float\"",
         "target_schema" : "'QA_SCHEMA'",
         "unique_key" : "'c_int'",
         "type" : "SnapshotConfig"

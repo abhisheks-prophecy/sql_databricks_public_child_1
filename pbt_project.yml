@@ -877,18 +877,19 @@ sqlSnapshots:
           type: String
       - name: dbt_updated_at
         dataType:
-          type: Timestamp
+          type: Float
       - name: dbt_valid_from
         dataType:
-          type: Timestamp
+          type: Float
       - name: dbt_valid_to
         dataType:
-          type: Timestamp
+          type: Float
     description: null
     author: abhisheks+shared@prophecy.io
     files:
     - snapshots/snapshot_sanity_test_1.sql
     - .prophecy/ide/snapshots/snapshot_sanity_test_1.json
+    - snapshots/schema.yml
     sqlDependencies:
       models: []
       datasets: []
@@ -952,13 +953,13 @@ sqlSnapshots:
           type: String
       - name: dbt_updated_at
         dataType:
-          type: Timestamp
+          type: Float
       - name: dbt_valid_from
         dataType:
-          type: Timestamp
+          type: Float
       - name: dbt_valid_to
         dataType:
-          type: Timestamp
+          type: Float
     description: null
     author: abhisheks+shared@prophecy.io
     files:

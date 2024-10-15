@@ -1,10 +1,11 @@
 {% snapshot snapshot_sanity_test_1 %}
 {{
   config({    
-    "check_cols": ['c_bigint', 'c_float'],
-    "strategy": 'check',
+    "check_cols": [],
+    "strategy": 'timestamp',
     "target_schema": 'QA_SCHEMA',
-    "unique_key": 'c_int'
+    "unique_key": 'c_int',
+    "updated_at": "c_float"
   })
 }}
 

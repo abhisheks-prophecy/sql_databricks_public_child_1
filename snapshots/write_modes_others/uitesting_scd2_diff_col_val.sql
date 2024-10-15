@@ -1,10 +1,11 @@
 {% snapshot uitesting_scd2_diff_col_val %}
 {{
   config({    
-    "check_cols": ['c_id', 'c_struct.city', 'c_smallint'],
-    "strategy": 'check',
+    "check_cols": [],
+    "strategy": 'timestamp',
     "target_schema":  var('qa_schema') ,
-    "unique_key": 'c_id'
+    "unique_key": 'c_id',
+    "updated_at": "c_float"
   })
 }}
 
