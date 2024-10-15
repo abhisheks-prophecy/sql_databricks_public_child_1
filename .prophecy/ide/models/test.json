@@ -971,6 +971,61 @@
         "isCustomOutputSchema" : false,
         "autoUpdateOnRun" : false
       }
+    },
+    "GTrj6SwgTKW9eCT5swUZw" : {
+      "id" : "GTrj6SwgTKW9eCT5swUZw",
+      "component" : "Seed",
+      "metadata" : {
+        "label" : "country_classification",
+        "slug" : "country_classification",
+        "x" : -720,
+        "y" : -180,
+        "phase" : 0
+      },
+      "properties" : {
+        "table" : {
+          "name" : "country_classification",
+          "sourceType" : "Seed",
+          "alias" : ""
+        }
+      },
+      "ports" : {
+        "inputs" : [ ],
+        "outputs" : [ {
+          "id" : "yVsrib0tlOSvJiBbGYb5B",
+          "slug" : "out"
+        } ],
+        "isCustomOutputSchema" : false,
+        "autoUpdateOnRun" : false
+      }
+    },
+    "Dao-qUZv96OIt2RgMg5zf$$qmHTmnPURY7ArLwZGmZds" : {
+      "id" : "Dao-qUZv96OIt2RgMg5zf$$qmHTmnPURY7ArLwZGmZds",
+      "component" : "Reformat",
+      "metadata" : {
+        "label" : "Reformat_1",
+        "slug" : "Reformat_1",
+        "x" : -380,
+        "y" : -80,
+        "phase" : 0,
+        "macroDependencies" : [ ]
+      },
+      "properties" : {
+        "columnsSelector" : [ ],
+        "expressions" : [ ]
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "f1DHpK9vrJs9VtuMLF0BD$$O_aZzwFLQ7ysGfmNRj8sE",
+          "slug" : "in0"
+        } ],
+        "outputs" : [ {
+          "id" : "xNE8U9wOor4L0v7sySOAR$$inHozkEzVnLfJi2leKZc6",
+          "slug" : "out"
+        } ],
+        "isCustomOutputSchema" : false,
+        "autoUpdateOnRun" : false
+      }
     }
   },
   "connections" : [ {
