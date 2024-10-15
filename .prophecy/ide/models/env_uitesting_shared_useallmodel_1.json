@@ -1232,13 +1232,13 @@
         "macroName" : "combine_multiple_tables",
         "parameters" : [ {
           "name" : "table_1",
-          "value" : "'child_deduplicate_custom_1'"
+          "value" : "'Limit_2'"
         }, {
           "name" : "table_2",
           "value" : "'Limit_5'"
         }, {
           "name" : "table_3",
-          "value" : "'Subgraph_9'"
+          "value" : "'child_deduplicate_custom_1'"
         }, {
           "name" : "table_4",
           "value" : "'Limit_3'"
@@ -1254,13 +1254,13 @@
       "ports" : {
         "inputs" : [ {
           "id" : "Bs77IRcZ",
-          "slug" : "child_deduplicate_custom_1"
+          "slug" : "Limit_2"
         }, {
           "id" : "CjQSNhZd",
           "slug" : "Limit_5"
         }, {
           "id" : "QcVgQLsn",
-          "slug" : "Subgraph_9"
+          "slug" : "child_deduplicate_custom_1"
         }, {
           "id" : "eRXL3JDX",
           "slug" : "Limit_3"
@@ -1334,8 +1334,7 @@
         } ],
         "isCustomOutputSchema" : false,
         "autoUpdateOnRun" : false
-      },
-      "index" : 52
+      }
     },
     "Reformat_1_2_1_1##e9gDryVn" : {
       "id" : "Reformat_1_2_1_1##e9gDryVn",
@@ -1522,8 +1521,7 @@
         } ],
         "isCustomOutputSchema" : false,
         "autoUpdateOnRun" : false
-      },
-      "index" : 44
+      }
     },
     "SQLStatement_1_1##A1xlc0Hf" : {
       "id" : "SQLStatement_1_1##A1xlc0Hf",
@@ -1553,8 +1551,7 @@
         } ],
         "isCustomOutputSchema" : false,
         "autoUpdateOnRun" : false
-      },
-      "index" : 15
+      }
     },
     "Filter_1##NfaeHJHF" : {
       "id" : "Filter_1##NfaeHJHF",
@@ -1584,8 +1581,7 @@
         } ],
         "isCustomOutputSchema" : false,
         "autoUpdateOnRun" : false
-      },
-      "index" : 40
+      }
     },
     "Reformat_2_1##n8Czs2Zt" : {
       "id" : "Reformat_2_1##n8Czs2Zt",
@@ -2981,8 +2977,7 @@
         } ],
         "isCustomOutputSchema" : false,
         "autoUpdateOnRun" : false
-      },
-      "index" : 37
+      }
     },
     "all_type_parquet##rJn5V2mU" : {
       "id" : "all_type_parquet##rJn5V2mU",
@@ -11975,6 +11970,8 @@
           "component" : "Limit",
           "metadata" : {
             "label" : "Limit_4",
+            "x" : 220,
+            "y" : 20,
             "phase" : 0,
             "isLabelGrayed" : false
           },
@@ -12042,6 +12039,8 @@
           "component" : "Reformat",
           "metadata" : {
             "label" : "AllExSQL",
+            "x" : 220,
+            "y" : 620,
             "phase" : 0,
             "macroDependencies" : [ ],
             "isLabelGrayed" : false
@@ -16675,6 +16674,8 @@
           "component" : "SQLStatement",
           "metadata" : {
             "label" : "SQLStatement_1_3",
+            "x" : 220,
+            "y" : 220,
             "phase" : 0,
             "macroDependencies" : [ ],
             "isLabelGrayed" : false
@@ -16712,6 +16713,8 @@
           "component" : "Reformat",
           "metadata" : {
             "label" : "Reformat_1_2_2",
+            "x" : 20,
+            "y" : 820,
             "phase" : 0,
             "macroDependencies" : [ ],
             "isLabelGrayed" : false
@@ -16847,6 +16850,8 @@
           "component" : "SQLStatement",
           "metadata" : {
             "label" : "SQLStatement_4_2",
+            "x" : 220,
+            "y" : 420,
             "phase" : 0,
             "macroDependencies" : [ ],
             "isLabelGrayed" : false
@@ -17015,6 +17020,8 @@
           "component" : "Reformat",
           "metadata" : {
             "label" : "SQLStatement_6",
+            "x" : 20,
+            "y" : 420,
             "phase" : 0,
             "macroDependencies" : [ ],
             "isLabelGrayed" : false
@@ -17189,6 +17196,8 @@
           "component" : "OrderBy",
           "metadata" : {
             "label" : "OrderBy_1",
+            "x" : 20,
+            "y" : 20,
             "phase" : 0,
             "macroDependencies" : [ ],
             "isLabelGrayed" : false
@@ -17261,6 +17270,8 @@
           "component" : "Reformat",
           "metadata" : {
             "label" : "Reformat_1_2_1",
+            "x" : 20,
+            "y" : 620,
             "phase" : 0,
             "macroDependencies" : [ ],
             "isLabelGrayed" : false
@@ -17396,6 +17407,8 @@
           "component" : "Macro",
           "metadata" : {
             "label" : "combine_multiple_tables_4",
+            "x" : 480,
+            "y" : 400,
             "phase" : 0,
             "macroDependencies" : [ "SQL_DatabricksSharedBasic.combine_multiple_tables" ],
             "comment" : "Consolidates data from multiple tables for comprehensive analysis.",
@@ -20074,6 +20087,8 @@
           "component" : "Filter",
           "metadata" : {
             "label" : "Filter_1_1_1",
+            "x" : 220,
+            "y" : 820,
             "phase" : 0,
             "macroDependencies" : [ ],
             "isLabelGrayed" : false
@@ -20540,8 +20555,7 @@
         } ],
         "isCustomOutputSchema" : false,
         "autoUpdateOnRun" : false
-      },
-      "index" : 51
+      }
     },
     "distinct_all_typ##dmp5hEsP" : {
       "id" : "distinct_all_typ##dmp5hEsP",
@@ -20609,8 +20623,7 @@
         } ],
         "isCustomOutputSchema" : false,
         "autoUpdateOnRun" : false
-      },
-      "index" : 25
+      }
     },
     "distinct_rows_by##UAqCmVOo" : {
       "id" : "distinct_rows_by##UAqCmVOo",
@@ -20808,8 +20821,7 @@
         } ],
         "isCustomOutputSchema" : false,
         "autoUpdateOnRun" : false
-      },
-      "index" : 16
+      }
     },
     "Limit_4_1##r0AG3Qhe" : {
       "id" : "Limit_4_1##r0AG3Qhe",
@@ -20837,8 +20849,7 @@
         } ],
         "isCustomOutputSchema" : false,
         "autoUpdateOnRun" : false
-      },
-      "index" : 50
+      }
     },
     "all_type_parquet##g2cQ0FME" : {
       "id" : "all_type_parquet##g2cQ0FME",
@@ -20950,8 +20961,7 @@
         } ],
         "isCustomOutputSchema" : false,
         "autoUpdateOnRun" : false
-      },
-      "index" : 49
+      }
     },
     "AllStunningOne##W5nERFfv" : {
       "id" : "AllStunningOne##W5nERFfv",
@@ -21159,8 +21169,7 @@
         } ],
         "isCustomOutputSchema" : false,
         "autoUpdateOnRun" : false
-      },
-      "index" : 53
+      }
     },
     "all_type_parquet##U6eHSbQ5" : {
       "id" : "all_type_parquet##U6eHSbQ5",
@@ -21243,8 +21252,7 @@
         } ],
         "isCustomOutputSchema" : false,
         "autoUpdateOnRun" : false
-      },
-      "index" : 41
+      }
     },
     "Limit8Test1##GOyIM2nd" : {
       "id" : "Limit8Test1##GOyIM2nd",
@@ -21273,8 +21281,7 @@
         } ],
         "isCustomOutputSchema" : false,
         "autoUpdateOnRun" : false
-      },
-      "index" : 11
+      }
     },
     "Z5uIX4O5YlStqwfAF2AiS$$kATjw3OS5f1yWCBl2IPj0" : {
       "id" : "Z5uIX4O5YlStqwfAF2AiS$$kATjw3OS5f1yWCBl2IPj0",
@@ -21282,28 +21289,28 @@
       "metadata" : {
         "label" : "child_deduplicate_custom_1",
         "slug" : "child_deduplicate_custom_1",
-        "x" : 1860,
-        "y" : 1360,
+        "x" : 1420,
+        "y" : 2080,
         "phase" : 0,
         "macroDependencies" : [ ],
         "comment" : "Removes duplicate child records to ensure data accuracy."
       },
       "properties" : {
-        "relation" : "Limit_2",
-        "order_by" : "c_tinyint",
-        "partition_by" : "c_smallint",
+        "relation" : "Subgraph_9",
+        "order_by" : "first_name",
+        "partition_by" : "id",
         "_oldMacroProperties" : {
           "macroName" : "child_deduplicate_custom",
           "projectName" : "SQL_DatabricksSharedBasic",
           "parameters" : [ {
             "name" : "relation",
-            "value" : "'Limit_2'"
+            "value" : "'Subgraph_9'"
           }, {
             "name" : "order_by",
-            "value" : "'c_tinyint'"
+            "value" : "'first_name'"
           }, {
             "name" : "partition_by",
-            "value" : "'c_smallint'"
+            "value" : "'id'"
           } ]
         }
       },
@@ -21362,8 +21369,7 @@
         } ],
         "isCustomOutputSchema" : false,
         "autoUpdateOnRun" : false
-      },
-      "index" : 30
+      }
     },
     "all_type_non_par##SkOZHUQC" : {
       "id" : "all_type_non_par##SkOZHUQC",
@@ -22030,12 +22036,6 @@
     "target" : "combine_multiple##KyIr4hRU",
     "targetPort" : "CjQSNhZd"
   }, {
-    "id" : "mK9bqMnb",
-    "source" : "Subgraph_9##jSHL9Wbh",
-    "sourcePort" : "eihuiCoI",
-    "target" : "combine_multiple##KyIr4hRU",
-    "targetPort" : "QcVgQLsn"
-  }, {
     "id" : "Z03dg6ji",
     "source" : "Limit_3##xU8jK7lz",
     "sourcePort" : "QTNxX1Rz",
@@ -22054,17 +22054,23 @@
     "target" : "final##VW3x35Yo",
     "targetPort" : "RSqMQwR3"
   }, {
-    "id" : "tufJ0PxzaVXooeD4dSiVG",
+    "id" : "jc8ZAQcWu9JzpMyGm0ul4",
     "source" : "Limit_2##KCNoKYRw",
     "sourcePort" : "PQII1zBe",
+    "target" : "combine_multiple##KyIr4hRU",
+    "targetPort" : "Bs77IRcZ"
+  }, {
+    "id" : "eU6sqpjecTc9qHR7nzu2Z$$ZCCwHoEFkCackeAq4_Jdl",
+    "source" : "Subgraph_9##jSHL9Wbh",
+    "sourcePort" : "eihuiCoI",
     "target" : "Z5uIX4O5YlStqwfAF2AiS$$kATjw3OS5f1yWCBl2IPj0",
     "targetPort" : "Mk-pcAuuLfv5K3GvOKewL$$L0x6kSbX2Y1Mi_MsWnefK"
   }, {
-    "id" : "qDAYtjDznJnb2xq1wP-xd",
+    "id" : "ycurkRuUDr1VKb_MTqW4w",
     "source" : "Z5uIX4O5YlStqwfAF2AiS$$kATjw3OS5f1yWCBl2IPj0",
     "sourcePort" : "M_CxifvAYnzchFH3S-7xX$$mbuhqgTQu9LX19TTttgEV",
     "target" : "combine_multiple##KyIr4hRU",
-    "targetPort" : "Bs77IRcZ"
+    "targetPort" : "QcVgQLsn"
   } ],
   "component" : "Model"
 }
