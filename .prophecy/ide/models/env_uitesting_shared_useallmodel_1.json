@@ -5,7 +5,1895 @@
     "autoLayout" : false,
     "staleState" : "none",
     "sourceSuggestions" : {
-      "sources" : [ ]
+      "sources" : [ {
+        "source" : {
+          "table" : {
+            "name" : "all_type_non_partitioned",
+            "sourceName" : "hive_metastore.qa_database",
+            "sourceType" : "Source"
+          }
+        },
+        "sourceComponentKind" : "Source",
+        "sourceLabel" : "all_type_non_partitioned_1",
+        "canJoinWith" : [ {
+          "processLabel" : "all_type_parquet",
+          "processId" : "all_type##Subgraph##TwuXgHIl",
+          "properties" : {
+            "activeTab" : "conditions",
+            "columnsSelector" : [ "c_array", "c_bigint", "c_boolean" ],
+            "conditions" : [ {
+              "alias" : "all_type_non_partitioned_1",
+              "expression" : {
+                "expression" : "all_type_non_partitioned_1.c_array = all_type_parquet.c_array AND all_type_non_partitioned_1.c_bigint = all_type_parquet.c_bigint AND all_type_non_partitioned_1.c_boolean = all_type_parquet.c_boolean"
+              },
+              "joinType" : "inner"
+            } ],
+            "expressions" : [ {
+              "expression" : {
+                "expression" : "all_type_parquet.c_int"
+              },
+              "alias" : "c_int"
+            }, {
+              "expression" : {
+                "expression" : "all_type_parquet.c_smallint"
+              },
+              "alias" : "c_smallint"
+            }, {
+              "expression" : {
+                "expression" : "all_type_parquet.c_float"
+              },
+              "alias" : "c_float"
+            }, {
+              "expression" : {
+                "expression" : "all_type_parquet.c_bigint"
+              },
+              "alias" : "c_bigint"
+            }, {
+              "expression" : {
+                "expression" : "all_type_parquet.c_array"
+              },
+              "alias" : "c_array"
+            }, {
+              "expression" : {
+                "expression" : "all_type_parquet.c_double"
+              },
+              "alias" : "c_double"
+            }, {
+              "expression" : {
+                "expression" : "all_type_parquet.c_tinyint"
+              },
+              "alias" : "c_tinyint"
+            }, {
+              "expression" : {
+                "expression" : "all_type_parquet.c_string"
+              },
+              "alias" : "c_string"
+            }, {
+              "expression" : {
+                "expression" : "all_type_parquet.c_struct"
+              },
+              "alias" : "c_struct"
+            }, {
+              "expression" : {
+                "expression" : "all_type_parquet.c_boolean"
+              },
+              "alias" : "c_boolean"
+            } ],
+            "headAlias" : "all_type_non_partitioned_1",
+            "allowSelection" : false
+          },
+          "joinColumns" : [ "c_array", "c_bigint", "c_boolean" ],
+          "isRecommended" : true
+        } ]
+      }, {
+        "source" : {
+          "table" : {
+            "name" : "all_type_non_partitioned",
+            "sourceName" : "hive_metastore.qa_db_warehouse",
+            "sourceType" : "Source"
+          }
+        },
+        "sourceComponentKind" : "Source",
+        "sourceLabel" : "all_type_non_partitioned_1",
+        "canJoinWith" : [ {
+          "processLabel" : "all_type_parquet",
+          "processId" : "all_type##Subgraph##TwuXgHIl",
+          "properties" : {
+            "activeTab" : "conditions",
+            "columnsSelector" : [ "c_array", "c_bigint", "c_boolean" ],
+            "conditions" : [ {
+              "alias" : "all_type_non_partitioned_1",
+              "expression" : {
+                "expression" : "all_type_non_partitioned_1.c_array = all_type_parquet.c_array AND all_type_non_partitioned_1.c_bigint = all_type_parquet.c_bigint AND all_type_non_partitioned_1.c_boolean = all_type_parquet.c_boolean"
+              },
+              "joinType" : "inner"
+            } ],
+            "expressions" : [ {
+              "expression" : {
+                "expression" : "all_type_parquet.c_int"
+              },
+              "alias" : "c_int"
+            }, {
+              "expression" : {
+                "expression" : "all_type_parquet.c_smallint"
+              },
+              "alias" : "c_smallint"
+            }, {
+              "expression" : {
+                "expression" : "all_type_parquet.c_float"
+              },
+              "alias" : "c_float"
+            }, {
+              "expression" : {
+                "expression" : "all_type_parquet.c_bigint"
+              },
+              "alias" : "c_bigint"
+            }, {
+              "expression" : {
+                "expression" : "all_type_parquet.c_array"
+              },
+              "alias" : "c_array"
+            }, {
+              "expression" : {
+                "expression" : "all_type_parquet.c_double"
+              },
+              "alias" : "c_double"
+            }, {
+              "expression" : {
+                "expression" : "all_type_parquet.c_tinyint"
+              },
+              "alias" : "c_tinyint"
+            }, {
+              "expression" : {
+                "expression" : "all_type_parquet.c_string"
+              },
+              "alias" : "c_string"
+            }, {
+              "expression" : {
+                "expression" : "all_type_parquet.c_struct"
+              },
+              "alias" : "c_struct"
+            }, {
+              "expression" : {
+                "expression" : "all_type_parquet.c_boolean"
+              },
+              "alias" : "c_boolean"
+            } ],
+            "headAlias" : "all_type_non_partitioned_1",
+            "allowSelection" : false
+          },
+          "joinColumns" : [ "c_array", "c_bigint", "c_boolean" ],
+          "isRecommended" : true
+        } ]
+      }, {
+        "source" : {
+          "table" : {
+            "name" : "all_type_partitioned",
+            "sourceName" : "spark_catalog.qa_database",
+            "sourceType" : "Source"
+          }
+        },
+        "sourceComponentKind" : "Source",
+        "sourceLabel" : "all_type_partitioned_1",
+        "canJoinWith" : [ {
+          "processLabel" : "all_type_parquet",
+          "processId" : "all_type##Subgraph##TwuXgHIl",
+          "properties" : {
+            "activeTab" : "conditions",
+            "columnsSelector" : [ "c_array", "c_bigint", "c_boolean" ],
+            "conditions" : [ {
+              "alias" : "all_type_partitioned_1",
+              "expression" : {
+                "expression" : "all_type_partitioned_1.c_array = all_type_parquet.c_array AND all_type_partitioned_1.c_bigint = all_type_parquet.c_bigint AND all_type_partitioned_1.c_boolean = all_type_parquet.c_boolean"
+              },
+              "joinType" : "inner"
+            } ],
+            "expressions" : [ {
+              "expression" : {
+                "expression" : "all_type_partitioned_1.p_int"
+              },
+              "alias" : "p_int"
+            }, {
+              "expression" : {
+                "expression" : "all_type_partitioned_1.p_string"
+              },
+              "alias" : "p_string"
+            }, {
+              "expression" : {
+                "expression" : "all_type_parquet.c_int"
+              },
+              "alias" : "c_int"
+            }, {
+              "expression" : {
+                "expression" : "all_type_parquet.c_smallint"
+              },
+              "alias" : "c_smallint"
+            }, {
+              "expression" : {
+                "expression" : "all_type_parquet.c_float"
+              },
+              "alias" : "c_float"
+            }, {
+              "expression" : {
+                "expression" : "all_type_parquet.c_bigint"
+              },
+              "alias" : "c_bigint"
+            }, {
+              "expression" : {
+                "expression" : "all_type_parquet.c_array"
+              },
+              "alias" : "c_array"
+            }, {
+              "expression" : {
+                "expression" : "all_type_parquet.c_double"
+              },
+              "alias" : "c_double"
+            }, {
+              "expression" : {
+                "expression" : "all_type_parquet.c_tinyint"
+              },
+              "alias" : "c_tinyint"
+            }, {
+              "expression" : {
+                "expression" : "all_type_parquet.c_string"
+              },
+              "alias" : "c_string"
+            }, {
+              "expression" : {
+                "expression" : "all_type_parquet.c_struct"
+              },
+              "alias" : "c_struct"
+            }, {
+              "expression" : {
+                "expression" : "all_type_parquet.c_boolean"
+              },
+              "alias" : "c_boolean"
+            } ],
+            "headAlias" : "all_type_partitioned_1",
+            "allowSelection" : false
+          },
+          "joinColumns" : [ "c_array", "c_bigint", "c_boolean" ],
+          "isRecommended" : true
+        }, {
+          "processLabel" : "env_uitesting_shared_mid_model_1",
+          "processId" : "env_uite##Subgraph##UdRUC8hz",
+          "properties" : {
+            "activeTab" : "conditions",
+            "columnsSelector" : [ "c_float" ],
+            "conditions" : [ {
+              "alias" : "all_type_partitioned_1",
+              "expression" : {
+                "expression" : "all_type_partitioned_1.c_float = env_uitesting_shared_mid_model_1.c_float"
+              },
+              "joinType" : "inner"
+            } ],
+            "expressions" : [ {
+              "expression" : {
+                "expression" : "all_type_partitioned_1.p_int"
+              },
+              "alias" : "p_int"
+            }, {
+              "expression" : {
+                "expression" : "all_type_partitioned_1.p_string"
+              },
+              "alias" : "p_string"
+            }, {
+              "expression" : {
+                "expression" : "env_uitesting_shared_mid_model_1.c_array"
+              },
+              "alias" : "c_array"
+            }, {
+              "expression" : {
+                "expression" : "env_uitesting_shared_mid_model_1.c_tinyint"
+              },
+              "alias" : "c_tinyint"
+            }, {
+              "expression" : {
+                "expression" : "env_uitesting_shared_mid_model_1.c_struct"
+              },
+              "alias" : "c_struct"
+            }, {
+              "expression" : {
+                "expression" : "env_uitesting_shared_mid_model_1.c_float"
+              },
+              "alias" : "c_float"
+            }, {
+              "expression" : {
+                "expression" : "env_uitesting_shared_mid_model_1.c_bigint"
+              },
+              "alias" : "c_bigint"
+            }, {
+              "expression" : {
+                "expression" : "env_uitesting_shared_mid_model_1.c_double"
+              },
+              "alias" : "c_double"
+            }, {
+              "expression" : {
+                "expression" : "env_uitesting_shared_mid_model_1.c_smallint"
+              },
+              "alias" : "c_smallint"
+            }, {
+              "expression" : {
+                "expression" : "env_uitesting_shared_mid_model_1.c_string"
+              },
+              "alias" : "c_string"
+            }, {
+              "expression" : {
+                "expression" : "env_uitesting_shared_mid_model_1.c_boolean"
+              },
+              "alias" : "c_boolean"
+            }, {
+              "expression" : {
+                "expression" : "env_uitesting_shared_mid_model_1.c_int"
+              },
+              "alias" : "c_int"
+            } ],
+            "headAlias" : "all_type_partitioned_1",
+            "allowSelection" : false
+          },
+          "joinColumns" : [ "c_float" ],
+          "isRecommended" : true
+        }, {
+          "processLabel" : "all_type_parquet_1_2",
+          "processId" : "all_type##Subgraph##SX2ZtsJw",
+          "properties" : {
+            "activeTab" : "conditions",
+            "columnsSelector" : [ "c_float" ],
+            "conditions" : [ {
+              "alias" : "all_type_partitioned_1",
+              "expression" : {
+                "expression" : "all_type_partitioned_1.c_float = all_type_parquet_1_2.c_float"
+              },
+              "joinType" : "inner"
+            } ],
+            "expressions" : [ {
+              "expression" : {
+                "expression" : "all_type_partitioned_1.p_int"
+              },
+              "alias" : "p_int"
+            }, {
+              "expression" : {
+                "expression" : "all_type_partitioned_1.p_string"
+              },
+              "alias" : "p_string"
+            }, {
+              "expression" : {
+                "expression" : "all_type_parquet_1_2.c_boolean"
+              },
+              "alias" : "c_boolean"
+            }, {
+              "expression" : {
+                "expression" : "all_type_parquet_1_2.c_bigint"
+              },
+              "alias" : "c_bigint"
+            }, {
+              "expression" : {
+                "expression" : "all_type_parquet_1_2.c_struct"
+              },
+              "alias" : "c_struct"
+            }, {
+              "expression" : {
+                "expression" : "all_type_parquet_1_2.c_double"
+              },
+              "alias" : "c_double"
+            }, {
+              "expression" : {
+                "expression" : "all_type_parquet_1_2.c_tinyint"
+              },
+              "alias" : "c_tinyint"
+            }, {
+              "expression" : {
+                "expression" : "all_type_parquet_1_2.c_smallint"
+              },
+              "alias" : "c_smallint"
+            }, {
+              "expression" : {
+                "expression" : "all_type_parquet_1_2.c_array"
+              },
+              "alias" : "c_array"
+            }, {
+              "expression" : {
+                "expression" : "all_type_parquet_1_2.c_int"
+              },
+              "alias" : "c_int"
+            }, {
+              "expression" : {
+                "expression" : "all_type_parquet_1_2.c_string"
+              },
+              "alias" : "c_string"
+            }, {
+              "expression" : {
+                "expression" : "all_type_parquet_1_2.c_float"
+              },
+              "alias" : "c_float"
+            } ],
+            "headAlias" : "all_type_partitioned_1",
+            "allowSelection" : false
+          },
+          "joinColumns" : [ "c_float" ],
+          "isRecommended" : false
+        }, {
+          "processLabel" : "all_type_parquet_1_1",
+          "processId" : "all_type##Subgraph##T149a4Ty",
+          "properties" : {
+            "activeTab" : "conditions",
+            "columnsSelector" : [ "c_float" ],
+            "conditions" : [ {
+              "alias" : "all_type_partitioned_1",
+              "expression" : {
+                "expression" : "all_type_partitioned_1.c_float = all_type_parquet_1_1.c_float"
+              },
+              "joinType" : "inner"
+            } ],
+            "expressions" : [ {
+              "expression" : {
+                "expression" : "all_type_partitioned_1.p_int"
+              },
+              "alias" : "p_int"
+            }, {
+              "expression" : {
+                "expression" : "all_type_partitioned_1.p_string"
+              },
+              "alias" : "p_string"
+            }, {
+              "expression" : {
+                "expression" : "all_type_parquet_1_1.c_boolean"
+              },
+              "alias" : "c_boolean"
+            }, {
+              "expression" : {
+                "expression" : "all_type_parquet_1_1.c_string"
+              },
+              "alias" : "c_string"
+            }, {
+              "expression" : {
+                "expression" : "all_type_parquet_1_1.c_double"
+              },
+              "alias" : "c_double"
+            }, {
+              "expression" : {
+                "expression" : "all_type_parquet_1_1.c_bigint"
+              },
+              "alias" : "c_bigint"
+            }, {
+              "expression" : {
+                "expression" : "all_type_parquet_1_1.c_tinyint"
+              },
+              "alias" : "c_tinyint"
+            }, {
+              "expression" : {
+                "expression" : "all_type_parquet_1_1.c_struct"
+              },
+              "alias" : "c_struct"
+            }, {
+              "expression" : {
+                "expression" : "all_type_parquet_1_1.c_array"
+              },
+              "alias" : "c_array"
+            }, {
+              "expression" : {
+                "expression" : "all_type_parquet_1_1.c_smallint"
+              },
+              "alias" : "c_smallint"
+            }, {
+              "expression" : {
+                "expression" : "all_type_parquet_1_1.c_float"
+              },
+              "alias" : "c_float"
+            }, {
+              "expression" : {
+                "expression" : "all_type_parquet_1_1.c_int"
+              },
+              "alias" : "c_int"
+            } ],
+            "headAlias" : "all_type_partitioned_1",
+            "allowSelection" : false
+          },
+          "joinColumns" : [ "c_float" ],
+          "isRecommended" : false
+        }, {
+          "processLabel" : "all_type_parquet_1",
+          "processId" : "all_type##Subgraph##H6Ek49Rd",
+          "properties" : {
+            "activeTab" : "conditions",
+            "columnsSelector" : [ "c_float" ],
+            "conditions" : [ {
+              "alias" : "all_type_partitioned_1",
+              "expression" : {
+                "expression" : "all_type_partitioned_1.c_float = all_type_parquet_1.c_float"
+              },
+              "joinType" : "inner"
+            } ],
+            "expressions" : [ {
+              "expression" : {
+                "expression" : "all_type_partitioned_1.p_int"
+              },
+              "alias" : "p_int"
+            }, {
+              "expression" : {
+                "expression" : "all_type_partitioned_1.p_string"
+              },
+              "alias" : "p_string"
+            }, {
+              "expression" : {
+                "expression" : "all_type_parquet_1.c_int"
+              },
+              "alias" : "c_int"
+            }, {
+              "expression" : {
+                "expression" : "all_type_parquet_1.c_float"
+              },
+              "alias" : "c_float"
+            }, {
+              "expression" : {
+                "expression" : "all_type_parquet_1.c_double"
+              },
+              "alias" : "c_double"
+            }, {
+              "expression" : {
+                "expression" : "all_type_parquet_1.c_array"
+              },
+              "alias" : "c_array"
+            }, {
+              "expression" : {
+                "expression" : "all_type_parquet_1.c_string"
+              },
+              "alias" : "c_string"
+            }, {
+              "expression" : {
+                "expression" : "all_type_parquet_1.c_smallint"
+              },
+              "alias" : "c_smallint"
+            }, {
+              "expression" : {
+                "expression" : "all_type_parquet_1.c_tinyint"
+              },
+              "alias" : "c_tinyint"
+            }, {
+              "expression" : {
+                "expression" : "all_type_parquet_1.c_struct"
+              },
+              "alias" : "c_struct"
+            }, {
+              "expression" : {
+                "expression" : "all_type_parquet_1.c_boolean"
+              },
+              "alias" : "c_boolean"
+            }, {
+              "expression" : {
+                "expression" : "all_type_parquet_1.c_bigint"
+              },
+              "alias" : "c_bigint"
+            } ],
+            "headAlias" : "all_type_partitioned_1",
+            "allowSelection" : false
+          },
+          "joinColumns" : [ "c_float" ],
+          "isRecommended" : false
+        }, {
+          "processLabel" : "env_uitesting_shared_parent_model_1",
+          "processId" : "env_uite##Subgraph##PV9ie1xP",
+          "properties" : {
+            "activeTab" : "conditions",
+            "columnsSelector" : [ "c_float" ],
+            "conditions" : [ {
+              "alias" : "all_type_partitioned_1",
+              "expression" : {
+                "expression" : "all_type_partitioned_1.c_float = env_uitesting_shared_parent_model_1.c_float"
+              },
+              "joinType" : "inner"
+            } ],
+            "expressions" : [ {
+              "expression" : {
+                "expression" : "all_type_partitioned_1.p_int"
+              },
+              "alias" : "p_int"
+            }, {
+              "expression" : {
+                "expression" : "all_type_partitioned_1.p_string"
+              },
+              "alias" : "p_string"
+            }, {
+              "expression" : {
+                "expression" : "env_uitesting_shared_parent_model_1.c_smallint"
+              },
+              "alias" : "c_smallint"
+            }, {
+              "expression" : {
+                "expression" : "env_uitesting_shared_parent_model_1.c_double"
+              },
+              "alias" : "c_double"
+            }, {
+              "expression" : {
+                "expression" : "env_uitesting_shared_parent_model_1.c_bigint"
+              },
+              "alias" : "c_bigint"
+            }, {
+              "expression" : {
+                "expression" : "env_uitesting_shared_parent_model_1.c_string"
+              },
+              "alias" : "c_string"
+            }, {
+              "expression" : {
+                "expression" : "env_uitesting_shared_parent_model_1.c_tinyint"
+              },
+              "alias" : "c_tinyint"
+            }, {
+              "expression" : {
+                "expression" : "env_uitesting_shared_parent_model_1.c_boolean"
+              },
+              "alias" : "c_boolean"
+            }, {
+              "expression" : {
+                "expression" : "env_uitesting_shared_parent_model_1.c_float"
+              },
+              "alias" : "c_float"
+            }, {
+              "expression" : {
+                "expression" : "env_uitesting_shared_parent_model_1.c_int"
+              },
+              "alias" : "c_int"
+            }, {
+              "expression" : {
+                "expression" : "env_uitesting_shared_parent_model_1.c_array"
+              },
+              "alias" : "c_array"
+            }, {
+              "expression" : {
+                "expression" : "env_uitesting_shared_parent_model_1.c_struct"
+              },
+              "alias" : "c_struct"
+            } ],
+            "headAlias" : "all_type_partitioned_1",
+            "allowSelection" : false
+          },
+          "joinColumns" : [ "c_float" ],
+          "isRecommended" : false
+        }, {
+          "processLabel" : "all_type_parquet_1_1_1",
+          "processId" : "all_type##Subgraph##WGYEDe3G",
+          "properties" : {
+            "activeTab" : "conditions",
+            "columnsSelector" : [ "c_float" ],
+            "conditions" : [ {
+              "alias" : "all_type_partitioned_1",
+              "expression" : {
+                "expression" : "all_type_partitioned_1.c_float = all_type_parquet_1_1_1.c_float"
+              },
+              "joinType" : "inner"
+            } ],
+            "expressions" : [ {
+              "expression" : {
+                "expression" : "all_type_partitioned_1.p_int"
+              },
+              "alias" : "p_int"
+            }, {
+              "expression" : {
+                "expression" : "all_type_partitioned_1.p_string"
+              },
+              "alias" : "p_string"
+            }, {
+              "expression" : {
+                "expression" : "all_type_parquet_1_1_1.c_double"
+              },
+              "alias" : "c_double"
+            }, {
+              "expression" : {
+                "expression" : "all_type_parquet_1_1_1.c_boolean"
+              },
+              "alias" : "c_boolean"
+            }, {
+              "expression" : {
+                "expression" : "all_type_parquet_1_1_1.c_array"
+              },
+              "alias" : "c_array"
+            }, {
+              "expression" : {
+                "expression" : "all_type_parquet_1_1_1.c_float"
+              },
+              "alias" : "c_float"
+            }, {
+              "expression" : {
+                "expression" : "all_type_parquet_1_1_1.c_bigint"
+              },
+              "alias" : "c_bigint"
+            }, {
+              "expression" : {
+                "expression" : "all_type_parquet_1_1_1.c_tinyint"
+              },
+              "alias" : "c_tinyint"
+            }, {
+              "expression" : {
+                "expression" : "all_type_parquet_1_1_1.c_struct"
+              },
+              "alias" : "c_struct"
+            }, {
+              "expression" : {
+                "expression" : "all_type_parquet_1_1_1.c_smallint"
+              },
+              "alias" : "c_smallint"
+            }, {
+              "expression" : {
+                "expression" : "all_type_parquet_1_1_1.c_string"
+              },
+              "alias" : "c_string"
+            }, {
+              "expression" : {
+                "expression" : "all_type_parquet_1_1_1.c_int"
+              },
+              "alias" : "c_int"
+            } ],
+            "headAlias" : "all_type_partitioned_1",
+            "allowSelection" : false
+          },
+          "joinColumns" : [ "c_float" ],
+          "isRecommended" : false
+        } ]
+      }, {
+        "source" : {
+          "table" : {
+            "name" : "very_complex_table",
+            "sourceName" : "hive_metastore.qa_database",
+            "sourceType" : "Source"
+          }
+        },
+        "sourceComponentKind" : "Source",
+        "sourceLabel" : "very_complex_table",
+        "canJoinWith" : [ {
+          "processLabel" : "all_type_parquet",
+          "processId" : "all_type##Subgraph##TwuXgHIl",
+          "properties" : {
+            "activeTab" : "conditions",
+            "columnsSelector" : [ "c_boolean", "c_double", "c_int" ],
+            "conditions" : [ {
+              "alias" : "very_complex_table",
+              "expression" : {
+                "expression" : "very_complex_table.c_boolean = all_type_parquet.c_boolean AND very_complex_table.c_double = all_type_parquet.c_double AND very_complex_table.c_int = all_type_parquet.c_int"
+              },
+              "joinType" : "inner"
+            } ],
+            "expressions" : [ {
+              "expression" : {
+                "expression" : "very_complex_table.c_char"
+              },
+              "alias" : "c_char"
+            }, {
+              "expression" : {
+                "expression" : "very_complex_table.c_time"
+              },
+              "alias" : "c_time"
+            }, {
+              "expression" : {
+                "expression" : "very_complex_table.c_timestamp"
+              },
+              "alias" : "c_timestamp"
+            }, {
+              "expression" : {
+                "expression" : "very_complex_table.`c_complex-array`"
+              },
+              "alias" : "c_complex-array"
+            }, {
+              "expression" : {
+                "expression" : "very_complex_table.`c_complex-struct`"
+              },
+              "alias" : "c_complex-struct"
+            }, {
+              "expression" : {
+                "expression" : "all_type_parquet.c_int"
+              },
+              "alias" : "c_int"
+            }, {
+              "expression" : {
+                "expression" : "all_type_parquet.c_smallint"
+              },
+              "alias" : "c_smallint"
+            }, {
+              "expression" : {
+                "expression" : "all_type_parquet.c_float"
+              },
+              "alias" : "c_float"
+            }, {
+              "expression" : {
+                "expression" : "all_type_parquet.c_bigint"
+              },
+              "alias" : "c_bigint"
+            }, {
+              "expression" : {
+                "expression" : "all_type_parquet.c_array"
+              },
+              "alias" : "c_array"
+            }, {
+              "expression" : {
+                "expression" : "all_type_parquet.c_double"
+              },
+              "alias" : "c_double"
+            }, {
+              "expression" : {
+                "expression" : "all_type_parquet.c_tinyint"
+              },
+              "alias" : "c_tinyint"
+            }, {
+              "expression" : {
+                "expression" : "all_type_parquet.c_string"
+              },
+              "alias" : "c_string"
+            }, {
+              "expression" : {
+                "expression" : "all_type_parquet.c_struct"
+              },
+              "alias" : "c_struct"
+            }, {
+              "expression" : {
+                "expression" : "all_type_parquet.c_boolean"
+              },
+              "alias" : "c_boolean"
+            } ],
+            "headAlias" : "very_complex_table",
+            "allowSelection" : false
+          },
+          "joinColumns" : [ "c_boolean", "c_double", "c_int" ],
+          "isRecommended" : true
+        } ]
+      }, {
+        "source" : {
+          "table" : {
+            "name" : "all_type_parquet",
+            "sourceName" : "spark_catalog.qa_database",
+            "sourceType" : "Source"
+          }
+        },
+        "sourceComponentKind" : "Source",
+        "sourceLabel" : "all_type_parquet_3",
+        "canJoinWith" : [ {
+          "processLabel" : "all_type_partitioned",
+          "processId" : "all_type##Subgraph##OxoG3Hdj",
+          "properties" : {
+            "activeTab" : "conditions",
+            "columnsSelector" : [ "c_float" ],
+            "conditions" : [ {
+              "alias" : "all_type_parquet_3",
+              "expression" : {
+                "expression" : "all_type_parquet_3.c_float = all_type_partitioned.c_float"
+              },
+              "joinType" : "inner"
+            } ],
+            "expressions" : [ {
+              "expression" : {
+                "expression" : "all_type_partitioned.p_string"
+              },
+              "alias" : "p_string"
+            }, {
+              "expression" : {
+                "expression" : "all_type_partitioned.c_tinyint"
+              },
+              "alias" : "c_tinyint"
+            }, {
+              "expression" : {
+                "expression" : "all_type_partitioned.c_int"
+              },
+              "alias" : "c_int"
+            }, {
+              "expression" : {
+                "expression" : "all_type_partitioned.c_array"
+              },
+              "alias" : "c_array"
+            }, {
+              "expression" : {
+                "expression" : "all_type_partitioned.c_struct"
+              },
+              "alias" : "c_struct"
+            }, {
+              "expression" : {
+                "expression" : "all_type_partitioned.p_int"
+              },
+              "alias" : "p_int"
+            }, {
+              "expression" : {
+                "expression" : "all_type_partitioned.c_double"
+              },
+              "alias" : "c_double"
+            }, {
+              "expression" : {
+                "expression" : "all_type_partitioned.c_boolean"
+              },
+              "alias" : "c_boolean"
+            }, {
+              "expression" : {
+                "expression" : "all_type_partitioned.c_string"
+              },
+              "alias" : "c_string"
+            }, {
+              "expression" : {
+                "expression" : "all_type_partitioned.c_smallint"
+              },
+              "alias" : "c_smallint"
+            }, {
+              "expression" : {
+                "expression" : "all_type_partitioned.c_float"
+              },
+              "alias" : "c_float"
+            }, {
+              "expression" : {
+                "expression" : "all_type_partitioned.c_bigint"
+              },
+              "alias" : "c_bigint"
+            } ],
+            "headAlias" : "all_type_parquet_3",
+            "allowSelection" : false
+          },
+          "joinColumns" : [ "c_float" ],
+          "isRecommended" : false
+        } ]
+      }, {
+        "source" : {
+          "table" : {
+            "name" : "automation_databricks_sql_targetmodel_model_1728198325357",
+            "sourceName" : "hive_metastore.qa_db_warehouse",
+            "sourceType" : "ExternalSource"
+          }
+        },
+        "sourceComponentKind" : "ExternalSource",
+        "sourceLabel" : "automation_databricks_sql_targetmodel_model_1728198325357",
+        "canJoinWith" : [ {
+          "processLabel" : "all_type_parquet",
+          "processId" : "all_type##Subgraph##TwuXgHIl",
+          "properties" : {
+            "activeTab" : "conditions",
+            "columnsSelector" : [ "c_array", "c_bigint", "c_boolean" ],
+            "conditions" : [ {
+              "alias" : "automation_databricks_sql_targetmodel_model_1728198325357",
+              "expression" : {
+                "expression" : "automation_databricks_sql_targetmodel_model_1728198325357.c_array = all_type_parquet.c_array AND automation_databricks_sql_targetmodel_model_1728198325357.c_bigint = all_type_parquet.c_bigint AND automation_databricks_sql_targetmodel_model_1728198325357.c_boolean = all_type_parquet.c_boolean"
+              },
+              "joinType" : "inner"
+            } ],
+            "expressions" : [ {
+              "expression" : {
+                "expression" : "automation_databricks_sql_targetmodel_model_1728198325357.c_date"
+              },
+              "alias" : "c_date"
+            }, {
+              "expression" : {
+                "expression" : "automation_databricks_sql_targetmodel_model_1728198325357.c_timestamp"
+              },
+              "alias" : "c_timestamp"
+            }, {
+              "expression" : {
+                "expression" : "automation_databricks_sql_targetmodel_model_1728198325357.c_binary"
+              },
+              "alias" : "c_binary"
+            }, {
+              "expression" : {
+                "expression" : "automation_databricks_sql_targetmodel_model_1728198325357.c_decimal"
+              },
+              "alias" : "c_decimal"
+            }, {
+              "expression" : {
+                "expression" : "automation_databricks_sql_targetmodel_model_1728198325357.c_array_struct"
+              },
+              "alias" : "c_array_struct"
+            }, {
+              "expression" : {
+                "expression" : "automation_databricks_sql_targetmodel_model_1728198325357.c_map"
+              },
+              "alias" : "c_map"
+            }, {
+              "expression" : {
+                "expression" : "automation_databricks_sql_targetmodel_model_1728198325357.p_string"
+              },
+              "alias" : "p_string"
+            }, {
+              "expression" : {
+                "expression" : "automation_databricks_sql_targetmodel_model_1728198325357.p_int"
+              },
+              "alias" : "p_int"
+            }, {
+              "expression" : {
+                "expression" : "all_type_parquet.c_int"
+              },
+              "alias" : "c_int"
+            }, {
+              "expression" : {
+                "expression" : "all_type_parquet.c_smallint"
+              },
+              "alias" : "c_smallint"
+            }, {
+              "expression" : {
+                "expression" : "all_type_parquet.c_float"
+              },
+              "alias" : "c_float"
+            }, {
+              "expression" : {
+                "expression" : "all_type_parquet.c_bigint"
+              },
+              "alias" : "c_bigint"
+            }, {
+              "expression" : {
+                "expression" : "all_type_parquet.c_array"
+              },
+              "alias" : "c_array"
+            }, {
+              "expression" : {
+                "expression" : "all_type_parquet.c_double"
+              },
+              "alias" : "c_double"
+            }, {
+              "expression" : {
+                "expression" : "all_type_parquet.c_tinyint"
+              },
+              "alias" : "c_tinyint"
+            }, {
+              "expression" : {
+                "expression" : "all_type_parquet.c_string"
+              },
+              "alias" : "c_string"
+            }, {
+              "expression" : {
+                "expression" : "all_type_parquet.c_struct"
+              },
+              "alias" : "c_struct"
+            }, {
+              "expression" : {
+                "expression" : "all_type_parquet.c_boolean"
+              },
+              "alias" : "c_boolean"
+            } ],
+            "headAlias" : "automation_databricks_sql_targetmodel_model_1728198325357",
+            "allowSelection" : false
+          },
+          "joinColumns" : [ "c_array", "c_bigint", "c_boolean" ],
+          "isRecommended" : false
+        } ]
+      }, {
+        "source" : {
+          "table" : {
+            "name" : "customers",
+            "sourceName" : "spark_catalog.qa_suggestion_database",
+            "sourceType" : "Source"
+          }
+        },
+        "sourceComponentKind" : "Source",
+        "sourceLabel" : "customers",
+        "canJoinWith" : [ {
+          "processLabel" : "raw_customers",
+          "processId" : "raw_cust##Subgraph##wD0IwbYK",
+          "properties" : {
+            "activeTab" : "conditions",
+            "columnsSelector" : [ "first_name" ],
+            "conditions" : [ {
+              "alias" : "customers",
+              "expression" : {
+                "expression" : "customers.FIRST_NAME = raw_customers.first_name"
+              },
+              "joinType" : "inner"
+            } ],
+            "expressions" : [ {
+              "expression" : {
+                "expression" : "customers.ID"
+              },
+              "alias" : "ID"
+            }, {
+              "expression" : {
+                "expression" : "customers.LAST_NAME"
+              },
+              "alias" : "LAST_NAME"
+            }, {
+              "expression" : {
+                "expression" : "raw_customers.id"
+              },
+              "alias" : "id"
+            }, {
+              "expression" : {
+                "expression" : "raw_customers.first_name"
+              },
+              "alias" : "first_name"
+            }, {
+              "expression" : {
+                "expression" : "raw_customers.last_name"
+              },
+              "alias" : "last_name"
+            } ],
+            "headAlias" : "customers",
+            "allowSelection" : false
+          },
+          "joinColumns" : [ "first_name" ],
+          "isRecommended" : false
+        } ]
+      }, {
+        "source" : {
+          "table" : {
+            "name" : "date_dim",
+            "sourceName" : "hive_metastore.qa_database",
+            "sourceType" : "ExternalSource"
+          }
+        },
+        "sourceComponentKind" : "ExternalSource",
+        "sourceLabel" : "date_dim_1",
+        "canJoinWith" : [ {
+          "processLabel" : "date_dim",
+          "processId" : "date_dim##Subgraph##CMWg4xh0",
+          "properties" : {
+            "activeTab" : "conditions",
+            "columnsSelector" : [ "D_DOM" ],
+            "conditions" : [ {
+              "alias" : "date_dim_1",
+              "expression" : {
+                "expression" : "date_dim_1.D_DOM = date_dim.D_DOM"
+              },
+              "joinType" : "inner"
+            } ],
+            "expressions" : [ {
+              "expression" : {
+                "expression" : "date_dim.D_CURRENT_MONTH"
+              },
+              "alias" : "D_CURRENT_MONTH"
+            }, {
+              "expression" : {
+                "expression" : "date_dim.D_MONTH_SEQ"
+              },
+              "alias" : "D_MONTH_SEQ"
+            }, {
+              "expression" : {
+                "expression" : "date_dim.D_FY_WEEK_SEQ"
+              },
+              "alias" : "D_FY_WEEK_SEQ"
+            }, {
+              "expression" : {
+                "expression" : "date_dim.D_DAY_NAME"
+              },
+              "alias" : "D_DAY_NAME"
+            }, {
+              "expression" : {
+                "expression" : "date_dim.D_QUARTER_NAME"
+              },
+              "alias" : "D_QUARTER_NAME"
+            }, {
+              "expression" : {
+                "expression" : "date_dim.D_FIRST_DOM"
+              },
+              "alias" : "D_FIRST_DOM"
+            }, {
+              "expression" : {
+                "expression" : "date_dim.D_YEAR"
+              },
+              "alias" : "D_YEAR"
+            }, {
+              "expression" : {
+                "expression" : "date_dim.D_HOLIDAY"
+              },
+              "alias" : "D_HOLIDAY"
+            }, {
+              "expression" : {
+                "expression" : "date_dim.D_DATE_ID"
+              },
+              "alias" : "D_DATE_ID"
+            }, {
+              "expression" : {
+                "expression" : "date_dim.D_QUARTER_SEQ"
+              },
+              "alias" : "D_QUARTER_SEQ"
+            }, {
+              "expression" : {
+                "expression" : "date_dim.D_DOW"
+              },
+              "alias" : "D_DOW"
+            }, {
+              "expression" : {
+                "expression" : "date_dim.D_CURRENT_QUARTER"
+              },
+              "alias" : "D_CURRENT_QUARTER"
+            }, {
+              "expression" : {
+                "expression" : "date_dim.D_SAME_DAY_LQ"
+              },
+              "alias" : "D_SAME_DAY_LQ"
+            }, {
+              "expression" : {
+                "expression" : "date_dim.D_FY_YEAR"
+              },
+              "alias" : "D_FY_YEAR"
+            }, {
+              "expression" : {
+                "expression" : "date_dim.D_WEEKEND"
+              },
+              "alias" : "D_WEEKEND"
+            }, {
+              "expression" : {
+                "expression" : "date_dim.D_DOM"
+              },
+              "alias" : "D_DOM"
+            }, {
+              "expression" : {
+                "expression" : "date_dim.D_CURRENT_YEAR"
+              },
+              "alias" : "D_CURRENT_YEAR"
+            }, {
+              "expression" : {
+                "expression" : "date_dim.D_MOY"
+              },
+              "alias" : "D_MOY"
+            }, {
+              "expression" : {
+                "expression" : "date_dim.D_QOY"
+              },
+              "alias" : "D_QOY"
+            }, {
+              "expression" : {
+                "expression" : "date_dim.D_CURRENT_DAY"
+              },
+              "alias" : "D_CURRENT_DAY"
+            }, {
+              "expression" : {
+                "expression" : "date_dim.D_SAME_DAY_LY"
+              },
+              "alias" : "D_SAME_DAY_LY"
+            }, {
+              "expression" : {
+                "expression" : "date_dim.D_LAST_DOM"
+              },
+              "alias" : "D_LAST_DOM"
+            }, {
+              "expression" : {
+                "expression" : "date_dim.D_FY_QUARTER_SEQ"
+              },
+              "alias" : "D_FY_QUARTER_SEQ"
+            }, {
+              "expression" : {
+                "expression" : "date_dim.D_WEEK_SEQ"
+              },
+              "alias" : "D_WEEK_SEQ"
+            }, {
+              "expression" : {
+                "expression" : "date_dim.D_CURRENT_WEEK"
+              },
+              "alias" : "D_CURRENT_WEEK"
+            }, {
+              "expression" : {
+                "expression" : "date_dim.D_DATE_SK"
+              },
+              "alias" : "D_DATE_SK"
+            }, {
+              "expression" : {
+                "expression" : "date_dim.D_FOLLOWING_HOLIDAY"
+              },
+              "alias" : "D_FOLLOWING_HOLIDAY"
+            }, {
+              "expression" : {
+                "expression" : "date_dim.D_DATE"
+              },
+              "alias" : "D_DATE"
+            } ],
+            "headAlias" : "date_dim_1",
+            "allowSelection" : false
+          },
+          "joinColumns" : [ "D_DOM" ],
+          "isRecommended" : false
+        } ]
+      }, {
+        "source" : {
+          "table" : {
+            "name" : "dest_data_mart1",
+            "sourceName" : "hive_metastore.qa_database",
+            "sourceType" : "ExternalSource"
+          }
+        },
+        "sourceComponentKind" : "ExternalSource",
+        "sourceLabel" : "dest_data_mart1",
+        "canJoinWith" : [ {
+          "processLabel" : "all_type_parquet",
+          "processId" : "all_type##Subgraph##TwuXgHIl",
+          "properties" : {
+            "activeTab" : "conditions",
+            "columnsSelector" : [ "c_int" ],
+            "conditions" : [ {
+              "alias" : "dest_data_mart1",
+              "expression" : {
+                "expression" : "dest_data_mart1.c_int = all_type_parquet.c_int"
+              },
+              "joinType" : "inner"
+            } ],
+            "expressions" : [ {
+              "expression" : {
+                "expression" : "all_type_parquet.c_int"
+              },
+              "alias" : "c_int"
+            }, {
+              "expression" : {
+                "expression" : "all_type_parquet.c_smallint"
+              },
+              "alias" : "c_smallint"
+            }, {
+              "expression" : {
+                "expression" : "all_type_parquet.c_float"
+              },
+              "alias" : "c_float"
+            }, {
+              "expression" : {
+                "expression" : "all_type_parquet.c_bigint"
+              },
+              "alias" : "c_bigint"
+            }, {
+              "expression" : {
+                "expression" : "all_type_parquet.c_array"
+              },
+              "alias" : "c_array"
+            }, {
+              "expression" : {
+                "expression" : "all_type_parquet.c_double"
+              },
+              "alias" : "c_double"
+            }, {
+              "expression" : {
+                "expression" : "all_type_parquet.c_tinyint"
+              },
+              "alias" : "c_tinyint"
+            }, {
+              "expression" : {
+                "expression" : "all_type_parquet.c_string"
+              },
+              "alias" : "c_string"
+            }, {
+              "expression" : {
+                "expression" : "all_type_parquet.c_struct"
+              },
+              "alias" : "c_struct"
+            }, {
+              "expression" : {
+                "expression" : "all_type_parquet.c_boolean"
+              },
+              "alias" : "c_boolean"
+            } ],
+            "headAlias" : "dest_data_mart1",
+            "allowSelection" : false
+          },
+          "joinColumns" : [ "c_int" ],
+          "isRecommended" : false
+        } ]
+      }, {
+        "source" : {
+          "table" : {
+            "name" : "json_all_type_table",
+            "sourceName" : "hive_metastore.qa_db_warehouse",
+            "sourceType" : "ExternalSource"
+          }
+        },
+        "sourceComponentKind" : "ExternalSource",
+        "sourceLabel" : "json_all_type_table",
+        "canJoinWith" : [ {
+          "processLabel" : "all_type_parquet",
+          "processId" : "all_type##Subgraph##TwuXgHIl",
+          "properties" : {
+            "activeTab" : "conditions",
+            "columnsSelector" : [ "c_array", "c_bigint", "c_boolean" ],
+            "conditions" : [ {
+              "alias" : "json_all_type_table",
+              "expression" : {
+                "expression" : "json_all_type_table.c_array = all_type_parquet.c_array AND json_all_type_table.c_bigint = all_type_parquet.c_bigint AND json_all_type_table.c_boolean = all_type_parquet.c_boolean"
+              },
+              "joinType" : "inner"
+            } ],
+            "expressions" : [ {
+              "expression" : {
+                "expression" : "json_all_type_table.c_map"
+              },
+              "alias" : "c_map"
+            }, {
+              "expression" : {
+                "expression" : "json_all_type_table.p_string"
+              },
+              "alias" : "p_string"
+            }, {
+              "expression" : {
+                "expression" : "json_all_type_table.p_int"
+              },
+              "alias" : "p_int"
+            }, {
+              "expression" : {
+                "expression" : "all_type_parquet.c_int"
+              },
+              "alias" : "c_int"
+            }, {
+              "expression" : {
+                "expression" : "all_type_parquet.c_smallint"
+              },
+              "alias" : "c_smallint"
+            }, {
+              "expression" : {
+                "expression" : "all_type_parquet.c_float"
+              },
+              "alias" : "c_float"
+            }, {
+              "expression" : {
+                "expression" : "all_type_parquet.c_bigint"
+              },
+              "alias" : "c_bigint"
+            }, {
+              "expression" : {
+                "expression" : "all_type_parquet.c_array"
+              },
+              "alias" : "c_array"
+            }, {
+              "expression" : {
+                "expression" : "all_type_parquet.c_double"
+              },
+              "alias" : "c_double"
+            }, {
+              "expression" : {
+                "expression" : "all_type_parquet.c_tinyint"
+              },
+              "alias" : "c_tinyint"
+            }, {
+              "expression" : {
+                "expression" : "all_type_parquet.c_string"
+              },
+              "alias" : "c_string"
+            }, {
+              "expression" : {
+                "expression" : "all_type_parquet.c_struct"
+              },
+              "alias" : "c_struct"
+            }, {
+              "expression" : {
+                "expression" : "all_type_parquet.c_boolean"
+              },
+              "alias" : "c_boolean"
+            } ],
+            "headAlias" : "json_all_type_table",
+            "allowSelection" : false
+          },
+          "joinColumns" : [ "c_array", "c_bigint", "c_boolean" ],
+          "isRecommended" : false
+        } ]
+      }, {
+        "source" : {
+          "table" : {
+            "name" : "orc_all_type_table",
+            "sourceName" : "hive_metastore.qa_db_warehouse",
+            "sourceType" : "ExternalSource"
+          }
+        },
+        "sourceComponentKind" : "ExternalSource",
+        "sourceLabel" : "orc_all_type_table",
+        "canJoinWith" : [ {
+          "processLabel" : "all_type_parquet",
+          "processId" : "all_type##Subgraph##TwuXgHIl",
+          "properties" : {
+            "activeTab" : "conditions",
+            "columnsSelector" : [ "c_array", "c_bigint", "c_boolean" ],
+            "conditions" : [ {
+              "alias" : "orc_all_type_table",
+              "expression" : {
+                "expression" : "orc_all_type_table.c_array = all_type_parquet.c_array AND orc_all_type_table.c_bigint = all_type_parquet.c_bigint AND orc_all_type_table.c_boolean = all_type_parquet.c_boolean"
+              },
+              "joinType" : "inner"
+            } ],
+            "expressions" : [ {
+              "expression" : {
+                "expression" : "orc_all_type_table.c_map"
+              },
+              "alias" : "c_map"
+            }, {
+              "expression" : {
+                "expression" : "orc_all_type_table.p_string"
+              },
+              "alias" : "p_string"
+            }, {
+              "expression" : {
+                "expression" : "orc_all_type_table.p_int"
+              },
+              "alias" : "p_int"
+            }, {
+              "expression" : {
+                "expression" : "all_type_parquet.c_int"
+              },
+              "alias" : "c_int"
+            }, {
+              "expression" : {
+                "expression" : "all_type_parquet.c_smallint"
+              },
+              "alias" : "c_smallint"
+            }, {
+              "expression" : {
+                "expression" : "all_type_parquet.c_float"
+              },
+              "alias" : "c_float"
+            }, {
+              "expression" : {
+                "expression" : "all_type_parquet.c_bigint"
+              },
+              "alias" : "c_bigint"
+            }, {
+              "expression" : {
+                "expression" : "all_type_parquet.c_array"
+              },
+              "alias" : "c_array"
+            }, {
+              "expression" : {
+                "expression" : "all_type_parquet.c_double"
+              },
+              "alias" : "c_double"
+            }, {
+              "expression" : {
+                "expression" : "all_type_parquet.c_tinyint"
+              },
+              "alias" : "c_tinyint"
+            }, {
+              "expression" : {
+                "expression" : "all_type_parquet.c_string"
+              },
+              "alias" : "c_string"
+            }, {
+              "expression" : {
+                "expression" : "all_type_parquet.c_struct"
+              },
+              "alias" : "c_struct"
+            }, {
+              "expression" : {
+                "expression" : "all_type_parquet.c_boolean"
+              },
+              "alias" : "c_boolean"
+            } ],
+            "headAlias" : "orc_all_type_table",
+            "allowSelection" : false
+          },
+          "joinColumns" : [ "c_array", "c_bigint", "c_boolean" ],
+          "isRecommended" : false
+        } ]
+      }, {
+        "source" : {
+          "table" : {
+            "name" : "prakhar_table_configs_model",
+            "sourceName" : "hive_metastore.qa_db_warehouse",
+            "sourceType" : "ExternalSource"
+          }
+        },
+        "sourceComponentKind" : "ExternalSource",
+        "sourceLabel" : "prakhar_table_configs_model",
+        "canJoinWith" : [ {
+          "processLabel" : "all_type_parquet",
+          "processId" : "all_type##Subgraph##TwuXgHIl",
+          "properties" : {
+            "activeTab" : "conditions",
+            "columnsSelector" : [ "c_string", "c_boolean", "c_bigint" ],
+            "conditions" : [ {
+              "alias" : "prakhar_table_configs_model",
+              "expression" : {
+                "expression" : "prakhar_table_configs_model.c_bool = all_type_parquet.c_boolean AND prakhar_table_configs_model.c_int = all_type_parquet.c_bigint AND prakhar_table_configs_model.c_string = all_type_parquet.c_string"
+              },
+              "joinType" : "inner"
+            } ],
+            "expressions" : [ {
+              "expression" : {
+                "expression" : "all_type_parquet.c_int"
+              },
+              "alias" : "c_int"
+            }, {
+              "expression" : {
+                "expression" : "all_type_parquet.c_smallint"
+              },
+              "alias" : "c_smallint"
+            }, {
+              "expression" : {
+                "expression" : "all_type_parquet.c_float"
+              },
+              "alias" : "c_float"
+            }, {
+              "expression" : {
+                "expression" : "all_type_parquet.c_bigint"
+              },
+              "alias" : "c_bigint"
+            }, {
+              "expression" : {
+                "expression" : "all_type_parquet.c_array"
+              },
+              "alias" : "c_array"
+            }, {
+              "expression" : {
+                "expression" : "all_type_parquet.c_double"
+              },
+              "alias" : "c_double"
+            }, {
+              "expression" : {
+                "expression" : "all_type_parquet.c_tinyint"
+              },
+              "alias" : "c_tinyint"
+            }, {
+              "expression" : {
+                "expression" : "all_type_parquet.c_string"
+              },
+              "alias" : "c_string"
+            }, {
+              "expression" : {
+                "expression" : "all_type_parquet.c_struct"
+              },
+              "alias" : "c_struct"
+            }, {
+              "expression" : {
+                "expression" : "all_type_parquet.c_boolean"
+              },
+              "alias" : "c_boolean"
+            } ],
+            "headAlias" : "prakhar_table_configs_model",
+            "allowSelection" : false
+          },
+          "joinColumns" : [ "c_string", "c_boolean", "c_bigint" ],
+          "isRecommended" : false
+        } ]
+      }, {
+        "source" : {
+          "table" : {
+            "name" : "qa_test_seed",
+            "sourceName" : "hive_metastore.qa_db_warehouse",
+            "sourceType" : "ExternalSource"
+          }
+        },
+        "sourceComponentKind" : "ExternalSource",
+        "sourceLabel" : "qa_test_seed",
+        "canJoinWith" : [ {
+          "processLabel" : "all_type_parquet",
+          "processId" : "all_type##Subgraph##TwuXgHIl",
+          "properties" : {
+            "activeTab" : "conditions",
+            "columnsSelector" : [ "c_string", "c_boolean", "c_bigint" ],
+            "conditions" : [ {
+              "alias" : "qa_test_seed",
+              "expression" : {
+                "expression" : "qa_test_seed.c_bool = all_type_parquet.c_boolean AND qa_test_seed.c_int = all_type_parquet.c_bigint AND qa_test_seed.c_string = all_type_parquet.c_string"
+              },
+              "joinType" : "inner"
+            } ],
+            "expressions" : [ {
+              "expression" : {
+                "expression" : "qa_test_seed.c_bignumeric"
+              },
+              "alias" : "c_bignumeric"
+            }, {
+              "expression" : {
+                "expression" : "qa_test_seed.c_float64"
+              },
+              "alias" : "c_float64"
+            }, {
+              "expression" : {
+                "expression" : "all_type_parquet.c_int"
+              },
+              "alias" : "c_int"
+            }, {
+              "expression" : {
+                "expression" : "all_type_parquet.c_smallint"
+              },
+              "alias" : "c_smallint"
+            }, {
+              "expression" : {
+                "expression" : "all_type_parquet.c_float"
+              },
+              "alias" : "c_float"
+            }, {
+              "expression" : {
+                "expression" : "all_type_parquet.c_bigint"
+              },
+              "alias" : "c_bigint"
+            }, {
+              "expression" : {
+                "expression" : "all_type_parquet.c_array"
+              },
+              "alias" : "c_array"
+            }, {
+              "expression" : {
+                "expression" : "all_type_parquet.c_double"
+              },
+              "alias" : "c_double"
+            }, {
+              "expression" : {
+                "expression" : "all_type_parquet.c_tinyint"
+              },
+              "alias" : "c_tinyint"
+            }, {
+              "expression" : {
+                "expression" : "all_type_parquet.c_string"
+              },
+              "alias" : "c_string"
+            }, {
+              "expression" : {
+                "expression" : "all_type_parquet.c_struct"
+              },
+              "alias" : "c_struct"
+            }, {
+              "expression" : {
+                "expression" : "all_type_parquet.c_boolean"
+              },
+              "alias" : "c_boolean"
+            } ],
+            "headAlias" : "qa_test_seed",
+            "allowSelection" : false
+          },
+          "joinColumns" : [ "c_string", "c_boolean", "c_bigint" ],
+          "isRecommended" : false
+        } ]
+      }, {
+        "source" : {
+          "table" : {
+            "name" : "tpcds_uitesting_shared_1",
+            "sourceType" : "Model"
+          }
+        },
+        "sourceComponentKind" : "Model",
+        "sourceLabel" : "tpcds_uitesting_shared_1",
+        "canJoinWith" : [ {
+          "processLabel" : "item",
+          "processId" : "item##Subgraph##IDRmg9An",
+          "properties" : {
+            "activeTab" : "conditions",
+            "columnsSelector" : [ "I_ITEM_ID" ],
+            "conditions" : [ {
+              "alias" : "tpcds_uitesting_shared_1",
+              "expression" : {
+                "expression" : "tpcds_uitesting_shared_1.i_item_id = item.I_ITEM_ID"
+              },
+              "joinType" : "inner"
+            } ],
+            "expressions" : [ {
+              "expression" : {
+                "expression" : "tpcds_uitesting_shared_1.substrw_warehouse_name120"
+              },
+              "alias" : "substrw_warehouse_name120"
+            }, {
+              "expression" : {
+                "expression" : "tpcds_uitesting_shared_1.sm_type"
+              },
+              "alias" : "sm_type"
+            }, {
+              "expression" : {
+                "expression" : "tpcds_uitesting_shared_1.cc_name"
+              },
+              "alias" : "cc_name"
+            }, {
+              "expression" : {
+                "expression" : "tpcds_uitesting_shared_1.days_30"
+              },
+              "alias" : "days_30"
+            }, {
+              "expression" : {
+                "expression" : "tpcds_uitesting_shared_1.days_31_60"
+              },
+              "alias" : "days_31_60"
+            }, {
+              "expression" : {
+                "expression" : "tpcds_uitesting_shared_1.days_61_90"
+              },
+              "alias" : "days_61_90"
+            }, {
+              "expression" : {
+                "expression" : "tpcds_uitesting_shared_1.days_90_120"
+              },
+              "alias" : "days_90_120"
+            }, {
+              "expression" : {
+                "expression" : "tpcds_uitesting_shared_1.days_more_than_120"
+              },
+              "alias" : "days_more_than_120"
+            }, {
+              "expression" : {
+                "expression" : "tpcds_uitesting_shared_1.h8_30_to_9"
+              },
+              "alias" : "h8_30_to_9"
+            }, {
+              "expression" : {
+                "expression" : "item.I_SIZE"
+              },
+              "alias" : "I_SIZE"
+            }, {
+              "expression" : {
+                "expression" : "item.I_WHOLESALE_COST"
+              },
+              "alias" : "I_WHOLESALE_COST"
+            }, {
+              "expression" : {
+                "expression" : "item.I_BRAND_ID"
+              },
+              "alias" : "I_BRAND_ID"
+            }, {
+              "expression" : {
+                "expression" : "item.I_CLASS_ID"
+              },
+              "alias" : "I_CLASS_ID"
+            }, {
+              "expression" : {
+                "expression" : "item.I_UNITS"
+              },
+              "alias" : "I_UNITS"
+            }, {
+              "expression" : {
+                "expression" : "item.I_CATEGORY_ID"
+              },
+              "alias" : "I_CATEGORY_ID"
+            }, {
+              "expression" : {
+                "expression" : "item.I_ITEM_DESC"
+              },
+              "alias" : "I_ITEM_DESC"
+            }, {
+              "expression" : {
+                "expression" : "item.I_CLASS"
+              },
+              "alias" : "I_CLASS"
+            }, {
+              "expression" : {
+                "expression" : "item.I_REC_END_DATE"
+              },
+              "alias" : "I_REC_END_DATE"
+            }, {
+              "expression" : {
+                "expression" : "item.I_ITEM_ID"
+              },
+              "alias" : "I_ITEM_ID"
+            }, {
+              "expression" : {
+                "expression" : "item.I_PRODUCT_NAME"
+              },
+              "alias" : "I_PRODUCT_NAME"
+            }, {
+              "expression" : {
+                "expression" : "item.I_CURRENT_PRICE"
+              },
+              "alias" : "I_CURRENT_PRICE"
+            }, {
+              "expression" : {
+                "expression" : "item.I_MANAGER_ID"
+              },
+              "alias" : "I_MANAGER_ID"
+            }, {
+              "expression" : {
+                "expression" : "item.I_BRAND"
+              },
+              "alias" : "I_BRAND"
+            }, {
+              "expression" : {
+                "expression" : "item.I_ITEM_SK"
+              },
+              "alias" : "I_ITEM_SK"
+            }, {
+              "expression" : {
+                "expression" : "item.I_CONTAINER"
+              },
+              "alias" : "I_CONTAINER"
+            }, {
+              "expression" : {
+                "expression" : "item.I_COLOR"
+              },
+              "alias" : "I_COLOR"
+            }, {
+              "expression" : {
+                "expression" : "item.I_REC_START_DATE"
+              },
+              "alias" : "I_REC_START_DATE"
+            }, {
+              "expression" : {
+                "expression" : "item.I_FORMULATION"
+              },
+              "alias" : "I_FORMULATION"
+            }, {
+              "expression" : {
+                "expression" : "item.I_MANUFACT_ID"
+              },
+              "alias" : "I_MANUFACT_ID"
+            }, {
+              "expression" : {
+                "expression" : "item.I_CATEGORY"
+              },
+              "alias" : "I_CATEGORY"
+            }, {
+              "expression" : {
+                "expression" : "item.I_MANUFACT"
+              },
+              "alias" : "I_MANUFACT"
+            } ],
+            "headAlias" : "tpcds_uitesting_shared_1",
+            "allowSelection" : false
+          },
+          "joinColumns" : [ "I_ITEM_ID" ],
+          "isRecommended" : false
+        } ]
+      } ]
     },
     "graphConfig" : {
       "entityConfig" : {
@@ -1955,6 +3843,8 @@
           "component" : "SQLStatement",
           "metadata" : {
             "label" : "pvt2",
+            "x" : 480,
+            "y" : 420,
             "phase" : 0,
             "macroDependencies" : [ ],
             "isLabelGrayed" : false
@@ -2065,6 +3955,8 @@
           "component" : "Reformat",
           "metadata" : {
             "label" : "Reformat_10",
+            "x" : 20,
+            "y" : 220,
             "phase" : 0,
             "macroDependencies" : [ ],
             "isLabelGrayed" : false
@@ -2240,6 +4132,8 @@
           "component" : "SQLStatement",
           "metadata" : {
             "label" : "pvt1",
+            "x" : 480,
+            "y" : 220,
             "phase" : 0,
             "macroDependencies" : [ ],
             "isLabelGrayed" : false
@@ -2332,6 +4226,8 @@
           "component" : "SetOperation",
           "metadata" : {
             "label" : "SQLStatement_5",
+            "x" : 740,
+            "y" : 120,
             "phase" : 0,
             "isLabelGrayed" : false
           },
@@ -2406,6 +4302,8 @@
           "component" : "SQLStatement",
           "metadata" : {
             "label" : "pvt",
+            "x" : 480,
+            "y" : 20,
             "phase" : 0,
             "macroDependencies" : [ ],
             "isLabelGrayed" : false
@@ -2498,6 +4396,8 @@
           "component" : "Reformat",
           "metadata" : {
             "label" : "employees",
+            "x" : 220,
+            "y" : 220,
             "phase" : 0,
             "macroDependencies" : [ ],
             "isLabelGrayed" : false
@@ -2657,6 +4557,8 @@
           "component" : "SQLStatement",
           "metadata" : {
             "label" : "SQLStatementtest1232134",
+            "x" : 220,
+            "y" : 440,
             "phase" : 0,
             "macroDependencies" : [ ],
             "comment" : "Filters specific performance records based on defined criteria.",
@@ -2868,6 +4770,8 @@
           "component" : "Reformat",
           "metadata" : {
             "label" : "departments",
+            "x" : 220,
+            "y" : 20,
             "phase" : 0,
             "macroDependencies" : [ ],
             "isLabelGrayed" : false
@@ -2994,6 +4898,8 @@
           "component" : "Deduplicate",
           "metadata" : {
             "label" : "SQLStatement_1_1_1_1",
+            "x" : 20,
+            "y" : 440,
             "phase" : 0,
             "isLabelGrayed" : false
           },
