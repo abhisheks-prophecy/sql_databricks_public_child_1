@@ -9190,7 +9190,13 @@ Subgraph_9 AS (
 child_deduplicate_custom_1 AS (
 
   {#Removes duplicate child records to ensure data accuracy.#}
-  {{ SQL_DatabricksSharedBasic.child_deduplicate_custom('Subgraph_9', 'id', 'first_name') }}
+  {{
+    SQL_DatabricksSharedBasic.child_deduplicate_custom(
+      relation = 'Subgraph_9', 
+      partition_by = 'id', 
+      order_by = 'first_name'
+    )
+  }}
 
 ),
 
