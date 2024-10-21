@@ -45,6 +45,9 @@ snapshots:
   - name: "c_bigint"
     dataType:
       type: "Bigint"
+  - name: "c_timestamp"
+    dataType:
+      type: "Timestamp"
   - name: "c_int"
     dataType:
       type: "Integer"
