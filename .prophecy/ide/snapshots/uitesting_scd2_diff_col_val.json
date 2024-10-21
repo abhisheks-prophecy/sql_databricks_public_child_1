@@ -11,7 +11,7 @@
       "entityConfig" : {
         "strategy" : "'timestamp'",
         "check_cols" : [ ],
-        "updated_at" : "\"c_float\"",
+        "updated_at" : "\"c_timestamp\"",
         "target_schema" : " var('qa_schema') ",
         "unique_key" : "'c_id'",
         "type" : "SnapshotConfig"
@@ -64,7 +64,7 @@
         "isLabelGrayed" : false
       },
       "properties" : {
-        "columnsSelector" : [ ],
+        "columnsSelector" : [ "mOZM7hX2##c_tinyint", "mOZM7hX2##c_smallint", "mOZM7hX2##c_int", "mOZM7hX2##c_bigint", "mOZM7hX2##c_float", "mOZM7hX2##c_double", "mOZM7hX2##c_string", "mOZM7hX2##c_boolean", "mOZM7hX2##c_array", "mOZM7hX2##c_struct" ],
         "expressions" : [ {
           "expression" : {
             "expression" : "c_tinyint"
@@ -120,6 +120,11 @@
             "expression" : "monotonically_increasing_id()"
           },
           "alias" : "c_id"
+        }, {
+          "expression" : {
+            "expression" : "CURRENT_TIMESTAMP()"
+          },
+          "alias" : "c_timestamp"
         } ]
       },
       "ports" : {
@@ -133,8 +138,7 @@
         } ],
         "isCustomOutputSchema" : false,
         "autoUpdateOnRun" : false
-      },
-      "index" : 1
+      }
     },
     "final##twOT1prb" : {
       "id" : "final##twOT1prb",

@@ -70,10 +70,10 @@ snapshots:
       type: "Float"
   - name: "dbt_valid_to"
     dataType:
-      type: "String"
+      type: "Float"
   - name: "dbt_updated_at"
     dataType:
-      type: "String"
+      type: "Float"
   - name: "c_boolean"
     dataType:
       type: "Boolean"
@@ -103,10 +103,13 @@ snapshots:
           type: "Bigint"
   - name: "dbt_valid_from"
     dataType:
-      type: "String"
+      type: "Float"
   - name: "c_bigint"
     dataType:
       type: "Bigint"
+  - name: "c_timestamp"
+    dataType:
+      type: "Timestamp"
   - name: "c_int"
     dataType:
       type: "Integer"
