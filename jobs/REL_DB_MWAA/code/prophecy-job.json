@@ -40,7 +40,7 @@
         "label" : "DBT_SharedChildModel",
         "slug" : "DBT_SharedChildModel",
         "x" : 400,
-        "y" : 180
+        "y" : 220
       },
       "ports" : {
         "inputs" : [ {
