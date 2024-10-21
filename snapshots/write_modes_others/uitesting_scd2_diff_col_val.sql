@@ -5,7 +5,7 @@
     "strategy": 'timestamp',
     "target_schema":  var('qa_schema') ,
     "unique_key": 'c_id',
-    "updated_at": "c_timestamp"
+    "updated_at": "c_float"
   })
 }}
 
@@ -31,8 +31,7 @@ all_type_non_partitioned_columns AS (
     c_boolean AS c_boolean,
     c_array AS c_array,
     c_struct AS c_struct,
-    monotonically_increasing_id() AS c_id,
-    CURRENT_TIMESTAMP() AS c_timestamp
+    monotonically_increasing_id() AS c_id
   
   FROM all_type_non_partitioned_1 AS in0
 

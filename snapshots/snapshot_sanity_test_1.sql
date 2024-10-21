@@ -5,7 +5,7 @@
     "strategy": 'timestamp',
     "target_schema": 'QA_SCHEMA',
     "unique_key": 'c_int',
-    "updated_at": "c_timestamp"
+    "updated_at": "c_float"
   })
 }}
 
@@ -31,8 +31,7 @@ Reformat_1 AS (
     concat(c_string, {{v_snapshot_int}}, {{ var("v_project_int") }}) AS c_string,
     c_boolean AS c_boolean,
     c_array AS c_array,
-    c_struct AS c_struct,
-    current_timestamp() AS c_timestamp
+    c_struct AS c_struct
   
   FROM sanity_simple_model_1 AS in0
 

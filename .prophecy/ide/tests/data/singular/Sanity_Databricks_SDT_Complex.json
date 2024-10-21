@@ -10,8 +10,8 @@
     "graphConfig" : {
       "entityConfig" : {
         "fail_calc" : "'count(*)'",
-        "severity" : "'warn'",
         "error_if" : "'>1000'",
+        "severity" : "'warn'",
         "warn_if" : "'>500'",
         "type" : "TestConfig"
       }
@@ -394,7 +394,7 @@
       "metadata" : {
         "label" : "uitesting_scd2_diff_col_val",
         "slug" : "uitesting_scd2_diff_col_val",
-        "x" : -320,
+        "x" : -280,
         "y" : -180,
         "phase" : 0
       },

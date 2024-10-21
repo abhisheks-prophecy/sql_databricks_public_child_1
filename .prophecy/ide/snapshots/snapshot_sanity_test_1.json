@@ -11,7 +11,7 @@
       "entityConfig" : {
         "strategy" : "'timestamp'",
         "check_cols" : [ ],
-        "updated_at" : "\"c_timestamp\"",
+        "updated_at" : "\"c_float\"",
         "target_schema" : "'QA_SCHEMA'",
         "unique_key" : "'c_int'",
         "type" : "SnapshotConfig"
@@ -61,7 +61,7 @@
         "macroDependencies" : [ ]
       },
       "properties" : {
-        "columnsSelector" : [ "tthEwdeS##c_tinyint", "tthEwdeS##c_smallint", "tthEwdeS##c_int", "tthEwdeS##c_bigint", "tthEwdeS##c_float", "tthEwdeS##c_double", "tthEwdeS##c_string", "tthEwdeS##c_boolean", "tthEwdeS##c_array", "tthEwdeS##c_struct" ],
+        "columnsSelector" : [ "tthEwdeS##c_tinyint", "tthEwdeS##c_smallint", "tthEwdeS##c_int", "tthEwdeS##c_bigint", "tthEwdeS##c_float", "tthEwdeS##c_double", "tthEwdeS##c_boolean", "tthEwdeS##c_array", "tthEwdeS##c_struct" ],
         "expressions" : [ {
           "expression" : {
             "expression" : "c_tinyint"
@@ -112,11 +112,6 @@
             "expression" : "c_struct"
           },
           "alias" : "c_struct"
-        }, {
-          "expression" : {
-            "expression" : "current_timestamp()"
-          },
-          "alias" : "c_timestamp"
         } ]
       },
       "ports" : {

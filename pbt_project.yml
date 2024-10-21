@@ -861,21 +861,18 @@ sqlSnapshots:
           - name: pin
             dataType:
               type: Bigint
-      - name: c_timestamp
-        dataType:
-          type: Timestamp
       - name: dbt_scd_id
         dataType:
           type: String
       - name: dbt_updated_at
         dataType:
-          type: Timestamp
+          type: Float
       - name: dbt_valid_from
         dataType:
-          type: Timestamp
+          type: Float
       - name: dbt_valid_to
         dataType:
-          type: Timestamp
+          type: Float
     description: null
     author: abhisheks+shared@prophecy.io
     files:
@@ -940,21 +937,18 @@ sqlSnapshots:
       - name: c_id
         dataType:
           type: Bigint
-      - name: c_timestamp
-        dataType:
-          type: Timestamp
       - name: dbt_scd_id
         dataType:
           type: String
       - name: dbt_updated_at
         dataType:
-          type: Timestamp
+          type: Float
       - name: dbt_valid_from
         dataType:
-          type: Timestamp
+          type: Float
       - name: dbt_valid_to
         dataType:
-          type: Timestamp
+          type: Float
     description: null
     author: abhisheks+shared@prophecy.io
     files:
